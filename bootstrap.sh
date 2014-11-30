@@ -15,3 +15,6 @@ else
     cd ~/.dotfiles && git pull origin master && echo "Congrats, you are up-to-date!"
   fi
 fi
+
+ln -nfs ~/.dotfiles/vim/dotvimrc ~/.vimrc
+ln -nfs ~/.dotfiles/vim/dotvim ~/.vim
