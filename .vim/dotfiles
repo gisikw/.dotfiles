@@ -1,29 +1,27 @@
-function! PromptForManualChange()
-  echom "You changed a dotfile."
-  echom "Please commit your changes to the repo until automagicness works"
-endfunction
-
 function! HandleDotfilesChange()
-  " TODO
-  call PromptForManualChange()
+  silent exec '!cd ~/.dotfiles && test -z "$(git status --porcelain)"'
+  if v:shell_error
+    silent exec '!cd ~/.dotfiles && git add . && git commit -m "Automatic update" && git pull origin master && git push origin master'
+  endif
 endfunction
 
 function! ShouldUpdateDotfiles()
-  if empty(glob('~/.vim/bundle/update.log'))
+  if empty(glob('~/.dotfiles/update.log'))
     return 1
   end
   return system('echo $(($(date +%s)-$(cat ~/.dotfiles/update.log)))') > 86400
 endfunction
 
-function UpdateDotfiles()
+function! UpdateDotfiles()
+  silent exec '!echo Fetching latest dotfiles'
   silent exec '!cd ~/.dotfiles && git pull origin master && git rev-parse HEAD > ~/.dotfiles/head.log'
   silent exec '!date +\%s > ~/.dotfiles/update.log'
-  source ~/.vimrc
 endfunction
 
 autocmd! bufwritepost ~/.dotfiles/* call HandleDotfilesChange()
 autocmd! bufwritepost ~/.vimrc call HandleDotfilesChange()
 
-if ShouldUpdateDotfiles()
+if ShouldUpdateDotfiles() && HasGitHub()
   call UpdateDotfiles()
+  source ~/.vimrc
 endif
