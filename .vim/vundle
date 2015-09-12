@@ -2,11 +2,14 @@
 
 function! UpdateBundle()
   silent exec 'PluginInstall'
+  silent exec '!date +\%s > ~/.vim/bundle/update.log'
   exec 'q'
-  silent exec '!date +%s > ~/.vim/bundle/update.log'
 endfunction
 
 function! ShouldUpdateBundle()
+  if empty(glob('~/.vim/bundle/update.log'))
+    return 1
+  end
   return system('echo $(($(date +%s)-$(cat ~/.vim/bundle/update.log)))') > 86400
 endfunction
 
@@ -29,6 +32,5 @@ call vundle#end()
 filetype plugin indent on
 
 if ShouldUpdateBundle() && HasGitHub()
-  silent exec "PluginInstall"
-  exec "q"
+  call UpdateBundle()
 endif

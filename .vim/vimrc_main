@@ -87,6 +87,7 @@ au BufRead,BufNewFile *.conf        set filetype=apache
 au BufRead,BufNewFile *.es6         set filetype=javascript
 au BufRead,BufNewFile *.sls         set filetype=yaml
 au BufRead,BufNewFile vundle        set filetype=vim
+au BufRead,BufNewFile dotfiles      set filetype=vim
 
 let NERDTreeShowHidden=1
 

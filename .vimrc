@@ -30,5 +30,8 @@ if HasGit()
   endif
 endif
 
+" Dotfiles management
+source ~/.vim/dotfiles
+
 " Main configuration
 source ~/.vim/vimrc_main

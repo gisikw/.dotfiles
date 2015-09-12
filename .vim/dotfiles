@@ -1,0 +1,12 @@
+function! PromptForManualChange()
+  echom "You changed a dotfile."
+  echom "Please commit your changes to the repo until automagicness works"
+endfunction
+
+function! HandleDotfilesChange()
+  " TODO
+  call PromptForManualChange()
+endfunction
+
+autocmd! bufwritepost ~/.dotfiles/* call HandleDotfilesChange()
+autocmd! bufwritepost ~/.vimrc call HandleDotfilesChange()
