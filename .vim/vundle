@@ -1,0 +1,34 @@
+" Vundle Configuration
+
+function! UpdateBundle()
+  silent exec 'PluginInstall'
+  exec 'q'
+  silent exec '!date +%s > ~/.vim/bundle/update.log'
+endfunction
+
+function! ShouldUpdateBundle()
+  return system('echo $(($(date +%s)-$(cat ~/.vim/bundle/update.log)))') > 86400
+endfunction
+
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'scrooloose/nerdtree'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'tpope/vim-endwise'
+Plugin 'elzr/vim-json'
+Plugin 'mxw/vim-jsx'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'tomvanderlee/vim-kerboscript'
+Plugin 'othree/yajs.vim'
+
+call vundle#end()
+filetype plugin indent on
+
+if ShouldUpdateBundle() && HasGitHub()
+  silent exec "PluginInstall"
+  exec "q"
+endif

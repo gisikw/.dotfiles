@@ -1,16 +1,9 @@
-" Vim Configuration File
-" ~/.vimrc
-" Maintained by Kevin Gisi
-" Version 1.0.5
-
-" Call Pathogen
-call pathogen#infect()
+" Vimrc Main
 
 " General Options
 syntax on
 set bg=dark
 set autoindent
-
 set nofoldenable
 
 " Parameters
@@ -20,6 +13,10 @@ set shiftwidth=2
 set expandtab
 set pastetoggle=<F12>
 set splitright
+
+" Shift fix
+command! W write
+command! Q quit
 
 " Highlighting
 set hlsearch
@@ -35,7 +32,8 @@ nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 " Shortcuts
 nmap <leader>d :NERDTreeToggle<cr>
-nmap <leader>r :!rake<cr>
+nmap <leader>r :!clear && rake<cr><cr>
+nmap <leader>n :!clear && node %<cr>
 nmap <leader>c :!wc -w %<cr>
 nmap <leader>w :VimroomToggle<cr>:echo<cr>
 nmap <leader>e :vsp! ~/.vimrc<cr>
@@ -43,11 +41,17 @@ nmap <leader>s :execute 'vsp! ~/.vim/bundle/snipmate.vim/snippets/' . &filetype 
 nmap <leader>g :
 nmap <leader>p :!textplay -p %<cr>
 nmap <leader>f gqq
-nmap <leader>x yitvatp
+nmap <leader>z :!source ~/.bash_profile && gz %<cr>
+" nmap <leader>x yitvatp
+nmap <leader>x ::w<CR>:!clear && iex %<cr>
 nmap <leader>- :r! date<cr>
 nmap <leader><cr> :!./bin.sh<cr><cr>
+" This doesn't work. Why?
+" nmap <leader>m :!uglifyjs % | gzip -c | wc -c<cr>
 map <leader>/ :NERDCommenterToggle<cr>
 nmap <leader><space> :R<cr>
+
+vmap <leader>< :s/</\&lt;/g \| :'<,'>s/>/\&gt;/g<cr><cr>
 
 " Force Reload .vimrc on edit
 autocmd! bufwritepost .vimrc source ~/.vimrc
@@ -62,7 +66,11 @@ inoremap <Down>   <NOP>
 inoremap jj       <Esc>
 
 " Color Scheme
-colorscheme distinguished
+" colorscheme solarized
+" colorscheme synic
+
+let NERDTreeQuitOnOpen=1
+set backspace=2 " make backspace work like most other apps
 
 " IDIOMS TO START USING
 " :w !sudo tee %      # Save the file with sudo mode
@@ -71,9 +79,16 @@ colorscheme distinguished
 autocmd BufRead,BufNewFile *.txt set nonumber
 au BufRead,BufNewFile *.fountain    set filetype=fountain
 au BufRead,BufNewFile Guardfile     set filetype=ruby
+au BufRead,BufNewFile Gruntfile     set filetype=javascript
 au BufRead,BufNewFile Gemfile       set filetype=ruby
 au BufRead,BufNewFile config.ru     set filetype=ruby
 au BufRead,BufNewFile *.ad          set filetype=asciidoc
+au BufRead,BufNewFile *.conf        set filetype=apache
+au BufRead,BufNewFile *.es6         set filetype=javascript
+au BufRead,BufNewFile *.sls         set filetype=yaml
+au BufRead,BufNewFile vundle        set filetype=vim
+
+let NERDTreeShowHidden=1
 
 " Remove whitespace
 autocmd BufWritePre * :%s/\s\+$//e
