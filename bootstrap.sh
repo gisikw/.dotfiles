@@ -8,3 +8,4 @@ fi
 
 ln -nfs ~/.dotfiles/.vimrc ~/.vimrc
 ln -nfs ~/.dotfiles/.vim ~/.vim
+ln -nfs ~/.dotfiles/.bash_prompt ~/.bash_prompt
