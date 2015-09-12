@@ -14,7 +14,7 @@ endfunction
 
 function! UpdateDotfiles()
   silent exec '!echo Fetching latest dotfiles'
-  silent exec '!cd ~/.dotfiles && git pull origin master && git rev-parse HEAD > ~/.dotfiles/head.log'
+  silent exec '!cd ~/.dotfiles && git pull origin master'
   silent exec '!date +\%s > ~/.dotfiles/update.log'
 endfunction
 
