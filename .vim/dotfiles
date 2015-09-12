@@ -1,7 +1,8 @@
 function! HandleDotfilesChange()
   silent exec '!cd ~/.dotfiles && test -z "$(git status --porcelain)"'
   if v:shell_error
-    silent exec '!cd ~/.dotfiles && git add . && git commit -m "Automatic update" && git pull origin master && git push origin master && clear'
+    silent exec '!cd ~/.dotfiles && git add . && git commit -m "Automatic update" && git pull origin master && git push origin master'
+    redraw!
   endif
 endfunction
 
