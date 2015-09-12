@@ -6,16 +6,16 @@ function! HandleDotfilesChange()
 endfunction
 
 function! ShouldUpdateDotfiles()
-  if empty(glob('~/.dotfiles/update.log'))
+  if empty(glob('~/.dotfiles/.update.log'))
     return 1
   end
-  return system('echo $(($(date +%s)-$(cat ~/.dotfiles/update.log)))') > 86400
+  return system('echo $(($(date +%s)-$(cat ~/.dotfiles/.update.log)))') > 86400
 endfunction
 
 function! UpdateDotfiles()
   silent exec '!echo Fetching latest dotfiles'
   silent exec '!cd ~/.dotfiles && git pull origin master'
-  silent exec '!date +\%s > ~/.dotfiles/update.log'
+  silent exec '!date +\%s > ~/.dotfiles/.update.log'
 endfunction
 
 autocmd! bufwritepost ~/.dotfiles/* call HandleDotfilesChange()
