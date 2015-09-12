@@ -66,8 +66,7 @@ inoremap <Down>   <NOP>
 inoremap jj       <Esc>
 
 " Color Scheme
-" colorscheme solarized
-" colorscheme synic
+colorscheme synic
 
 let NERDTreeQuitOnOpen=1
 set backspace=2 " make backspace work like most other apps
