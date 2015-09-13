@@ -13,6 +13,7 @@ set shiftwidth=2
 set expandtab
 set pastetoggle=<F12>
 set splitright
+set backupdir=/tmp
 
 " Shift fix
 command! W write
@@ -36,7 +37,7 @@ nmap <leader>r :!clear && rake<cr><cr>
 nmap <leader>n :!clear && node %<cr>
 nmap <leader>c :!wc -w %<cr>
 nmap <leader>w :VimroomToggle<cr>:echo<cr>
-nmap <leader>e :vsp! ~/.vimrc<cr>
+nmap <leader>e :vsp! ~/.vim/vimrc_main<cr>
 nmap <leader>s :execute 'vsp! ~/.vim/bundle/snipmate.vim/snippets/' . &filetype . '.snippets'<cr>
 nmap <leader>g :
 nmap <leader>p :!textplay -p %<cr>
@@ -55,6 +56,7 @@ vmap <leader>< :s/</\&lt;/g \| :'<,'>s/>/\&gt;/g<cr><cr>
 
 " Force Reload .vimrc on edit
 autocmd! bufwritepost .vimrc source ~/.vimrc
+autocmd! bufwritepost .vim/vimrc_main source ~/.vimrc
 autocmd! bufwritepost *.snippets call ReloadAllSnippets()
 
 inoremap <Left>   <NOP>
