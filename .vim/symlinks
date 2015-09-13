@@ -1,0 +1,23 @@
+" Dotfile Symlinks
+
+let symlink_dict = {
+\ '~/.dotfiles/.vimrc': '~/.vimrc',
+\ '~/.dotfiles/.vim':   '~/.vim',
+\ '~/.dotfiles/.tmux.conf': '~/.tmux.conf',
+\ '~/.dotfiles/bootstrap.sh': '~/bootstrap.sh'
+\}
+
+for [src, target] in items(symlink_dict)
+  let target  = expand(target)
+  let src     = expand(src)
+
+  if !empty(glob(target))
+    echom src . ' -> ' target . ' exists.'
+    if substitute(system('readlink ' . target), '\n$', '', '') != src
+      silent exec '!mv ' . target . ' ' . target . '.backup'
+      silent exec '!ln -nfs ' . src . ' ' . target
+    endif
+  else
+    silent exec '!ln -nfs ' . src . ' ' . target
+  endif
+endfor

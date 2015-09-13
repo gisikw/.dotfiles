@@ -16,6 +16,7 @@ endfunction
 function! UpdateDotfiles()
   silent exec '!echo Fetching latest dotfiles'
   silent exec '!cd ~/.dotfiles && git pull origin master'
+  source ~/.dotfiles/.vim/symlinks
   silent exec '!date +\%s > ~/.dotfiles/.update.log'
 endfunction
 
