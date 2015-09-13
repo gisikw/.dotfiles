@@ -21,3 +21,5 @@ for [src, target] in items(symlink_dict)
     silent exec '!ln -nfs ' . src . ' ' . target
   endif
 endfor
+
+q
