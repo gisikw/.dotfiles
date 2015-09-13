@@ -14,7 +14,6 @@ for [src, target] in items(symlink_dict)
 
   if !empty(glob(target))
     if substitute(system('readlink ' . target), '\n$', '', '') != src
-      exec "Collision found..."
       silent exec '!mv ' . target . ' ' . target . '.backup'
       silent exec '!ln -nfs ' . src . ' ' . target
     endif
