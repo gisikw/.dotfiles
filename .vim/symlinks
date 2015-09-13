@@ -5,6 +5,7 @@ let symlink_dict = {
 \ '~/.dotfiles/.vim':   '~/.vim',
 \ '~/.dotfiles/.tmux.conf': '~/.tmux.conf',
 \ '~/.dotfiles/bootstrap.sh': '~/bootstrap.sh'
+\ '~/.dotfiles/.bash_prompt': '~/.bash_prompt'
 \}
 
 for [src, target] in items(symlink_dict)
