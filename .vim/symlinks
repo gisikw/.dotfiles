@@ -4,7 +4,7 @@ let symlink_dict = {
 \ '~/.dotfiles/.vimrc': '~/.vimrc',
 \ '~/.dotfiles/.vim':   '~/.vim',
 \ '~/.dotfiles/.tmux.conf': '~/.tmux.conf',
-\ '~/.dotfiles/bootstrap.sh': '~/bootstrap.sh'
+\ '~/.dotfiles/bootstrap.sh': '~/bootstrap.sh',
 \ '~/.dotfiles/.bash_prompt': '~/.bash_prompt'
 \}
 
