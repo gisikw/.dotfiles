@@ -21,7 +21,7 @@ call vundle#begin()
 Plugin 'scrooloose/nerdtree'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'elixir-lang/vim-elixir'
-Plugin 'tpope/vim-endwise'
+" Plugin 'tpope/vim-endwise'
 Plugin 'elzr/vim-json'
 Plugin 'mxw/vim-jsx'
 Plugin 'digitaltoad/vim-jade'
