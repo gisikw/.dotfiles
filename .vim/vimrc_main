@@ -71,6 +71,7 @@ inoremap jj       <Esc>
 colorscheme synic
 
 let NERDTreeQuitOnOpen=1
+let g:jsx_ext_required = 0
 set backspace=2 " make backspace work like most other apps
 
 " IDIOMS TO START USING
