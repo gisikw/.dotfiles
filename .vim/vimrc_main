@@ -92,7 +92,7 @@ au BufRead,BufNewFile vundle        set filetype=vim
 au BufRead,BufNewFile dotfiles      set filetype=vim
 au BufRead,BufNewFile symlinks      set filetype=vim
 
-let g:jsx_ext_required = 0
+" let g:jsx_ext_required = 0
 
 let NERDTreeShowHidden=1
 
