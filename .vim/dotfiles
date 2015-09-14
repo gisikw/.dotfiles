@@ -22,6 +22,7 @@ endfunction
 
 autocmd! bufwritepost ~/.dotfiles/* call HandleDotfilesChange()
 autocmd! bufwritepost ~/.vimrc call HandleDotfilesChange()
+autocmd! bufwritepost ~/.vim/* call HandleDotfilesChange()
 
 if ShouldUpdateDotfiles() && HasGitHub()
   call UpdateDotfiles()
