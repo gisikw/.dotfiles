@@ -36,7 +36,7 @@ nmap <leader>d :NERDTreeToggle<cr>
 nmap <leader>r :!clear && rake<cr><cr>
 nmap <leader>n :!clear && node %<cr>
 nmap <leader>c :!wc -w %<cr>
-nmap <leader>w :VimroomToggle<cr>:echo<cr>
+nmap <leader>w :Goyo<cr>
 nmap <leader>e :vsp! ~/.vim/vimrc_main<cr>
 nmap <leader>s :execute 'vsp! ~/.vim/bundle/snipmate.vim/snippets/' . &filetype . '.snippets'<cr>
 nmap <leader>g :
