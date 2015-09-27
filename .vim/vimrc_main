@@ -92,6 +92,10 @@ au BufRead,BufNewFile vundle        set filetype=vim
 au BufRead,BufNewFile dotfiles      set filetype=vim
 au BufRead,BufNewFile symlinks      set filetype=vim
 
+let g:limelight_conceal_ctermfg = 'gray'
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+
 autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
 
 " let g:jsx_ext_required = 0
