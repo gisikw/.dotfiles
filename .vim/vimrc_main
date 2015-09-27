@@ -114,7 +114,13 @@ autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
 " let NERDTreeShowHidden=1
 
 " Remove whitespace
-autocmd BufWritePre * :%s/\s\+$//e
+function! StripTrailingWhitespace()
+  let save_cursor = getpos(".")
+  %s/\s\+$//e
+  call setpos('.', save_cursor)
+endfunction
+
+autocmd BufWritePre * call StripTrailingWhitespace()
 
 function! WrapForTmux(s)
   if !exists('$TMUX')
