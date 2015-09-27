@@ -28,6 +28,7 @@ Plugin 'digitaltoad/vim-jade'
 Plugin 'tomvanderlee/vim-kerboscript'
 Plugin 'othree/yajs.vim'
 Plugin 'junegunn/goyo.vim'
+Plugin 'junegunn/limelight.vim'
 
 call vundle#end()
 
