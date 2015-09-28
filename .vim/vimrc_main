@@ -33,7 +33,8 @@ nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 " Shortcuts
 nmap <leader>d :NERDTreeToggle<cr>
-nmap <leader>r :!clear && rake<cr><cr>
+nmap <leader>R :!clear && rake<cr><cr>
+nmap <leader>r :!clear && ruby %<cr>
 nmap <leader>n :!clear && node %<cr>
 nmap <leader>c :echo system("wc -w ".expand("%"))<cr>
 nmap <leader>w :Goyo<cr>
