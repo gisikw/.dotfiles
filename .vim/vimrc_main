@@ -96,11 +96,13 @@ let g:limelight_conceal_ctermfg = 'darkgrey'
 
 function! s:goyo_enter()
   Limelight
+  colorscheme Tomorrow
   highlight NonText ctermfg=bg guifg=bg
 endfunction
 
 function! s:goyo_leave()
   Limelight!
+  colorscheme synic
   highlight NonText ctermfg=fg guifg=fg
 endfunction
 
