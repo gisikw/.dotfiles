@@ -98,6 +98,7 @@ function! s:goyo_enter()
   Limelight
   colorscheme Tomorrow
   highlight NonText ctermfg=bg guifg=bg
+  set wrap linebreak nolist
 endfunction
 
 function! s:goyo_leave()
