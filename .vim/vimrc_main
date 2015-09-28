@@ -92,7 +92,7 @@ au BufRead,BufNewFile vundle        set filetype=vim
 au BufRead,BufNewFile dotfiles      set filetype=vim
 au BufRead,BufNewFile symlinks      set filetype=vim
 
-let g:limelight_conceal_ctermfg = 'lightyellow'
+let g:limelight_conceal_ctermfg = 'lightgray'
 
 function! s:goyo_enter()
   Limelight
