@@ -45,7 +45,7 @@ nmap <leader>p :!textplay -p %<cr>
 nmap <leader>f gqq
 nmap <leader>z :!source ~/.bash_profile && gz %<cr>
 " nmap <leader>x yitvatp
-nmap <leader>x ::w<CR>:!clear && iex -S mix%<cr>
+nmap <leader>x ::w<CR>:!clear && iex -S mix<cr>
 nmap <leader>- :r! date<cr>
 nmap <leader><cr> :!./bin.sh<cr><cr>
 " This doesn't work. Why?
