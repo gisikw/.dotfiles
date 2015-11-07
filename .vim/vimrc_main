@@ -93,6 +93,7 @@ au BufRead,BufNewFile vundle        set filetype=vim
 au BufRead,BufNewFile dotfiles      set filetype=vim
 au BufRead,BufNewFile symlinks      set filetype=vim
 au BufRead,BufNewFile *.md          set filetype=markdown
+au BufRead,BufNewFile *.kspp        set filetype=kerboscript
 
 let g:limelight_conceal_ctermfg = 'lightgray'
 
