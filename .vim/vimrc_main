@@ -61,13 +61,10 @@ autocmd! bufwritepost .vimrc source ~/.vimrc
 autocmd! bufwritepost vimrc_main source ~/.vimrc
 autocmd! bufwritepost *.snippets call ReloadAllSnippets()
 
-
-
 noremap <Left>   <NOP>
 noremap <Right>  <NOP>
 noremap <Up>     <NOP>
 noremap <Down>   <NOP>
-
 
 " Shortcut Escape
 inoremap jj       <Esc>
