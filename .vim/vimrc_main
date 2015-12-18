@@ -61,10 +61,11 @@ autocmd! bufwritepost .vimrc source ~/.vimrc
 autocmd! bufwritepost vimrc_main source ~/.vimrc
 autocmd! bufwritepost *.snippets call ReloadAllSnippets()
 
-inoremap <Left>   echo "I think you mean \"j\""<cr>
+inoremap <Left>   :echo "I think you mean \"j\""<cr>
 inoremap <Right>  <NOP>
 inoremap <Up>     <NOP>
 inoremap <Down>   <NOP>
+
 
 " Shortcut Escape
 inoremap jj       <Esc>
