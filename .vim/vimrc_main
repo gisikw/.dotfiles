@@ -42,7 +42,7 @@ nmap <leader>e :vsp! ~/.vim/vimrc_main<cr>
 nmap <leader>s :execute 'vsp! ~/.vim/bundle/snipmate.vim/snippets/' . &filetype . '.snippets'<cr>
 nmap <leader>g :
 nmap <leader>p :!textplay -p %<cr>
-nmap <leader>f gqq
+nmap <leader>f gq
 nmap <leader>8 :set colorcolumn=80<cr>
 nmap <leader>z :!source ~/.bash_profile && gz %<cr>
 " nmap <leader>x yitvatp
