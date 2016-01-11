@@ -47,14 +47,15 @@ nmap <leader>8 :set colorcolumn=80<cr>
 nmap <leader>z :!source ~/.bash_profile && gz %<cr>
 " nmap <leader>x yitvatp
 nmap <leader>x ::w<CR>:!clear && iex -S mix<cr>
-nmap <leader>- :r! date<cr>
 nmap <leader><cr> :!./bin.sh<cr><cr>
 nmap <leader>k :!cp % /Volumes/Kerbal Space Program/Ships/Script<cr><cr>
-nmap <leader>\ :vsp<cr>
 " This doesn't work. Why?
 " nmap <leader>m :!uglifyjs % | gzip -c | wc -c<cr>
 map <leader>/ :NERDCommenterToggle<cr>
 nmap <leader><space> :R<cr>
+
+nmap <leader>- :sp<cr>
+nmap <leader>\ :vsp<cr>
 
 vmap <leader>< :s/</\&lt;/g \| :'<,'>s/>/\&gt;/g<cr><cr>
 
