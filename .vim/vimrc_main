@@ -50,6 +50,7 @@ nmap <leader>x ::w<CR>:!clear && iex -S mix<cr>
 nmap <leader>- :r! date<cr>
 nmap <leader><cr> :!./bin.sh<cr><cr>
 nmap <leader>k :!cp % /Volumes/Kerbal Space Program/Ships/Script<cr><cr>
+nmap <leader>\ :vsp<cr>
 " This doesn't work. Why?
 " nmap <leader>m :!uglifyjs % | gzip -c | wc -c<cr>
 map <leader>/ :NERDCommenterToggle<cr>
