@@ -32,6 +32,7 @@ nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 "nnoremap : ;
 
 " Shortcuts
+nmap <leader>t :CtrlP<cr>
 nmap <leader>d :NERDTreeToggle<cr>
 nmap <leader>R :!clear && rake<cr><cr>
 nmap <leader>r :!clear && ruby %<cr>
