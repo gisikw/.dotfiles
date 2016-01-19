@@ -26,20 +26,22 @@ if github_available; then
   update_dotfile_repository
 fi
 
-# FIXME: This belongs in its own utility spot
 function up() {
-  source ~/.bash_profile 2>/dev/null || 
+  source ~/.bash_profile 2>/dev/null ||
   source ~/.bash_profile 2>/dev/null
 }
 
+# TODO:
+# Verify symlinks
 if [ ! -e ~/.vimrc ]; then
   ln ~/.dotfiles/vimrc ~/.vimrc
 fi
 
-# TODO:
-# Verify symlinks
 # Set up aliases
 # Set up utility functions
 # Handle SSH agent
 
 source ~/.dotfiles/bash_prompt
+unset -f github_available
+unset -f commit_dotfile_changes
+unset -f update_dotfile_repository
