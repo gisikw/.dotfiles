@@ -32,6 +32,10 @@ function up() {
   source ~/.bash_profile 2>/dev/null
 }
 
+if [ ! -e ~/.vimrc ]; then
+  ln -s ~/.dotfiles/vimrc ~/.vimrc
+fi
+
 # TODO:
 # Verify symlinks
 # Set up aliases
