@@ -33,7 +33,7 @@ function up() {
 }
 
 if [ ! -e ~/.vimrc ]; then
-  ln -s ~/.dotfiles/vimrc ~/.vimrc
+  ln ~/.dotfiles/vimrc ~/.vimrc
 fi
 
 # TODO:
