@@ -26,6 +26,8 @@ if github_available; then
   update_dotfile_repository
 fi
 
+echo "Testing autoupdate"
+
 # TODO:
 # Verify symlinks
 # Set up aliases
