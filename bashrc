@@ -26,20 +26,11 @@ if github_available; then
   update_dotfile_repository
 fi
 
-# FIXME: Aliases shouldn't exist in the main bashrc
+# FIXME: This belongs in its own utility spot
 function up() {
-  if github_available; then
-    commit_dotfile_changes
-    update_dotfile_repository
-  fi
-  if [ -f ~/.bash_profile ]; then
-    source ~/.bash_profile
-  else
-    source ~/.bashrc
-  fi 
+  source ~/.bash_profile 2>/dev/null || 
+  source ~/.bash_profile 2>/dev/null
 }
-alias up="source 
-echo "Testing autoupdate"
 
 # TODO:
 # Verify symlinks
