@@ -41,4 +41,5 @@ fi
 # Set up aliases
 # Set up utility functions
 # Handle SSH agent
-# Set bash prompt
+
+source ~/.dotfiles/bash_prompt
