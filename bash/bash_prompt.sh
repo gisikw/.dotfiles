@@ -6,7 +6,7 @@ function status_prompt
     PS1="\[\e[0;31m\]$\[\e[0m\] "
   else
     gstatus="$(git status --porcelain 2>/dev/null | wc -c)"
-    if [ "$?" -ne "0" ] || [ "$gstatus" -eq "0" ]
+    if [ "$?" -ne "0" ] || [ "$gstatus" -eq "0" ]; then
       echo "Not a git repo, or clean git repo"
       PS1="\[\e[0;32m\]$\[\e[0m\] "
     else
