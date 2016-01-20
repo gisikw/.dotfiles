@@ -40,7 +40,7 @@ fi
 # Set up aliases
 
 # Set up utility functions
-ls ~/.dotfiles/bash | while read file; do
+for file in ~/.dotfiles/bash/*; do
   echo "Sourcing $file"
   source $file
 done
