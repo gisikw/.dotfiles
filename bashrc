@@ -44,7 +44,7 @@ done
 
 # Set up aliases
 craml_all ~/.dotfiles/config.yml aliases | while read key; do
-  echo "Setting up an alias"
+  echo "Setting up an alias for $key"
   alias $key="$(craml_value ~/.dotfiles/config.yml aliases $key)"
 done
 
