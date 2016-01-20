@@ -47,7 +47,6 @@ for key in $(craml_all ~/.dotfiles/config.yml aliases); do
   alias $key="$(craml_value ~/.dotfiles/config.yml aliases $key)"
 done
 
-source ~/.dotfiles/bash_prompt
 unset -f github_available
 unset -f commit_dotfile_changes
 unset -f update_dotfile_repository
