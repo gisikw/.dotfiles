@@ -2,4 +2,4 @@ aliases:
   be: bundle exec
   webs: python -m SimpleHTTPServer
 symlinks:
-  ~/.vimrc: ~/.dotfiles/vimrc
+  .vimrc: ~/.dotfiles/vimrc
