@@ -31,27 +31,9 @@ PROMPT_COMMAND=smile_prompt
 
 function smile_prompt
 {
-if [ "$?" -eq "0" ]
-then
-#smiley
-SC="${GREEN}:)"
-else
-#frowney
-SC="${RED}:("
-fi
-if [ $UID -eq 0 ]
-then
-#root user color
-UC="${RED}"
-else
-#normal user color
-UC="${BWHITE}"
-fi
-#hostname color
-HC="${BYELLOW}"
-#regular color
-RC="${BWHITE}"
-#default color
-DF='\[\e[0m\]'
-PS1="[${UC}\u${RC}@${HC}\h ${RC}\W${DF}] ${SC}${DF} "
+  if [ "$?" -eq "0" ]; then
+    PS1="${GREEN}$ "
+  else
+    PS1="${RED}$ "
+  fi
 }
