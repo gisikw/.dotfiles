@@ -38,7 +38,12 @@ if [ ! -e ~/.vimrc ]; then
 fi
 
 # Set up aliases
+
 # Set up utility functions
+ls ~/.dotfiles/bash | while read file; do
+  source $file
+done
+
 # Handle SSH agent
 
 source ~/.dotfiles/bash_prompt
