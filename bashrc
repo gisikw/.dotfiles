@@ -39,7 +39,7 @@ done
 for key in $(craml_all ~/.dotfiles/config.yml symlinks); do
   target="$HOME/$key"
   if [ ! -e $target ]; then
-    ln $(craml_value ~/.dotfiles/config.yml symlinks $key) $target
+    ln $HOME/$(craml_value ~/.dotfiles/config.yml symlinks $key) $target
   fi
 done
 
