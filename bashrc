@@ -27,27 +27,25 @@ if github_available; then
 fi
 
 function up() {
-  source ~/.bash_profile 2>/dev/null ||
-  source ~/.bash_profile 2>/dev/null
+  source ~/.bash_profile 2>/dev/null || source ~/.bashrc 2>/dev/null
 }
-
-# TODO:
-# Verify symlinks
-if [ ! -e ~/.vimrc ]; then
-  ln ~/.dotfiles/vimrc ~/.vimrc
-fi
 
 # Set up utility functions
 for file in ~/.dotfiles/bash/*; do
   source $file
 done
 
+# Verify symlinks
+for key in $(craml_all ~/.dotfiles/config.yml symlinks); do
+  if [ ! -e $key ]; then
+    ln $(craml_value ~/.dotfiles/config.yml symlinks $key) $key
+  fi
+done
+
 # Set up aliases
 for key in $(craml_all ~/.dotfiles/config.yml aliases); do
   alias $key="$(craml_value ~/.dotfiles/config.yml aliases $key)"
 done
-
-# Handle SSH agent
 
 source ~/.dotfiles/bash_prompt
 unset -f github_available
