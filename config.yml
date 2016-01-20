@@ -1,7 +1,7 @@
 aliases:
   be: bundle exec
   webs: python -m SimpleHTTPServer
-  dot: cd ~/.dotfiles && vim bashrc && up
+  dot: (cd ~/.dotfiles && vim bashrc && up)
   z: fg
 symlinks:
   .vimrc: .dotfiles/vimrc
