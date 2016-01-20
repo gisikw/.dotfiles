@@ -16,7 +16,7 @@ Plugin 'tomvanderlee/vim-kerboscript'
 Plugin 'othree/yajs.vim'
 Plugin 'junegunn/goyo.vim'
 Plugin 'junegunn/limelight.vim'
-Plugin 'tpope/vim-endwise.vim'
+Plugin 'tpope/vim-endwise'
 call vundle#end()
 
 " General Configuration
@@ -29,6 +29,7 @@ set backupdir=/tmp
 set autoindent
 set nofoldenable
 set splitright
+set splitbelow
 set bg=dark
 set backspace=2
 
