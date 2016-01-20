@@ -4,3 +4,4 @@ aliases:
   dot: cd ~/.dotfiles && vim bashrc && up
 symlinks:
   .vimrc: .dotfiles/vimrc
+  .tmux.conf: .dotfiles/tmux.conf
