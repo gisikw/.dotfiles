@@ -37,11 +37,14 @@ if [ ! -e ~/.vimrc ]; then
   ln ~/.dotfiles/vimrc ~/.vimrc
 fi
 
-# Set up aliases
-
 # Set up utility functions
 for file in ~/.dotfiles/bash/*; do
   source $file
+done
+
+# Set up aliases
+craml_all ~/.dotfiles/config.yml aliases | while read key; do
+  alias $key=$(craml_value ~/.dotfiles/config.yml aliases $key)
 done
 
 # Handle SSH agent
