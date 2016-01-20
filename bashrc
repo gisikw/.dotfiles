@@ -37,7 +37,7 @@ done
 
 # Verify symlinks
 for key in $(craml_all ~/.dotfiles/config.yml symlinks); do
-  target="~/$key"
+  target="$HOME/$key"
   echo "Checking symlink $target"
   if [ ! -e $target ]; then
     echo "Doesn't exist!"
