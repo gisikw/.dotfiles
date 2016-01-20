@@ -1,6 +1,6 @@
 aliases:
   be: bundle exec
   webs: python -m SimpleHTTPServer
-  dot: cd ~/.dotfiles && vim -c "NERDTreeToggle" && up
+  dot: cd ~/.dotfiles && vim bashrc && up
 symlinks:
   .vimrc: .dotfiles/vimrc
