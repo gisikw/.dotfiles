@@ -13,6 +13,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tomvanderlee/vim-kerboscript'
+Plugin 'othree/yajs.vim'
 call vundle#end()
 
 " General Configuration
