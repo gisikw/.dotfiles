@@ -14,6 +14,8 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tomvanderlee/vim-kerboscript'
 Plugin 'othree/yajs.vim'
+Plugin 'junegunn/goyo.vim'
+Plugin 'junegunn/limelight.vim'
 call vundle#end()
 
 " General Configuration
@@ -45,6 +47,7 @@ nmap <leader>t :CtrlP<cr>
 nmap <leader>d :NERDTreeToggle<cr>
 nmap <leader>\ :vsp<cr>
 nmap <leader>- :sp<cr>
+nmap <leader>w :Goyo<cr>
 
 " Keyboard lag fix
 command! W write
@@ -91,3 +94,20 @@ function! StripTrailingWhitespace()
   call setpos('.', save_cursor)
 endfunction
 autocmd BufWritePre * call StripTrailingWhitespace()
+
+" Configure Goyo and Limelight for writing prose
+let g:limelight_conceal_ctermfg = 'lightgray'
+function! s:goyo_enter()
+  Limelight
+  colorscheme Tomorrow
+  highlight NonText ctermfg=bg guifg=bg
+  set wrap linebreak nolist
+endfunction
+function! s:goyo_leave()
+  Limelight!
+  colorscheme synic
+  highlight NonText ctermfg=fg guifg=fg
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
