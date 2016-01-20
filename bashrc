@@ -41,6 +41,7 @@ fi
 
 # Set up utility functions
 ls ~/.dotfiles/bash | while read file; do
+  echo "Sourcing $file"
   source $file
 done
 
