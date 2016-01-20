@@ -41,7 +41,6 @@ fi
 
 # Set up utility functions
 for file in ~/.dotfiles/bash/*; do
-  echo "Sourcing $file"
   source $file
 done
 
