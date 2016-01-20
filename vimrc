@@ -1,7 +1,7 @@
 " Kevin Gisi's .vimrc
 
 set nocompatible
-filetype plugin indent on
+filetype plugin on
 
 " Vundle Bootstrap and Plugins
 if empty(glob('~/.vim/bundle/Vundle.vim'))
