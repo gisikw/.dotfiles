@@ -43,7 +43,7 @@ for file in ~/.dotfiles/bash/*; do
 done
 
 # Set up aliases
-craml_all ~/.dotfiles/config.yml aliases | while read key; do
+for key in $(craml_all ~/.dotfiles/config.yml aliases); do
   value=$(craml_value ~/.dotfiles/config.yml aliases $key)
   echo "Setting up an alias for $key to $value"
   $(alias $key="$value")
