@@ -1,0 +1,7 @@
+[user]
+	email = kevin@kevingisi.com
+	name = Kevin Gisi
+[push]
+	default = matching
+[alias]
+	co = checkout

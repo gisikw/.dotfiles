@@ -6,3 +6,4 @@ aliases:
 symlinks:
   .vimrc: .dotfiles/vimrc
   .tmux.conf: .dotfiles/tmux.conf
+  .gitconfig: .dotfiles/gitconfig
