@@ -45,7 +45,7 @@ done
 # Set up aliases
 craml_all ~/.dotfiles/config.yml aliases | while read key; do
   echo "Setting up an alias"
-  alias $key=$(craml_value ~/.dotfiles/config.yml aliases $key)
+  alias $key="$(craml_value ~/.dotfiles/config.yml aliases $key)"
 done
 
 # Handle SSH agent
