@@ -7,6 +7,6 @@ function craml_all() {
 
 function craml_value() {
   awk "/$2:/{p=1;next;print;}p&&/^[^\ ]/{p=0};p" $1 |
-  grep "^\s*$3:"
+  grep "^\s*$3:" |
   awk '{ print substr($0, index($0, $2)) }'
 }
