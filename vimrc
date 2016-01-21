@@ -56,6 +56,10 @@ nmap <leader>w :Goyo<cr>
 command! W write
 command! Q quit
 
+" Filetype overrides
+au BufRead,BufNewFile *.txt set nonumber
+au BufRead,BufNewFile *.ks set filetype=kerboscript
+
 " Reload vimrc on change
 autocmd! bufwritepost vimrc source ~/.vimrc
 
