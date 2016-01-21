@@ -5,3 +5,10 @@ function gh() {
     open https://github.com/$1
   fi
 }
+
+function gz() {
+        echo "orig size    (bytes): "
+        cat "$1" | wc -c
+        echo "gzipped size (bytes): "
+        gzip -c "$1" | wc -c
+}
