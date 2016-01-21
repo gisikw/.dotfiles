@@ -46,6 +46,7 @@ inoremap <C-c> <Esc>
 
 " Leader-Key Shortcuts
 nmap <leader>t :CtrlP<cr>
+nmap <leader>e :e<space>
 nmap <leader>d :NERDTreeToggle<cr>
 nmap <leader>\ :vsp<cr>
 nmap <leader>- :sp<cr>
