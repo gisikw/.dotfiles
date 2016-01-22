@@ -2,7 +2,7 @@ aliases:
   be: bundle exec
   berc: bundle exec rails c
   webs: python -m SimpleHTTPServer
-  dot: (cd ~/.dotfiles && vim bashrc && up)
+  dot: (cd ~/.dotfiles && vim bashrc) && up
   m: mux
   z: fg
 symlinks:
