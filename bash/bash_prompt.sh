@@ -4,7 +4,7 @@ function status_prompt() {
   if [ "$?" -ne "0" ]; then
     PS1="\[\e[0;31m\]$\[\e[0m\] "
   else
-    gstatus="$(pwd | grep Volumes || git status --porcelain 2>/dev/null | wc -c)"
+    gstatus="$(git status --porcelain 2>/dev/null | wc -c)"
     if [ "$?" -ne "0" ] || [ "$gstatus" -eq "0" ]; then
       PS1="\[\e[0;32m\]$\[\e[0m\] "
     else
