@@ -60,6 +60,7 @@ command! Q quit
 " Filetype overrides
 au BufRead,BufNewFile *.txt set nonumber
 au BufRead,BufNewFile *.ks set filetype=kerboscript
+au BufRead,BufNewFile *.coffee set filetype=coffee
 
 " Reload vimrc on change
 autocmd! bufwritepost vimrc source ~/.vimrc
