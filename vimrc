@@ -52,6 +52,7 @@ nmap <leader>d :NERDTreeToggle<cr>
 nmap <leader>\ :vsp<cr>
 nmap <leader>- :sp<cr>
 nmap <leader>w :Goyo<cr>
+nmap <leader>c :echo system("wc -w " . expand("%"))<cr>
 nmap <leader><space> :!cp % /Volumes/Kerbal\ Space\ Program/Ships/Script<cr><cr>
 
 " Keyboard lag fix
