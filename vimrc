@@ -22,6 +22,7 @@ call vundle#end()
 
 " General Configuration
 syntax on
+set relativenumber
 set number
 set softtabstop=2
 set shiftwidth=2
