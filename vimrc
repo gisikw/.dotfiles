@@ -1,4 +1,12 @@
 " Kevin Gisi's .vimrc
+export function ensureGlobals(obj, parent = global) {
+  Object.keys(obj).forEach((key) => {
+    if (!parent[key])
+      parent[key] = obj[key];
+    if (obj[key] instanceof Object && parent[key] instanceof Object)
+      ensureGlobals(obj[key], parent[key]);
+  });
+}
 
 set nocompatible
 filetype plugin on
@@ -121,6 +129,9 @@ function! s:goyo_leave()
   colorscheme synic
   highlight NonText ctermfg=fg guifg=fg
 endfunction
+
+" Configure NERDTree"
+let NERDTreeQuitOnOpen = 1
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
