@@ -1,12 +1,4 @@
 " Kevin Gisi's .vimrc
-export function ensureGlobals(obj, parent = global) {
-  Object.keys(obj).forEach((key) => {
-    if (!parent[key])
-      parent[key] = obj[key];
-    if (obj[key] instanceof Object && parent[key] instanceof Object)
-      ensureGlobals(obj[key], parent[key]);
-  });
-}
 
 set nocompatible
 filetype plugin on
