@@ -55,6 +55,7 @@ nmap <leader>- :sp<cr>
 nmap <leader>w :Goyo<cr>
 nmap <leader>c :echo system("wc -w " . expand("%"))<cr>
 nmap <leader>n :!FILE=% npm test<cr>
+nmap <leader>@ "=strftime("%c")<CR>P
 nmap <leader><space> :!cp % /Volumes/Kerbal\ Space\ Program/Ships/Script<cr><cr>
 
 " Keyboard lag fix
