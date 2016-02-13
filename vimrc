@@ -50,8 +50,8 @@ inoremap <C-c> <Esc>
 nmap <leader>t :CtrlP<cr>
 nmap <leader>e :e<space>
 nmap <leader>d :NERDTreeToggle<cr>
-nmap <leader>\ :vsp<cr>
-nmap <leader>- :sp<cr>
+nmap <leader>\ :bn<cr>
+nmap <leader>- :bd<cr>
 nmap <leader>w :Goyo<cr>
 nmap <leader>c :echo system("wc -w " . expand("%"))<cr>
 nmap <leader>n :!FILE=% npm test<cr>
