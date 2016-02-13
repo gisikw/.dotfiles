@@ -53,6 +53,7 @@ nmap <leader>d :NERDTreeToggle<cr>
 nmap <leader>\ :bn<cr>
 nmap <leader>- :bd<cr>
 nmap <leader>w :Goyo<cr>
+nmap <leader>r :!rspec %<cr>
 nmap <leader>c :echo system("wc -w " . expand("%"))<cr>
 nmap <leader>n :!FILE=% npm test<cr>
 nmap <leader>@ "=strftime("%m/%d/%y")<CR>P
