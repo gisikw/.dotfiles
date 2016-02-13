@@ -7,6 +7,7 @@ aliases:
   m: mux
   z: fg
   c: clear
+  w: find . | grep md | xargs cat | wc -w
 symlinks:
   .vimrc: .dotfiles/vimrc
   .tmux.conf: .dotfiles/tmux.conf
