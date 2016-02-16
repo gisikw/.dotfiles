@@ -17,7 +17,6 @@ Plugin 'othree/yajs.vim'
 Plugin 'junegunn/goyo.vim'
 Plugin 'junegunn/limelight.vim'
 Plugin 'kchmck/vim-coffee-script'
-Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-endwise'
 call vundle#end()
 
