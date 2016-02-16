@@ -50,7 +50,7 @@ inoremap <C-c> <Esc>
 nmap <leader>t :CtrlP<cr>
 nmap <leader>e :e<space>
 nmap <leader>d :NERDTreeToggle<cr>
-nmap <leader>\ :bn<cr>
+nmap <leader>\ :bn!<cr>
 nmap <leader>- :bd<cr>
 nmap <leader>w :Goyo<cr>
 nmap <leader>r :!rspec %<cr>
