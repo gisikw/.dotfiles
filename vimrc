@@ -16,9 +16,9 @@ Plugin 'tomvanderlee/vim-kerboscript'
 Plugin 'othree/yajs.vim'
 Plugin 'junegunn/goyo.vim'
 Plugin 'junegunn/limelight.vim'
-Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-endwise'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'jiangmiao/auto-pairs'
 call vundle#end()
 
 " General Configuration
@@ -127,9 +127,6 @@ endfunction
 
 " Configure NERDTree
 let NERDTreeQuitOnOpen = 1
-
-" Configure delimitMate
-let delimiteMate_expand_cr = 1
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
