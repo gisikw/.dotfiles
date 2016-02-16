@@ -124,9 +124,8 @@ function! s:goyo_leave()
   highlight NonText ctermfg=fg guifg=fg
 endfunction
 
-" Add a retyping function for fun
+" Functions for playing back the deleted buffer
 function! Retype()
-  exe ":normal ggdG"
   let i = 0
   while i < len(@")
     exe ":normal a" . strpart(@",i,1)
@@ -135,6 +134,11 @@ function! Retype()
     let i += 1
   endwhile
   exe ":normal dd"
+endfunction
+
+function! RetypeFile()
+  exe ":normal ggdG"
+  call Retype()
 endfunction
 
 " Configure NERDTree
