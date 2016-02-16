@@ -125,7 +125,7 @@ function! s:goyo_leave()
 endfunction
 
 " Add a retyping function for fun
-function! FakeTyping()
+function! Retype()
   exe ":normal ggdG"
   let i = 0
   while i < len(@")
@@ -134,6 +134,7 @@ function! FakeTyping()
     sleep 50m
     let i += 1
   endwhile
+  exe ":normal dd"
 endfunction
 
 " Configure NERDTree
