@@ -125,8 +125,11 @@ function! s:goyo_leave()
   highlight NonText ctermfg=fg guifg=fg
 endfunction
 
-" Configure NERDTree"
+" Configure NERDTree
 let NERDTreeQuitOnOpen = 1
+
+" Configure delimitMate
+let delimiteMate_expand_cr = 1
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
