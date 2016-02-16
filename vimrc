@@ -18,7 +18,7 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'junegunn/limelight.vim'
 Plugin 'tpope/vim-endwise'
 Plugin 'kchmck/vim-coffee-script'
-Plugin 'Townk/vim-autoclose'
+Plugin 'Raimondi/delimitMate'
 call vundle#end()
 
 " General Configuration
