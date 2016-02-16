@@ -124,6 +124,18 @@ function! s:goyo_leave()
   highlight NonText ctermfg=fg guifg=fg
 endfunction
 
+" Add a retyping function for fun
+function! FakeTyping()
+  exe ":normal ggdG"
+  let i = 0
+  while i < len(@")
+    exe ":normal a" . strpart(@",i,1)
+    redraw
+    sleep 50m
+    let i += 1
+  endwhile
+endfunction
+
 " Configure NERDTree
 let NERDTreeQuitOnOpen = 1
 
