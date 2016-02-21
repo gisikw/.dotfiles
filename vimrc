@@ -142,7 +142,7 @@ function! RetypeFile()
   call Retype()
 endfunction
 
-" Function for interacting with KOS via the terminal
+" Function for interacting with KOS via telnet
 let KOSGameDirectory = '/Volumes/Kerbal\ Space\ Program'
 let KOSTelnetPort    = '5410'
 let KOSTelnetIP      = '10.0.0.2'
