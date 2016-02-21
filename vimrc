@@ -57,7 +57,7 @@ nmap <leader>r :!rspec %<cr>
 nmap <leader>c :echo system("wc -w " . expand("%"))<cr>
 nmap <leader>n :!FILE=% npm test<cr>
 nmap <leader>@ "=strftime("%m/%d/%y")<CR>P
-nmap <leader><space> :!cp % /Volumes/Kerbal\ Space\ Program/Ships/Script<cr><cr>
+nmap <leader>k :call KOSEvaluate()<cr>
 nmap <leader><space> :!cp % /Volumes/Kerbal\ Space\ Program/Ships/Script<cr><cr>
 
 " Keyboard lag fix
@@ -140,6 +140,21 @@ endfunction
 function! RetypeFile()
   exe ":normal ggdG"
   call Retype()
+endfunction
+
+" Function for interacting with KOS via the terminal
+let KOSGameDirectory = '/Volumes/Kerbal\ Space\ Program'
+let KOSTelnetPort    = '5410'
+let KOSTelnetIP      = '10.0.0.2'
+function! KOSEvaluate()
+  exec '!cp ' . expand('%:p') . ' ' . g:KOSGameDirectory . '/Ships/Script &&
+          \ (echo open ' . g:KOSTelnetIP . ' ' . g:KOSTelnetPort . ';
+          \ sleep 1;
+          \ echo "1";
+          \ sleep 1;
+          \ echo "clearscreen. switch to 0. run ' . expand('%:t') . '.";
+          \ sleep 1;
+          \ ) | telnet; true'
 endfunction
 
 " Configure NERDTree
