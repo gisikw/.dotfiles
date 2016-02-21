@@ -58,6 +58,7 @@ nmap <leader>c :echo system("wc -w " . expand("%"))<cr>
 nmap <leader>n :!FILE=% npm test<cr>
 nmap <leader>@ "=strftime("%m/%d/%y")<CR>P
 nmap <leader><space> :!cp % /Volumes/Kerbal\ Space\ Program/Ships/Script<cr><cr>
+nmap <leader><space> :!cp % /Volumes/Kerbal\ Space\ Program/Ships/Script<cr><cr>
 
 " Keyboard lag fix
 command! W write
