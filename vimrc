@@ -18,11 +18,11 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'junegunn/limelight.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'tpope/vim-endwise'
+Plugin 'vim-scripts/RltvNmbr.vim'
 call vundle#end()
 
 " General Configuration
 syntax on
-set relativenumber
 set number
 set softtabstop=2
 set shiftwidth=2
