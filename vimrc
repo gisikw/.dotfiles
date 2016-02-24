@@ -47,6 +47,7 @@ nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 inoremap <C-c> <Esc>
 
 " Leader-Key Shortcuts
+nmap <leader>! :call Autorun()<cr>
 nmap <leader>t :CtrlP<cr>
 nmap <leader>e :e<space>
 nmap <leader>d :NERDTreeToggle<cr>
@@ -123,6 +124,20 @@ function! s:goyo_leave()
   Limelight!
   colorscheme synic
   highlight NonText ctermfg=fg guifg=fg
+endfunction
+
+" Function for autorunning the current file
+let g:autorun_rules = {
+  \ '\.vim'    : 'source %',
+  \ '_spec\.rb' : '!rspec %'
+\}
+
+function! Autorun()
+  for [pattern, task] in items(g:autorun_rules)
+    if match(expand('%'),pattern) != -1
+      exec task
+    endif
+  endfor
 endfunction
 
 " Functions for playing back the deleted buffer
