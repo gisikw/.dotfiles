@@ -54,11 +54,8 @@ nmap <leader>d :NERDTreeToggle<cr>
 nmap <leader>\ :bn!<cr>
 nmap <leader>- :bd<cr>
 nmap <leader>w :Goyo<cr>
-nmap <leader>r :!rspec %<cr>
-nmap <leader>c :echo system("wc -w " . expand("%"))<cr>
 nmap <leader>n :!FILE=% npm test<cr>
 nmap <leader>@ "=strftime("%m/%d/%y")<CR>P
-nmap <leader>k :call KOSEvaluate()<cr>
 nmap <leader><space> :!cp % /Volumes/Kerbal\ Space\ Program/Ships/Script<cr><cr>
 
 " Keyboard lag fix
@@ -129,7 +126,9 @@ endfunction
 " Function for autorunning the current file
 let g:autorun_rules = {
   \ '\.vim'    : 'source %',
-  \ '_spec\.rb' : '!rspec %'
+  \ '_spec\.rb' : '!rspec %',
+  \ '\.ks'     : 'call KOSEvaluate()',
+  \ '\.txt'    : 'echo system("wc -w " . expand("%"))'
 \}
 
 function! Autorun()
