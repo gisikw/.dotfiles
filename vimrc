@@ -44,6 +44,9 @@ set hlsearch
 set incsearch
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
+" Map Tilde to toggle folds
+nnoremap ~ za
+
 " Make Ctrl+C work like traditional escape
 inoremap <C-c> <Esc>
 
