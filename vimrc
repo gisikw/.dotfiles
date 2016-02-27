@@ -29,11 +29,12 @@ set shiftwidth=2
 set expandtab
 set backupdir=/tmp
 set autoindent
-set nofoldenable
 set splitright
 set splitbelow
 set bg=dark
 set backspace=2
+set fdm=syntax
+set foldlevelstart=99
 
 " Color Scheme
 colorscheme synic
