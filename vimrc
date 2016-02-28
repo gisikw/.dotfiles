@@ -171,7 +171,7 @@ function! KOSEvaluate()
           \ echo "1";
           \ sleep 1;
           \ echo "clearscreen. switch to 0. run ' . expand('%:t') . '.";
-          \ sleep 1;
+          \ sleep 5;
           \ ) | telnet; true'
 endfunction
 
