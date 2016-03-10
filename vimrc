@@ -141,6 +141,7 @@ function! Autorun()
   for [pattern, task] in items(g:autorun_rules)
     if match(expand('%'),pattern) != -1
       exec task
+      break
     endif
   endfor
 endfunction
