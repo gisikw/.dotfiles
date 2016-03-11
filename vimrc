@@ -18,6 +18,7 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'junegunn/limelight.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'tpope/vim-endwise'
+Plugin 'lambdatoast/elm.vim'
 call vundle#end()
 
 " General Configuration
