@@ -105,6 +105,9 @@ function! XTermPasteBegin()
 endfunction
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
+" Fix broken elm detection
+autocmd BufRead,BufNewFile *.elm set ft=elm
+
 " Automatically remove whitespace on save
 function! StripTrailingWhitespace()
   let save_cursor = getpos(".")
