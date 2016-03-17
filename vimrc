@@ -53,6 +53,7 @@ inoremap <C-c> <Esc>
 
 " Leader-Key Shortcuts
 nmap <leader>! :call Autorun()<cr>
+nmap <leader>~ :call AutorunSecondary()<cr>
 nmap <leader>t :CtrlP<cr>
 nmap <leader>e :e<space>
 nmap <leader>d :NERDTreeToggle<cr>
@@ -143,6 +144,20 @@ let g:autorun_rules = {
 
 function! Autorun()
   for [pattern, task] in items(g:autorun_rules)
+    if match(expand('%'),pattern) != -1
+      exec task
+      break
+    endif
+  endfor
+endfunction
+
+" Secondary functions for autorunning the current file
+let g:autorun_rules_secondary = {
+  \ '\.js'      : '!FILE=% npm run lint'
+\}
+
+function! AutorunSecondrary()
+  for [pattern, task] in items(g:autorun_rules_secondary)
     if match(expand('%'),pattern) != -1
       exec task
       break
