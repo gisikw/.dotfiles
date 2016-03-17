@@ -1,3 +1,5 @@
+trap "echo trytrytry" TSTP
+
 function github_available() {
   echo -e "GET http://github.com HTTP/1.0\n\n" |
   nc github.com 80 > /dev/null 2>&1;
