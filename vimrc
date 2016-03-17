@@ -156,7 +156,7 @@ let g:autorun_rules_secondary = {
   \ '\.js'      : '!FILE=% npm run lint'
 \}
 
-function! AutorunSecondrary()
+function! AutorunSecondary()
   for [pattern, task] in items(g:autorun_rules_secondary)
     if match(expand('%'),pattern) != -1
       exec task
