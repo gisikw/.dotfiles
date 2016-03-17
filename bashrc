@@ -1,4 +1,4 @@
-trap "echo trytrytry" TSTP
+trap "echo trytrytry" SIGTSTP
 
 function github_available() {
   echo -e "GET http://github.com HTTP/1.0\n\n" |
