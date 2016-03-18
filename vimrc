@@ -53,7 +53,7 @@ inoremap <C-c> <Esc>
 
 " Leader-Key Shortcuts
 nmap <leader>! :call Autorun()<cr>
-nmap <leader>~ :call AutorunSecondary()<cr>
+nmap <leader>` :call AutorunSecondary()<cr>
 nmap <leader>t :CtrlP<cr>
 nmap <leader>e :e<space>
 nmap <leader>d :NERDTreeToggle<cr>
