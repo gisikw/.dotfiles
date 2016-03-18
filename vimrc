@@ -139,7 +139,8 @@ let g:autorun_rules = {
   \ '\.txt'     : 'echo system("wc -w " . expand("%"))',
   \ 'Spec\.js'  : '!FILE=% npm test',
   \ '\.rb'      : '!ruby %',
-  \ '\.js'      : '!node %'
+  \ '\.js'      : '!node %',
+  \ '\.py'      : '!python %'
 \}
 
 function! Autorun()
