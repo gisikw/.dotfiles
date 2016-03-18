@@ -153,7 +153,8 @@ endfunction
 
 " Secondary functions for autorunning the current file
 let g:autorun_rules_secondary = {
-  \ '\.js'      : '!FILE=% npm run lint'
+  \ '\.js'      : '!FILE=% npm run lint',
+  \ '\.rb'      : '!rubocop %'
 \}
 
 function! AutorunSecondary()
