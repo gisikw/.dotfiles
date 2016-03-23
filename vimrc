@@ -44,7 +44,7 @@ set incsearch
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 " Make visual sorting trivial
-vnoremap s :sort<CR>
+vnoremap S :sort<CR>
 
 " Make Ctrl+C work like traditional escape
 inoremap <C-c> <Esc>
