@@ -43,6 +43,9 @@ set hlsearch
 set incsearch
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
+" Make line-number lookup via numpad easy
+nnoremap - G
+
 " Make visual sorting trivial
 vnoremap S :sort<CR>
 
