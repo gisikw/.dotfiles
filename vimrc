@@ -19,7 +19,6 @@ Plugin 'junegunn/limelight.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'tpope/vim-endwise'
 Plugin 'lambdatoast/elm.vim'
-Plugin 'mkarmona/colorsbox'
 call vundle#end()
 
 " General Configuration
