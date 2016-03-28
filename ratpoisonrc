@@ -1,0 +1,19 @@
+# Kevin Gisi's .ratpoisonrc
+
+escape C-b
+
+bind c exec rxvt
+bind j focusdown
+bind h focusleft
+bind k focusup
+bind l focusright
+
+bind g exec google-chrome
+
+bind F5 exec xbacklight -dec 10
+bind F6 exec xbacklight -inc 10
+bind F7 exec ratpoison -c banish && /home/gisikw/.dotfiles/bash/toggle_mouse.sh
+
+startup_message off
+exec xsetroot -solid black -cursor_name left_ptr
+exec pgrep "rxvt" || rxvt

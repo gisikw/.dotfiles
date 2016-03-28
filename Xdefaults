@@ -1,0 +1,8 @@
+xterm*background: black
+xterm*foreground: darkgrey
+URxvt*background: black
+URxvt*foreground: darkgrey
+URxvt*scrollBar: false
+URxvt*font: xft:Cousine:pixelsize=20
+URxvt*boldFont: xft:Cousine:pixelsize=20
+URxvt.letterSpace: -1
