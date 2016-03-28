@@ -37,7 +37,7 @@ set bg=dark
 set backspace=2
 
 " Color Scheme
-colorscheme 256_noir
+colorscheme synic
 
 " Highlighting
 set hlsearch
@@ -72,7 +72,6 @@ command! Q quit
 " Filetype overrides
 au BufRead,BufNewFile *.txt set nonumber
 au BufRead,BufNewFile *.ks set filetype=kerboscript
-au BufRead,BufNewFile *.ks colors synic
 au BufRead,BufNewFile *.coffee set filetype=coffee
 
 " Reload vimrc on change
