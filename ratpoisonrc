@@ -17,3 +17,5 @@ bind F7 exec ratpoison -c banish && /home/gisikw/.dotfiles/bin/toggle_mouse
 startup_message off
 exec xsetroot -solid black -cursor_name left_ptr
 exec pgrep "rxvt" || rxvt
+
+exec ratpoison -c banish && /home/gisikw/.dotfiles/bin/toggle_mouse
