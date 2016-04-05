@@ -48,9 +48,6 @@ for key in $(craml_all ~/.dotfiles/config.yml aliases); do
   alias $key="$(craml_value ~/.dotfiles/config.yml aliases $key)"
 done
 
-# Add binaries to path
-export PATH="$PATH:$HOME/.dotfiles/bin"
-
 # Tidy up
 unset -f github_available
 unset -f commit_dotfile_changes
