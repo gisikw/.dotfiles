@@ -133,6 +133,12 @@ function! s:goyo_leave()
   highlight NonText ctermfg=fg guifg=fg
 endfunction
 
+" Ignore some folders and files for CtrlP indexing
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.yardoc\|public$|log\|tmp\|node_modules$',
+  \ 'file': '\.so$\|\.dat$|\.DS_Store$'
+  \ }
+
 " Function for autorunning the current file
 let g:autorun_rules = {
   \ '\.vim'     : 'source %',
