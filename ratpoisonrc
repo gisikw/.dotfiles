@@ -10,8 +10,12 @@ bind l focusright
 
 bind g exec google-chrome
 
+bind Escape exec ratpoison -c "source /home/gisikw/.ratpoisonrc"
+
 bind F5 exec xbacklight -dec 10
 bind F6 exec xbacklight -inc 10
+bind Pause exec ratpoison -c "echo $(date)"
+bind Print exec ratpoison -c "echo $(upower -i /org/freedesktop/UPower/devices/battery_BATC | grep -E 'time to empty|percentage' | sed 's/.*: *//' | tac | xargs)"
 bind m exec ratpoison -c banish && /home/gisikw/.dotfiles/bin/toggle_mouse
 
 startup_message off
