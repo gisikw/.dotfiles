@@ -37,7 +37,8 @@ set bg=dark
 set backspace=2
 
 " Color Scheme
-colorscheme synic
+" colorscheme synic
+colorscheme louver
 
 " Highlighting
 set hlsearch
