@@ -11,6 +11,7 @@ aliases:
   z: fg
   c: clear
   w: find . | grep md | xargs cat | wc -w
+  v: vim
 symlinks:
   .vimrc: .dotfiles/vimrc
   .tmux.conf: .dotfiles/tmux.conf
