@@ -46,10 +46,10 @@ set incsearch
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 " Keybindings to help RSI hopefully
-inoremap jj <Esc>
-nmap hj :w<CR>
-imap hj <C-o>:w<CR>
-nmap wq :wq<CR>
+" inoremap jj <Esc>
+" nmap hj :w<CR>
+" imap hj <C-o>:w<CR>
+" nmap wq :wq<CR>
 
 " Make line-number lookup via numpad easy
 nnoremap - G
