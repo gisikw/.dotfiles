@@ -17,7 +17,7 @@ function status_prompt() {
     fi
   fi
   if [ -n "$SSH_CLIENT" ]; then
-    PS1=*$PROMPT
+    PS1="\h$PROMPT"
   else
     PS1=$PROMPT
   fi
