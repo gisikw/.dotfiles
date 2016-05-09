@@ -17,7 +17,7 @@ function status_prompt() {
     fi
   fi
   if [ -n "$SSH_CLIENT" ]; then
-    PS1="\[\e[0;35m\](\h)\[\e[0m\] $PROMPT"
+    PS1="\[\e[0;36m\](\h)\[\e[0m\] $PROMPT"
   else
     PS1=$PROMPT
   fi
