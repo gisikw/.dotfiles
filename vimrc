@@ -70,6 +70,7 @@ nmap <leader>\ :bn!<cr>
 nmap <leader>- :bd<cr>
 nmap <leader>w :Goyo<cr>
 nmap <leader>@ "=strftime("%m/%d/%y")<CR>P
+nmap <leader>c :!wc %<cr>
 nmap <leader><space> :!cp % /Volumes/Kerbal\ Space\ Program/Ships/Script<cr><cr>
 
 " Keyboard lag fix
