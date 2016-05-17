@@ -150,7 +150,7 @@ let g:ctrlp_custom_ignore = {
 " Function for autorunning the current file
 let g:autorun_rules = {
   \ '\.vim'     : 'source %',
-  \ 'spec\.rb' : '!rspec %',
+  \ 'spec\.rb' : '!clear && rspec %',
   \ '\.ks'      : 'call KOSEvaluate()',
   \ '\.txt'     : 'echo system("wc -w " . expand("%"))',
   \ 'Spec\.js'  : '!FILE=% npm test',
