@@ -154,7 +154,6 @@ let g:autorun_rules = {
   \ '\.ks'      : 'call KOSEvaluate()',
   \ '\.txt'     : 'echo system("wc -w " . expand("%"))',
   \ 'Spec\.js'  : '!FILE=% npm test',
-  \ '\.rb'      : '!ruby %',
   \ '\.js'      : '!node %',
   \ '\.py'      : '!python %'
 \}
