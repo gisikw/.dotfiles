@@ -61,8 +61,8 @@ vnoremap S :sort<CR>
 inoremap <C-c> <Esc>
 
 " Leader-Key Shortcuts
-nmap <leader>! :call Autorun()<cr>
-nmap <leader>` :call AutorunSecondary()<cr>
+nmap <leader>1 :call Autorun()<cr>
+nmap <leader>2 :call AutorunSecondary()<cr>
 nmap <leader>t :CtrlP<cr>
 nmap <leader>e :e<space>
 nmap <leader>d :NERDTreeToggle<cr>
@@ -150,7 +150,7 @@ let g:ctrlp_custom_ignore = {
 " Function for autorunning the current file
 let g:autorun_rules = {
   \ '\.vim'     : 'source %',
-  \ '_spec\.rb' : '!rspec %',
+  \ 'spec\.rb' : '!rspec %',
   \ '\.ks'      : 'call KOSEvaluate()',
   \ '\.txt'     : 'echo system("wc -w " . expand("%"))',
   \ 'Spec\.js'  : '!FILE=% npm test',
