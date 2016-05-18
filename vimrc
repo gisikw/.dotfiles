@@ -45,6 +45,10 @@ set hlsearch
 set incsearch
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
+" Use tab and shift-tab to cycle through windows.
+nnoremap <Tab> <C-W>w
+nnoremap <S-Tab> <C-W>W
+
 " Keybindings to help RSI hopefully
 " inoremap jj <Esc>
 " nmap hj :w<CR>
