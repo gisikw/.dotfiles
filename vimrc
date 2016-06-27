@@ -85,6 +85,7 @@ command! Q quit
 au BufRead,BufNewFile *.txt set nonumber
 au BufRead,BufNewFile *.ks set filetype=kerboscript
 au BufRead,BufNewFile *.coffee set filetype=coffee
+au BufRead,BufNewFile .eslintrc set filetype=json
 
 " Reload vimrc on change
 autocmd! bufwritepost vimrc source ~/.vimrc
