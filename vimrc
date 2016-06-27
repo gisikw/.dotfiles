@@ -161,7 +161,7 @@ let g:autorun_rules = {
   \ 'spec\.rb' : '!clear && rspec %',
   \ '\.ks'      : 'call KOSEvaluate()',
   \ '\.txt'     : 'echo system("wc -w " . expand("%"))',
-  \ 'Spec\.js'  : '!FILE=% npm run test:clean',
+  \ 'Spec\.js'  : '!FILE=% npm run test:clean --silent',
   \ '\.js'      : '!node %',
   \ '\.py'      : '!python %'
 \}
