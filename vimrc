@@ -65,7 +65,7 @@ vnoremap S :sort<CR>
 inoremap <C-c> <Esc>
 
 " Make F12 super fun for ES6 specs
-inoremap <F12> , () => {<CR>}<ESC>O<TAB>
+inoremap <F12> , () => {<CR>});<Esc>O<Tab>
 
 " Leader-Key Shortcuts
 nmap <leader>1 :call Autorun()<cr>
