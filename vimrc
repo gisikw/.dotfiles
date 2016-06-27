@@ -64,6 +64,9 @@ vnoremap S :sort<CR>
 " Make Ctrl+C work like traditional escape
 inoremap <C-c> <Esc>
 
+" Make F12 super fun for ES6 specs
+inoremap <F12> , () => {<CR>}<ESC>O<TAB>
+
 " Leader-Key Shortcuts
 nmap <leader>1 :call Autorun()<cr>
 nmap <leader>2 :call AutorunSecondary()<cr>
