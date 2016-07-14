@@ -225,7 +225,7 @@ function! KOSEvaluate()
 endfunction
 
 function! KOSCopy()
-  exec '!cp ' . expand('%:p') . ' ' . g:KOSGameDirectory . '/Ships/Script
+  exec '!cp ' . expand('%:p') . ' ' . g:KOSGameDirectory . '/Ships/Script'
 endfunction
 
 " Configure NERDTree
