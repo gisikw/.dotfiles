@@ -179,7 +179,8 @@ endfunction
 let g:autorun_rules_secondary = {
   \ '\.js'      : '!FILE=% npm run lint',
   \ '\.rb'      : '!rubocop %',
-  \ '\.scss'    : '!scss-lint %'
+  \ '\.scss'    : '!scss-lint %',
+  \ '\.ks'      : 'call KOSCopy()'
 \}
 
 function! AutorunSecondary()
@@ -221,6 +222,10 @@ function! KOSEvaluate()
           \ echo "clearscreen. switch to 0. run ' . expand('%:t') . '.";
           \ sleep 5;
           \ ) | telnet; true'
+endfunction
+
+function! KOSCopy()
+  exec '!cp ' . expand('%:p') . ' ' . g:KOSGameDirectory . '/Ships/Script
 endfunction
 
 " Configure NERDTree
