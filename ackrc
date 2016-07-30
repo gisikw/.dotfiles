@@ -1,0 +1,4 @@
+--sort−files
+--color
+--ignore-dir=node_modules
+--ignore-dir=log
