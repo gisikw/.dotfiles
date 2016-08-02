@@ -35,6 +35,7 @@ set splitright
 set splitbelow
 set bg=dark
 set backspace=2
+set re=1
 
 " Color Scheme
 colorscheme synic
