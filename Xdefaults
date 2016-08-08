@@ -7,4 +7,5 @@ URxvt*scrollBar: false
 URxvt*font: xft:Cousine:pixelsize=20
 URxvt*boldFont: xft:Cousine:pixelsize=20
 URxvt.letterSpace: -1
-*color4: #ffae00
+*color4:  #ffae00
+*color12: #ffae00
