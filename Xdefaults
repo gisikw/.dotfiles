@@ -1,5 +1,6 @@
 xterm*background: black
 xterm*foreground: darkgrey
+URxvt*loginShell: true
 URxvt*background: black
 URxvt*foreground: darkgrey
 URxvt*scrollBar: false
