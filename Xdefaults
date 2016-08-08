@@ -7,5 +7,7 @@ URxvt*scrollBar: false
 URxvt*font: xft:Cousine:pixelsize=20
 URxvt*boldFont: xft:Cousine:pixelsize=20
 URxvt.letterSpace: -1
+
+! Turn dark blue into cornflower blue
 *color4:  #6495ed
 *color12: #6495ed
