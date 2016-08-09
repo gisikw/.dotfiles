@@ -8,8 +8,8 @@ bind h focusleft
 bind k focusup
 bind l focusright
 
-bind | split
-bind - hsplit
+bind Bar split
+bind = hsplit
 
 bind g exec google-chrome
 
