@@ -8,9 +8,6 @@ bind h focusleft
 bind k focusup
 bind l focusright
 
-bind Bar split
-bind = hsplit
-
 bind g exec google-chrome
 
 bind Escape exec ratpoison -c "source /home/gisikw/.ratpoisonrc"
