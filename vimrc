@@ -80,8 +80,8 @@ nmap <leader>- :bd<cr>
 nmap <leader>w :Goyo<cr>
 nmap <leader>@ "=strftime("%m/%d/%y")<CR>P
 nmap <leader>c :!wc %<cr>
-nmap <leader><cr> :TestFile<cr>
-nmap <leader><space> :!cp % /Volumes/Kerbal\ Space\ Program/Ships/Script<cr><cr>
+nmap <space> :TestFile<cr>
+nmap <leader><space> :TestNearest<cr>
 
 " Keyboard lag fix
 command! W write
