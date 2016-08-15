@@ -45,7 +45,7 @@ colorscheme synic
 " Highlighting
 set hlsearch
 set incsearch
-nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
 
 " Use tab and shift-tab to cycle through windows.
 nnoremap <Tab> <C-W>w
