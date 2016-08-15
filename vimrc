@@ -20,6 +20,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'tpope/vim-endwise'
 Plugin 'lambdatoast/elm.vim'
 Plugin 'andreasvc/vim-256noir'
+Plugin 'janko-m/vim-test'
 call vundle#end()
 
 " General Configuration
