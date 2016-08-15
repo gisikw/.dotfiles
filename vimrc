@@ -51,12 +51,6 @@ nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 nnoremap <Tab> <C-W>w
 nnoremap <S-Tab> <C-W>W
 
-" Keybindings to help RSI hopefully
-" inoremap jj <Esc>
-" nmap hj :w<CR>
-" imap hj <C-o>:w<CR>
-" nmap wq :wq<CR>
-
 " Make line-number lookup via numpad easy
 nnoremap - G
 
@@ -80,8 +74,8 @@ nmap <leader>- :bd<cr>
 nmap <leader>w :Goyo<cr>
 nmap <leader>@ "=strftime("%m/%d/%y")<CR>P
 nmap <leader>c :!wc %<cr>
-nmap <space> :TestFile<cr>
-nmap <leader><space> :TestNearest<cr>
+nmap <space> :w<cr>:TestFile<cr>
+nmap <leader><space> :w<cr>:TestNearest<cr>
 
 " Keyboard lag fix
 command! W write
