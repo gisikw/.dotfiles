@@ -125,7 +125,7 @@ inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 autocmd BufRead,BufNewFile *.elm set ft=elm
 
 " Language-Specific Vim-Test config
-let test#javascript#runner = 'mocha'
+let g:test#javascript#runner = 'mocha'
 
 " Automatically remove whitespace on save
 function! StripTrailingWhitespace()
