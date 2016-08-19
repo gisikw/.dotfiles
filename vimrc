@@ -124,6 +124,9 @@ inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 " Fix broken elm detection
 autocmd BufRead,BufNewFile *.elm set ft=elm
 
+" Language-Specific Vim-Test config
+let test#javascript#runner = 'mocha'
+
 " Automatically remove whitespace on save
 function! StripTrailingWhitespace()
   let save_cursor = getpos(".")
