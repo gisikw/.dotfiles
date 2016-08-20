@@ -4,8 +4,8 @@ URxvt*loginShell: true
 URxvt*background: black
 URxvt*foreground: darkgrey
 URxvt*scrollBar: false
-URxvt*font: xft:Cousine:pixelsize=20
-URxvt*boldFont: xft:Cousine:pixelsize=20
+URxvt*font: xft:Cousine:pixelsize=40
+URxvt*boldFont: xft:Cousine:pixelsize=40
 URxvt.letterSpace: -1
 
 ! Turn dark blue into cornflower blue
