@@ -214,7 +214,7 @@ let KOSGameDirectory = '/mnt/ksp'
 let KOSTelnetPort    = '5410'
 let KOSTelnetIP      = '192.168.56.1'
 function! KOSEvaluate()
-  exec '!TERM=xterm cp ' . expand('%:p') . ' ' . g:KOSGameDirectory . '/Ships/Script &&
+  exec '!cp ' . expand('%:p') . ' ' . g:KOSGameDirectory . '/Ships/Script &&
           \ (echo open ' . g:KOSTelnetIP . ' ' . g:KOSTelnetPort . ';
           \ sleep 1;
           \ echo "1";
