@@ -210,9 +210,9 @@ function! RetypeFile()
 endfunction
 
 " Function for interacting with KOS via telnet
-let KOSGameDirectory = '/Users/gisikw/Library/Application\ Support/Steam/steamapps/common/Kerbal\ Space\ Program'
+let KOSGameDirectory = '/mnt/ksp'
 let KOSTelnetPort    = '5410'
-let KOSTelnetIP      = '127.0.0.1'
+let KOSTelnetIP      = '192.168.56.1'
 function! KOSEvaluate()
   exec '!cp ' . expand('%:p') . ' ' . g:KOSGameDirectory . '/Ships/Script &&
           \ (echo open ' . g:KOSTelnetIP . ' ' . g:KOSTelnetPort . ';
