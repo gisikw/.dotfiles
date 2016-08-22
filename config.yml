@@ -1,8 +1,8 @@
 aliases:
   be: bundle exec
   berc: bundle exec rails c
-  big: echo -e "\033]710;xft:Cousine:pixelsize=38\033\\ \033]711;xft:Cousine:pixelsize=38\033\\\033]712;xft:Cousine:pixelsize=38\033\\\033]713;xft:Cousine:pixelsize=38\033\\"
-  small: echo -e "\033]710;xft:Cousine:pixelsize=20\033\\\033]711;xft:Cousine:pixelsize=20\033\\\033]712;xft:Cousine:pixelsize=20\033\\\033]713;xft:Cousine:pixelsize=20\033\\"
+  big: echo -e "\033]710;xft:Cousine:pixelsize=38\033\\ \033]711;xft:Cousine:pixelsize=38\033\\ \033]712;xft:Cousine:pixelsize=38\033\\ \033]713;xft:Cousine:pixelsize=38\033\\"
+  small: echo -e "\033]710;xft:Cousine:pixelsize=20\033\\ \033]711;xft:Cousine:pixelsize=20\033\\ \033]712;xft:Cousine:pixelsize=20\033\\ \033]713;xft:Cousine:pixelsize=20\033\\"
   branches: for k in `git branch | perl -pe s/^..//`; do echo -e `git show --pretty=format:"%Cgreen%ci %Cblue%cr%Creset" $k -- | head -n 1`\\t$k; done | sort
   webs: python -m SimpleHTTPServer
   nethack: ssh nethack@alt.org
