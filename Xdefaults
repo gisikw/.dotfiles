@@ -4,8 +4,8 @@ URxvt*loginShell: true
 URxvt*background: black
 URxvt*foreground: darkgrey
 URxvt*scrollBar: false
-URxvt*font: xft:Cousine:pixelsize=38
-URxvt*boldFont: xft:Cousine:pixelsize=38
+URxvt*font: xft:Cousine:pixelsize=20
+URxvt*boldFont: xft:Cousine:pixelsize=20
 URxvt.letterSpace: -1
 URxvt.iso14755: false
 
