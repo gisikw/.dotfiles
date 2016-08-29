@@ -209,7 +209,7 @@ function! RetypeFile()
   call Retype()
 endfunction
 
-set shell=bash\ -l
+" set shell=bash\ -l
 
 " Function for interacting with KOS via telnet
 let KOSGameDirectory = '/mnt/ksp'
