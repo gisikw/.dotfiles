@@ -23,6 +23,7 @@ Plugin 'andreasvc/vim-256noir'
 Plugin 'janko-m/vim-test'
 call vundle#end()
 
+
 " General Configuration
 syntax on
 set number
