@@ -3,7 +3,8 @@
 # }
 
 function lint_file() {
-  if [[ $1 == *.rb ]]; then
-    rubocop $1
-  fi
+  ext=${1##*\.}
+  case "$ext" in
+  rb) rubocop $1;;
+  esac
 }
