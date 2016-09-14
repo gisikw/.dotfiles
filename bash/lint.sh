@@ -1,5 +1,5 @@
 function lint() {
-  filewatcher '**/*' 'lint_file $FILENAME'
+  filewatcher -s -l -r '**/*' 'lint_file $FILENAME'
 }
 
 function lint_file() {
