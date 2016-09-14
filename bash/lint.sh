@@ -1,12 +1,8 @@
 function lint() {
-  filewatcher -s -l -r '**/*' 'lint_file $FILENAME'
+  echo "soon"
+  # filewatcher -s -r '**/*' 'ext=${1##*\.};case "$ext" in;'
 }
 
 function lint_file() {
-  ext=${1##*\.}
-  case "$ext" in
-  rb) rubocop $1;;
-  js) eslint $1;;
-  scss) scss-lint $1;;
-  esac
+  ext=${1##*\.}; case "$ext" in; rb) rubocop $1;; js) eslint $1;; scss) scss-lint $1;;esac
 }
