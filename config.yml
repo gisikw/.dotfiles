@@ -25,3 +25,4 @@ symlinks:
   .ratpoisonrc: .dotfiles/ratpoisonrc
   .Xdefaults: .dotfiles/Xdefaults
   .ackrc: .dotfiles/ackrc
+  .ssh/config: .dotfiles/ssh_config
