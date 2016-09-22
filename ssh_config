@@ -1,0 +1,4 @@
+Host wall-e
+  HostName 10.0.0.12
+  Port 22
+  User gisikw
