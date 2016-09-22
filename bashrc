@@ -38,6 +38,9 @@ done
 # Verify symlinks
 for key in $(craml_all ~/.dotfiles/config.yml symlinks); do
   target="$HOME/$key"
+  if [ -e $target ]; then
+    rm $target
+  fi
   if [ ! -e $target ]; then
     ln -s $HOME/$(craml_value ~/.dotfiles/config.yml symlinks $key) $target
   fi
