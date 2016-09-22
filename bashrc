@@ -30,6 +30,14 @@ function up() {
   source ~/.bash_profile 2>/dev/null || source ~/.bashrc 2>/dev/null
 }
 
+function reset() {
+  for key in $(craml_all ~/.dotfiles/config.yml symlinks); do
+    target="$HOME/$key"
+    rm -f $target
+    ln -s $HOME/$(craml_value ~/.dotfiles/config.yml symlinks $key) $target
+  done
+}
+
 # Set up utility functions
 for file in ~/.dotfiles/bash/*; do
   source $file
@@ -38,9 +46,6 @@ done
 # Verify symlinks
 for key in $(craml_all ~/.dotfiles/config.yml symlinks); do
   target="$HOME/$key"
-  if [ -e $target ]; then
-    rm $target
-  fi
   if [ ! -e $target ]; then
     ln -s $HOME/$(craml_value ~/.dotfiles/config.yml symlinks $key) $target
   fi
