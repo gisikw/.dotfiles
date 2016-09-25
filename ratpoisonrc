@@ -8,6 +8,7 @@ bind h focusleft
 bind k focusup
 bind l focusright
 
+# Easy splits
 bind bar hsplit
 bind minus vsplit
 
