@@ -21,6 +21,7 @@ Plugin 'tpope/vim-endwise'
 Plugin 'lambdatoast/elm.vim'
 Plugin 'andreasvc/vim-256noir'
 Plugin 'janko-m/vim-test'
+Plugin 'benmills/vimux'
 call vundle#end()
 
 
