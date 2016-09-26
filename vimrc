@@ -129,7 +129,7 @@ autocmd BufRead,BufNewFile *.elm set ft=elm
 " let g:test#javascript#runner = 'mocha'
 let g:test#javascript#mocha#file_pattern = 'Spec\.js'
 let g:test#javascript#mocha#executable = './node_modules/.bin/mocha --opts spec/mocha.opts'
-if !exists('$TMUX')
+if exists('$TMUX')
   let g:test#strategy = 'vimux'
 endif
 
