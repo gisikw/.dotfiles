@@ -52,6 +52,9 @@ nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
 nnoremap <Tab> <C-W>w
 nnoremap <S-Tab> <C-W>W
 
+" Make backspace very aggressive
+imap <BS> <C-w>
+
 " Make line-number lookup via numpad easy
 nnoremap - G
 
