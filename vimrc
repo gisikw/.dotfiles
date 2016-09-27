@@ -52,9 +52,6 @@ nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
 nnoremap <Tab> <C-W>w
 nnoremap <S-Tab> <C-W>W
 
-" Make backspace very aggressive
-imap <BS> <C-w>
-
 " Make line-number lookup via numpad easy
 nnoremap - G
 
@@ -151,11 +148,13 @@ function! s:goyo_enter()
   colorscheme Tomorrow
   highlight NonText ctermfg=bg guifg=bg
   set wrap linebreak nolist
+  imap <BS> <C-w>
 endfunction
 function! s:goyo_leave()
   Limelight!
   colorscheme synic
   highlight NonText ctermfg=fg guifg=fg
+  imap <BS> <BS>
 endfunction
 
 " Ignore some folders and files for CtrlP indexing
