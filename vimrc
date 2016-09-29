@@ -129,9 +129,9 @@ autocmd BufRead,BufNewFile *.elm set ft=elm
 " let g:test#javascript#runner = 'mocha'
 let g:test#javascript#mocha#file_pattern = 'Spec\.js'
 let g:test#javascript#mocha#executable = './node_modules/.bin/mocha --opts spec/mocha.opts'
-" if exists('$TMUX')
-"   let g:test#strategy = 'vimux'
-" endif
+if exists('$TMUX')
+  let g:test#strategy = 'vimux'
+endif
 
 " Automatically remove whitespace on save
 function! StripTrailingWhitespace()
