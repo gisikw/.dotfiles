@@ -24,7 +24,6 @@ Plugin 'janko-m/vim-test'
 Plugin 'benmills/vimux'
 call vundle#end()
 
-
 " General Configuration
 syntax on
 set number
@@ -124,6 +123,8 @@ inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
 " Fix broken elm detection
 autocmd BufRead,BufNewFile *.elm set ft=elm
+autocmd BufRead,BufNewFile *.go set tabstop=2
+autocmd BufRead,BufNewFile *.go set noet
 
 " Language-Specific Vim-Test config
 " let g:test#javascript#runner = 'mocha'
