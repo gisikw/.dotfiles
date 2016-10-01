@@ -3,5 +3,5 @@ function lint() {
 }
 
 function lintgo() {
-  filewatcher -r '**/*.go' 'out=$(golint $FILENAME); if [ -z "$out" ]; then echo "\\033[0;32mAll Good\\033[0m"; else echo "\\033[0;33m$out\\033[0m"; fi'
+  filewatcher -r '**/*.go' 'out=$(golint $FILENAME); if [ -z "$out" ]; then echo "\\033[0;32mAll Good\\033[0m"; else echo "\\033[0;31m$out\\033[0m"; fi'
 }
