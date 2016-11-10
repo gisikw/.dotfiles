@@ -172,7 +172,8 @@ let g:autorun_rules = {
   \ '\.txt'     : 'echo system("wc -w " . expand("%"))',
   \ 'Spec\.js'  : '!FILE=% npm run test:clean --silent',
   \ '\.js'      : '!node %',
-  \ '\.py'      : '!python %'
+  \ '\.py'      : '!python %',
+  \ '\.lua'     : '!clear && lua %'
 \}
 
 function! Autorun()
