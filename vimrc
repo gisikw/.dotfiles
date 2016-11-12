@@ -189,6 +189,7 @@ endfunction
 let g:autorun_rules_secondary = {
   \ '\.js'      : '!FILE=% npm run lint',
   \ '\.rb'      : '!rubocop %',
+  \ '\.rake'    : '!rubocopy %',
   \ '\.scss'    : '!scss-lint %',
   \ '\.ks'      : 'call KOSCopy()'
 \}
