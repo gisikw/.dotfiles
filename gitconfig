@@ -5,7 +5,7 @@
 	default = matching
 [alias]
 	co = checkout
-        b = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
+        b = "!git for-each-ref --sort='-authordate' --format='%Cgreen%ci%(authordate)%09%CBlue%(objectname:short)%09%Creset%(refname)' refs/heads | sed -e 's-refs/heads/--'"
 
 [core]
 	excludesfile = /Users/gisikw/.gitignore
