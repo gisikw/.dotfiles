@@ -220,6 +220,12 @@ function! RetypeFile()
   call Retype()
 endfunction
 
+" Ignore some folders and files for CtrlP indexing
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.yardoc\|public$|log\|tmp$',
+  \ 'file': '\.so$\|\.dat$|\.DS_Store$'
+  \ }
+
 " set shell=bash\ -l
 
 " Function for interacting with KOS via telnet
