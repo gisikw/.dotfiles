@@ -163,6 +163,7 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.yardoc\|public$|log\|tmp\|node_modules$',
   \ 'file': '\.so$\|\.dat$|\.DS_Store$'
   \ }
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 
 " Function for autorunning the current file
 let g:autorun_rules = {
