@@ -134,6 +134,8 @@ if exists('$TMUX')
   let g:test#strategy = 'vimux'
 endif
 
+let g:test#javascript#tap#executable = './node_modules/.bin/babel-tap'
+
 " Automatically remove whitespace on save
 function! StripTrailingWhitespace()
   let save_cursor = getpos(".")
