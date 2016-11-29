@@ -13,6 +13,8 @@ bind H exchangeleft
 bind K exchangeup
 bind L exchangeright
 
+bind X kill
+
 # Easy splits
 bind bar hsplit
 bind minus vsplit
