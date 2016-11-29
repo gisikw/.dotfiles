@@ -33,5 +33,4 @@ startup_message off
 exec xsetroot -solid black -cursor_name left_ptr
 exec pgrep "rxvt" || rxvt
 
-exec ratpoison -c banish && /home/gisikw/.dotfiles/bin/toggle_mouse
-exec ratpoison -c banish
+exec ratpoison -c banish && /home/gisikw/.dotfiles/bin/toggle_mouse > /dev/null 2>&1
