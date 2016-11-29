@@ -1,0 +1,17 @@
+# ~/.tmuxinator/follow.yml
+
+name: follow
+root: ~/Projects/follow
+
+windows:
+  - app:
+    - vim -c 'NERDTreeToggle'
+  - server:
+    - ./bin/rails s
+  - js:
+    - cd webpack && vim -c 'NERDTreeToggle'
+  - webpack:
+      layout: main-vertical
+      panes:
+        - cd webpack && yarn run build:watch
+        - cd webpack && yarn run storybook

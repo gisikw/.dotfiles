@@ -28,4 +28,5 @@ symlinks:
   .Xdefaults: .dotfiles/Xdefaults
   .ackrc: .dotfiles/ackrc
   .ssh/config: .dotfiles/ssh_config
-  .tmuxinator/example.yml: .dotfiles/tmuxinator/example.yml
+  .tmuxinator/follow.yml: .dotfiles/tmuxinator/follow.yml
+  .tmuxinator/super.yml: .dotfiles/tmuxinator/super.yml
