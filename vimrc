@@ -40,7 +40,7 @@ set bg=dark
 set backspace=2
 
 " Color Scheme
-colorscheme synic
+colorscheme inkpot
 " colorscheme louver
 
 " Highlighting
