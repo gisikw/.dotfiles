@@ -15,7 +15,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tomvanderlee/vim-kerboscript'
 " Plugin 'othree/yajs.vim'
 Plugin 'pangloss/vim-javascript'
-Plugin 'mxrw/vim-jsx'
+Plugin 'mxw/vim-jsx'
 Plugin 'junegunn/goyo.vim'
 Plugin 'junegunn/limelight.vim'
 Plugin 'kchmck/vim-coffee-script'
@@ -251,6 +251,9 @@ endfunction
 function! KOSCopy()
   exec '!cp ' . expand('%:p') . ' ' . g:KOSGameDirectory . '/Ships/Script'
 endfunction
+
+" Configure JSX support
+let g:jsx_ext_required = 0
 
 " Configure NERDTree
 let NERDTreeQuitOnOpen = 1
