@@ -272,6 +272,12 @@ function! HLNext (blinktime)
     exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
     call matchdelete(ring)
     redraw
+    exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
+    let ring = matchadd('WhiteOnRed', target_pat, 101)
+    redraw
+    exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
+    call matchdelete(ring)
+    redraw
 endfunction
 nnoremap <silent> n   n:call HLNext(0.4)<cr>
 nnoremap <silent> N   N:call HLNext(0.4)<cr>
