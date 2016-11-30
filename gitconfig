@@ -10,3 +10,4 @@
 
 [core]
 	excludesfile = /Users/gisikw/.gitignore
+	excludefiles = /home/gisikw/.gitignore

@@ -24,6 +24,7 @@ symlinks:
   .vimrc: .dotfiles/vimrc
   .tmux.conf: .dotfiles/tmux.conf
   .gitconfig: .dotfiles/gitconfig
+  .gitignore: .dotfiles/gitignore
   .ratpoisonrc: .dotfiles/ratpoisonrc
   .Xdefaults: .dotfiles/Xdefaults
   .ackrc: .dotfiles/ackrc
