@@ -31,3 +31,4 @@ symlinks:
   .ssh/config: .dotfiles/ssh_config
   .tmuxinator/follow.yml: .dotfiles/tmuxinator/follow.yml
   .tmuxinator/super.yml: .dotfiles/tmuxinator/super.yml
+  .tmuxinator/superstory.yml: .dotfiles/tmuxinator/superstory.yml
