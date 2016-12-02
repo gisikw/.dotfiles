@@ -1,5 +1,5 @@
-# ~/.tmuxinator/superstory.yml
-name: super
+# ~/.tmuxinator/addon.yml
+name: addon
 root: ~/Projects/storybook-addon-superficial
 pre: yarn install
 windows:
