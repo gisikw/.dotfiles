@@ -17,6 +17,7 @@ aliases:
   m: mux
   z: fg
   c: clear
+  s: tmux switch -t
   w: find . | grep md | xargs cat | wc -w
   v: vim
   p: pwd
