@@ -178,7 +178,8 @@ let g:autorun_rules = {
   \ 'Spec\.js'  : '!FILE=% npm run test:clean --silent',
   \ '\.js'      : '!node %',
   \ '\.py'      : '!python %',
-  \ '\.lua'     : '!clear && lua %'
+  \ '\.lua'     : '!clear && lua %',
+  \ '\.sh'      : '!clear && bash %'
 \}
 
 function! Autorun()
