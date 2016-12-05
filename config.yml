@@ -30,6 +30,4 @@ symlinks:
   .Xdefaults: .dotfiles/Xdefaults
   .ackrc: .dotfiles/ackrc
   .ssh/config: .dotfiles/ssh_config
-  .tmuxinator/follow.yml: .dotfiles/tmuxinator/follow.yml
-  .tmuxinator/super.yml: .dotfiles/tmuxinator/super.yml
-  .tmuxinator/addon.yml: .dotfiles/tmuxinator/addon.yml
+  .tmuxinator: .dotfiles/tmuxinator
