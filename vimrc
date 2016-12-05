@@ -3,6 +3,11 @@
 set nocompatible
 filetype plugin on
 
+" Goodbye, Swapfiles
+set nobackup
+set nowritebackup
+set noswapfile
+
 " Vundle Bootstrap and Plugins
 if empty(glob('~/.vim/bundle/Vundle.vim'))
   silent exec '!git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim > /dev/null 2>&1'
