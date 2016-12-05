@@ -9,7 +9,11 @@ windows:
   - server:
     - ./bin/rails s
   - js:
-    - cd webpack && vim -c 'NERDTreeToggle'
+      layout: 87cc,159x45,0,0{80x45,0,0,0,78x45,81,0[78x12,81,0,1,78x32,81,13,2]}
+      panes:
+        - cd webpack && vim -c 'NERDTreeToggle'
+        - filewatcher -rd 'src spec' 'clear && yarn run lint'
+        - filewatcher -rd 'src spec' 'clear && yarn test'
   - webpack:
       layout: main-vertical
       panes:
