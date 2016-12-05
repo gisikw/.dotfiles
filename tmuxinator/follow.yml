@@ -13,5 +13,5 @@ windows:
   - webpack:
       layout: main-vertical
       panes:
-        - cd webpack && yarn run build:watch
-        - cd webpack && yarn run storybook
+        - cd webpack; yarn run build:watch
+        - cd webpack; yarn run storybook
