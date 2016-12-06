@@ -1,6 +1,6 @@
 function browser() {
   if hash xdg-open 2>/dev/null; then
-    open $1;
+    xdg-open $1;
   elif hash open 2>/dev/null; then
     open $1;
   fi
