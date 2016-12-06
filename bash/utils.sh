@@ -8,6 +8,7 @@ function browser() {
 
 function gh() {
   if [ -z $1 ]; then
+    echo https://github.com/$(git remote show origin | grep "Fetch URL" | sed 's/.*github.com:\(.*\)\.git/\1/')
     browser https://github.com/$(git remote show origin | grep "Fetch URL" | sed 's/.*github.com:\(.*\)\.git/\1/')
   else
     browser https://github.com/$1
