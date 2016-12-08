@@ -184,7 +184,8 @@ let g:autorun_rules = {
   \ '\.js'      : '!node %',
   \ '\.py'      : '!python %',
   \ '\.lua'     : '!clear && lua %',
-  \ '\.sh'      : '!clear && bash %'
+  \ '\.sh'      : '!clear && bash %',
+  \ '\.rb'      : '!clear && ruby %'
 \}
 
 function! Autorun()
