@@ -22,7 +22,6 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'othree/yajs'
 Plugin 'mxw/vim-jsx'
 Plugin 'junegunn/goyo.vim'
-Plugin 'junegunn/limelight.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'tpope/vim-endwise'
 Plugin 'lambdatoast/elm.vim'
@@ -151,20 +150,16 @@ function! StripTrailingWhitespace()
 endfunction
 autocmd BufWritePre * call StripTrailingWhitespace()
 
-" Configure Goyo and Limelight for writing prose
+" Configure Goyo for writing prose
 let g:limelight_conceal_ctermfg = 'lightgray'
 function! s:goyo_enter()
-  Limelight
   colorscheme Tomorrow
   highlight NonText ctermfg=bg guifg=bg
   set wrap linebreak nolist
-  imap <BS> <C-w>
 endfunction
 function! s:goyo_leave()
-  Limelight!
   colorscheme synic
   highlight NonText ctermfg=fg guifg=fg
-  imap <BS> <BS>
 endfunction
 
 " Ignore some folders and files for CtrlP indexing
