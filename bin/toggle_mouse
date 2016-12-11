@@ -1,4 +1,4 @@
 #!/bin/bash
 id=$(xinput --list --id-only 'Elan Touchpad')
 devEnabled=$(xinput --list-props $id | awk '/Device Enabled/{print !$NF}')
-xinput --set-prop $id 'Device Enabled' $devEnabled
+if [ -v "$id" ]; then xinput --set-prop $id 'Device Enabled' $devEnabled fi
