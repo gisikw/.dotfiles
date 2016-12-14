@@ -9,6 +9,7 @@
         b = "!git for-each-ref --sort=authordate --format='%1B[0;33m %(authordate:short) %1B[0;34m %09 %(objectname:short) %1B[0;35m %09%(refname) %1B[m' refs/heads | sed -e 's-refs/heads/--'"
         m = merge
         p = pull
+        l = log --oneline
         up = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
         pr = "!git up && hub pull-request -o"
         ci = ci-status
