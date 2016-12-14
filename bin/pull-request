@@ -1,8 +1,11 @@
 #!/bin/bash
 git push origin $(git rev-parse --abbrev-ref HEAD)
-url=$(hub pull-request)
-if hash xdg-open 2>/dev/null; then
-  xdg-open $url > /dev/null;
-elif hash open 2>/dev/null; then
-  open $url > /dev/null;
-fi
+hub pull-request | \
+(
+  read url;
+  if hash xdg-open 2>/dev/null; then
+    xdg-open $url > /dev/null;
+  elif hash open 2>/dev/null; then
+    open $url > /dev/null;
+  fi
+)
