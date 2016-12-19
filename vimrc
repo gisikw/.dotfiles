@@ -43,7 +43,7 @@ set splitright
 set splitbelow
 set bg=dark
 set backspace=2
-set foldmethod=syntax
+set foldmethod=indent
 set foldlevelstart=1
 
 " Color Scheme
