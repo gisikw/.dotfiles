@@ -12,6 +12,7 @@ aliases:
   d: (cd ~/.dotfiles && vim -c "NERDTreeToggle" bashrc) && up
   book: awk 'FNR==1{print ""}1' *.md | kramdown -o pdf >out.pdf 2>/dev/null
   kpack: ruby -Ilib ./exe/kpack
+  signal: google-chrome --app-id=$(basename $(ack 'Signal' .local/share/applications/ -l) | sed 's/-Default.desktop//' | sed 's/chrome-//')
   res: echo $(tput cols)x$(tput lines)
   g: git
   m: mux
