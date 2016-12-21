@@ -1,0 +1,10 @@
+# ~/.tmuxinator/ck.yml
+name: cheerskevin
+root: ~/Projects/cheerskevin.com
+windows:
+  - editor:
+      layout: 7171,113x32,0,0[113x29,0,0,1,113x2,0,30,2]
+      panes:
+        - vim -c 'NERDTreeToggle'
+        - ./sync.sh
+
