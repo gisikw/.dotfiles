@@ -16,7 +16,7 @@ aliases:
   res: echo $(tput cols)x$(tput lines)
   layout: tmux list-windows | sed 's/.*\[layout //' | sed 's/]].*/]/'
   g: git
-  m: mux
+  m: tmuxinator
   z: fg
   c: clear
   s: tmux switch -t
