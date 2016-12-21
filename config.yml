@@ -14,6 +14,7 @@ aliases:
   kpack: ruby -Ilib ./exe/kpack
   signal: google-chrome --app-id=$(basename $(ack 'Signal' .local/share/applications/ -l) | sed 's/-Default.desktop//' | sed 's/chrome-//')
   res: echo $(tput cols)x$(tput lines)
+  layout: tmux list-windows | sed 's/.*\[layout //' | sed 's/]].*/]/'
   g: git
   m: mux
   z: fg
