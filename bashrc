@@ -38,6 +38,9 @@ function reset() {
   done
 }
 
+# Yay VI!
+set -o vi
+
 # Set up utility functions
 for file in ~/.dotfiles/bash/*; do
   source $file
