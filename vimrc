@@ -14,20 +14,20 @@ if empty(glob('~/.vim/bundle/Vundle.vim'))
 endif
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'scrooloose/nerdtree'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'tomvanderlee/vim-kerboscript'
-Plugin 'pangloss/vim-javascript'
-Plugin 'othree/yajs'
-Plugin 'mxw/vim-jsx'
-Plugin 'junegunn/goyo.vim'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'tpope/vim-endwise'
-Plugin 'lambdatoast/elm.vim'
-Plugin 'andreasvc/vim-256noir'
-Plugin 'janko-m/vim-test'
-Plugin 'benmills/vimux'
+" Plugin 'scrooloose/nerdtree'
+" Plugin 'flazz/vim-colorschemes'
+" Plugin 'ctrlpvim/ctrlp.vim'
+" Plugin 'tomvanderlee/vim-kerboscript'
+" Plugin 'pangloss/vim-javascript'
+" Plugin 'othree/yajs'
+" Plugin 'mxw/vim-jsx'
+" Plugin 'junegunn/goyo.vim'
+" Plugin 'kchmck/vim-coffee-script'
+" Plugin 'tpope/vim-endwise'
+" Plugin 'lambdatoast/elm.vim'
+" Plugin 'andreasvc/vim-256noir'
+" Plugin 'janko-m/vim-test'
+" Plugin 'benmills/vimux'
 call vundle#end()
 
 " General Configuration
