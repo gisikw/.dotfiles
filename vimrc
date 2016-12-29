@@ -51,239 +51,239 @@ colorscheme inkpot
 " Highlighting
 set hlsearch
 set incsearch
-" nnoremap <silent> <Esc> :noh<bar>:echo<cr><Esc>
+noremap <cr> :noh<bar>:echo<cr><cr>
 
-" " Use tab and shift-tab to cycle through windows.
-" nnoremap <Tab> <C-W>w
-" nnoremap <S-Tab> <C-W>W
-" 
-" " Make line-number lookup via numpad easy
-" nnoremap - G
-" 
-" " Make visual sorting trivial
-" vnoremap S :sort<CR>
-" 
-" " Make Ctrl+C work like traditional escape
-" inoremap <C-c> <Esc>
+" Use tab and shift-tab to cycle through windows.
+nnoremap <Tab> <C-W>w
+nnoremap <S-Tab> <C-W>W
 
-" " Make F12 super fun for ES6 specs
-" inoremap <F12> , () => {<CR>});<Esc>O<Tab>
-" 
-" " Leader-Key Shortcuts
-" nmap <leader>1 :call Autorun()<cr>
-" nmap <leader>2 :call AutorunSecondary()<cr>
-" nmap <leader>t :CtrlP<cr>
-" nmap <leader>e :e<space>
-" nmap <leader>d :NERDTreeToggle<cr>
-" nmap <leader>\ :bn!<cr>
-" nmap <leader>- :bd<cr>
-" nmap <leader>w :Goyo<cr>
-" nmap <leader>@ "=strftime("%m/%d/%y")<CR>P
-" nmap <leader>c :!wc %<cr>
-" nmap <space> :w<cr>:TestFile<cr>
-" nmap <leader><space> :w<cr>:TestNearest<cr>
-" 
-" " Keyboard lag fix
-" command! W write
-" command! Q quit
-"
-" " Filetype overrides
-" au BufRead,BufNewFile *.txt set nonumber
-" au BufRead,BufNewFile *.ks set filetype=kerboscript
-" au BufRead,BufNewFile *.coffee set filetype=coffee
-" au BufRead,BufNewFile .eslintrc set filetype=json
-"
-" " Reload vimrc on change
-" autocmd! bufwritepost vimrc source ~/.vimrc
-"
-" " Overload tab to autocomplete
-" function! InsertTabWrapper()
-"     let col = col('.') - 1
-"     if !col || getline('.')[col - 1] !~ '\k'
-"         return "\<tab>"
-"     else
-"         return "\<c-p>"
-"     endif
-" endfunction
-" inoremap <expr> <tab> InsertTabWrapper()
-" inoremap <s-tab> <c-n>
-"
-" " Support sane pasting
-" set pastetoggle=<F12>
-" function! WrapForTmux(s)
-"   if !exists('$TMUX')
-"     return a:s
-"   endif
-"   let tmux_start = "\<Esc>Ptmux;"
-"   let tmux_end = "\<Esc>\\"
-"   return tmux_start . substitute(a:s, "\<Esc>", "\<Esc>\<Esc>", 'g') . tmux_end
-" endfunction
-" let &t_SI .= WrapForTmux("\<Esc>[?2004h")
-" let &t_EI .= WrapForTmux("\<Esc>[?2004l")
-" function! XTermPasteBegin()
-"   set pastetoggle=<Esc>[201~
-"   set paste
-"   return ""
-" endfunction
-" inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
-"
-" " Fix broken elm detection
-" autocmd BufRead,BufNewFile *.elm set ft=elm
-" autocmd BufRead,BufNewFile *.go set tabstop=2
-" autocmd BufRead,BufNewFile *.go set noet
-"
-" " Language-Specific Vim-Test config
-" " let g:test#javascript#runner = 'mocha'
-" let g:test#javascript#mocha#file_pattern = 'Spec\.js'
-" let g:test#javascript#mocha#executable = './node_modules/.bin/mocha --opts spec/mocha.opts'
-" if exists('$TMUX')
-"   let g:test#strategy = 'vimux'
-" endif
-"
-" let g:test#javascript#tap#executable = './node_modules/.bin/babel-tap'
-"
-" " Automatically remove whitespace on save
-" function! StripTrailingWhitespace()
-"   let save_cursor = getpos(".")
-"   %s/\s\+$//e
-"   call setpos('.', save_cursor)
-" endfunction
-" autocmd BufWritePre * call StripTrailingWhitespace()
-"
-" " Configure Goyo for writing prose
-" let g:limelight_conceal_ctermfg = 'lightgray'
-" function! s:goyo_enter()
-"   colorscheme Tomorrow
-"   highlight NonText ctermfg=bg guifg=bg
-"   set wrap linebreak nolist
-" endfunction
-" function! s:goyo_leave()
-"   colorscheme synic
-"   highlight NonText ctermfg=fg guifg=fg
-" endfunction
-"
-" " Ignore some folders and files for CtrlP indexing
-" " let g:ctrlp_custom_ignore = {
-" "   \ 'dir':  '\.git$\|\.yardoc\|public$|log\|tmp\|node_modules$',
-" "   \ 'file': '\.so$\|\.dat$|\.DS_Store$'
-" "   \ }
-" let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
-" let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-"
-" " Function for autorunning the current file
-" let g:autorun_rules = {
-"   \ '\.vim'     : 'source %',
-"   \ 'spec\.rb' : '!clear && rspec %',
-"   \ '\.ks'      : 'call KOSEvaluate()',
-"   \ '\.txt'     : 'echo system("wc -w " . expand("%"))',
-"   \ 'Spec\.js'  : '!FILE=% npm run test:clean --silent',
-"   \ '\.js'      : '!node %',
-"   \ '\.py'      : '!python %',
-"   \ '\.lua'     : '!clear && lua %',
-"   \ '\.sh'      : '!clear && bash %',
-"   \ '\.rb'      : '!clear && ruby %'
-" \}
-"
-" function! Autorun()
-"   for [pattern, task] in items(g:autorun_rules)
-"     if match(expand('%'),pattern) != -1
-"       exec task
-"       break
-"     endif
-"   endfor
-" endfunction
-"
-" " Secondary functions for autorunning the current file
-" let g:autorun_rules_secondary = {
-"   \ '\.js'      : '!FILE=% npm run lint',
-"   \ '\.rb'      : '!rubocop %',
-"   \ '\.rake'    : '!rubocop %',
-"   \ '\.scss'    : '!scss-lint %',
-"   \ '\.ks'      : 'call KOSCopy()'
-" \}
-"
-" function! AutorunSecondary()
-"   for [pattern, task] in items(g:autorun_rules_secondary)
-"     if match(expand('%'),pattern) != -1
-"       exec task
-"       break
-"     endif
-"   endfor
-" endfunction
-"
-" " Functions for playing back the deleted buffer
-" function! Retype()
-"   let i = 0
-"   while i < len(@")
-"     exe ":normal a" . strpart(@",i,1)
-"     redraw
-"     sleep 50m
-"     let i += 1
-"   endwhile
-"   exe ":normal dd"
-" endfunction
-"
-" function! RetypeFile()
-"   exe ":normal ggdG"
-"   call Retype()
-" endfunction
-"
-" " Ignore some folders and files for CtrlP indexing
+" Make line-number lookup via numpad easy
+nnoremap - G
+
+" Make visual sorting trivial
+vnoremap S :sort<CR>
+
+" Make Ctrl+C work like traditional escape
+inoremap <C-c> <Esc>
+
+" Make F12 super fun for ES6 specs
+inoremap <F12> , () => {<CR>});<Esc>O<Tab>
+
+" Leader-Key Shortcuts
+nmap <leader>1 :call Autorun()<cr>
+nmap <leader>2 :call AutorunSecondary()<cr>
+nmap <leader>t :CtrlP<cr>
+nmap <leader>e :e<space>
+nmap <leader>d :NERDTreeToggle<cr>
+nmap <leader>\ :bn!<cr>
+nmap <leader>- :bd<cr>
+nmap <leader>w :Goyo<cr>
+nmap <leader>@ "=strftime("%m/%d/%y")<CR>P
+nmap <leader>c :!wc %<cr>
+nmap <space> :w<cr>:TestFile<cr>
+nmap <leader><space> :w<cr>:TestNearest<cr>
+
+" Keyboard lag fix
+command! W write
+command! Q quit
+
+" Filetype overrides
+au BufRead,BufNewFile *.txt set nonumber
+au BufRead,BufNewFile *.ks set filetype=kerboscript
+au BufRead,BufNewFile *.coffee set filetype=coffee
+au BufRead,BufNewFile .eslintrc set filetype=json
+
+" Reload vimrc on change
+autocmd! bufwritepost vimrc source ~/.vimrc
+
+" Overload tab to autocomplete
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<c-p>"
+    endif
+endfunction
+inoremap <expr> <tab> InsertTabWrapper()
+inoremap <s-tab> <c-n>
+
+" Support sane pasting
+set pastetoggle=<F12>
+function! WrapForTmux(s)
+  if !exists('$TMUX')
+    return a:s
+  endif
+  let tmux_start = "\<Esc>Ptmux;"
+  let tmux_end = "\<Esc>\\"
+  return tmux_start . substitute(a:s, "\<Esc>", "\<Esc>\<Esc>", 'g') . tmux_end
+endfunction
+let &t_SI .= WrapForTmux("\<Esc>[?2004h")
+let &t_EI .= WrapForTmux("\<Esc>[?2004l")
+function! XTermPasteBegin()
+  set pastetoggle=<Esc>[201~
+  set paste
+  return ""
+endfunction
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+
+" Fix broken elm detection
+autocmd BufRead,BufNewFile *.elm set ft=elm
+autocmd BufRead,BufNewFile *.go set tabstop=2
+autocmd BufRead,BufNewFile *.go set noet
+
+" Language-Specific Vim-Test config
+" let g:test#javascript#runner = 'mocha'
+let g:test#javascript#mocha#file_pattern = 'Spec\.js'
+let g:test#javascript#mocha#executable = './node_modules/.bin/mocha --opts spec/mocha.opts'
+if exists('$TMUX')
+  let g:test#strategy = 'vimux'
+endif
+
+let g:test#javascript#tap#executable = './node_modules/.bin/babel-tap'
+
+" Automatically remove whitespace on save
+function! StripTrailingWhitespace()
+  let save_cursor = getpos(".")
+  %s/\s\+$//e
+  call setpos('.', save_cursor)
+endfunction
+autocmd BufWritePre * call StripTrailingWhitespace()
+
+" Configure Goyo for writing prose
+let g:limelight_conceal_ctermfg = 'lightgray'
+function! s:goyo_enter()
+  colorscheme Tomorrow
+  highlight NonText ctermfg=bg guifg=bg
+  set wrap linebreak nolist
+endfunction
+function! s:goyo_leave()
+  colorscheme synic
+  highlight NonText ctermfg=fg guifg=fg
+endfunction
+
+" Ignore some folders and files for CtrlP indexing
 " let g:ctrlp_custom_ignore = {
-"   \ 'dir':  '\.git$\|\.yardoc\|public$|log\|tmp$',
+"   \ 'dir':  '\.git$\|\.yardoc\|public$|log\|tmp\|node_modules$',
 "   \ 'file': '\.so$\|\.dat$|\.DS_Store$'
 "   \ }
-"
-" " set shell=bash\ -l
-"
-" " Function for interacting with KOS via telnet
-" let KOSGameDirectory = '/mnt/ksp'
-" let KOSTelnetPort    = '5410'
-" let KOSTelnetIP      = '192.168.56.1'
-" function! KOSEvaluate()
-"   exec '!export TERM=xterm && cp ' . expand('%:p') . ' ' . g:KOSGameDirectory . '/Ships/Script &&
-"           \ (echo open ' . g:KOSTelnetIP . ' ' . g:KOSTelnetPort . ';
-"           \ sleep 1;
-"           \ echo "1";
-"           \ sleep 1;
-"           \ echo "clearscreen. switch to 0. run ' . expand('%:t') . '.";
-"           \ sleep 5;
-"           \ ) | telnet; true'
-" endfunction
-"
-" function! KOSCopy()
-"   exec '!cp ' . expand('%:p') . ' ' . g:KOSGameDirectory . '/Ships/Script'
-" endfunction
-"
-" " Configure JSX support
-" let g:jsx_ext_required = 0
-"
-" " Configure NERDTree
-" let NERDTreeQuitOnOpen = 1
-"
-" " Call out 80+ line files
-" highlight ColorColumn ctermbg=magenta
-" call matchadd('ColorColumn', '\%81v', 100)
-"
-" function! HLNext (blinktime)
-"     highlight WhiteOnRed ctermfg=white ctermbg=red
-"     let [bufnum, lnum, col, off] = getpos('.')
-"     let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
-"     let target_pat = '\c\%#\%('.@/.'\)'
-"     let ring = matchadd('WhiteOnRed', target_pat, 101)
-"     redraw
-"     exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
-"     call matchdelete(ring)
-"     redraw
-"     exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
-"     let ring = matchadd('WhiteOnRed', target_pat, 101)
-"     redraw
-"     exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
-"     call matchdelete(ring)
-"     redraw
-" endfunction
-" nnoremap <silent> n   n:call HLNext(0.1)<cr>
-" nnoremap <silent> N   N:call HLNext(0.1)<cr>
-"
-" autocmd! User GoyoEnter nested call <SID>goyo_enter()
-" autocmd! User GoyoLeave nested call <SID>goyo_leave()
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+
+" Function for autorunning the current file
+let g:autorun_rules = {
+  \ '\.vim'     : 'source %',
+  \ 'spec\.rb' : '!clear && rspec %',
+  \ '\.ks'      : 'call KOSEvaluate()',
+  \ '\.txt'     : 'echo system("wc -w " . expand("%"))',
+  \ 'Spec\.js'  : '!FILE=% npm run test:clean --silent',
+  \ '\.js'      : '!node %',
+  \ '\.py'      : '!python %',
+  \ '\.lua'     : '!clear && lua %',
+  \ '\.sh'      : '!clear && bash %',
+  \ '\.rb'      : '!clear && ruby %'
+\}
+
+function! Autorun()
+  for [pattern, task] in items(g:autorun_rules)
+    if match(expand('%'),pattern) != -1
+      exec task
+      break
+    endif
+  endfor
+endfunction
+
+" Secondary functions for autorunning the current file
+let g:autorun_rules_secondary = {
+  \ '\.js'      : '!FILE=% npm run lint',
+  \ '\.rb'      : '!rubocop %',
+  \ '\.rake'    : '!rubocop %',
+  \ '\.scss'    : '!scss-lint %',
+  \ '\.ks'      : 'call KOSCopy()'
+\}
+
+function! AutorunSecondary()
+  for [pattern, task] in items(g:autorun_rules_secondary)
+    if match(expand('%'),pattern) != -1
+      exec task
+      break
+    endif
+  endfor
+endfunction
+
+" Functions for playing back the deleted buffer
+function! Retype()
+  let i = 0
+  while i < len(@")
+    exe ":normal a" . strpart(@",i,1)
+    redraw
+    sleep 50m
+    let i += 1
+  endwhile
+  exe ":normal dd"
+endfunction
+
+function! RetypeFile()
+  exe ":normal ggdG"
+  call Retype()
+endfunction
+
+" Ignore some folders and files for CtrlP indexing
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.yardoc\|public$|log\|tmp$',
+  \ 'file': '\.so$\|\.dat$|\.DS_Store$'
+  \ }
+
+" set shell=bash\ -l
+
+" Function for interacting with KOS via telnet
+let KOSGameDirectory = '/mnt/ksp'
+let KOSTelnetPort    = '5410'
+let KOSTelnetIP      = '192.168.56.1'
+function! KOSEvaluate()
+  exec '!export TERM=xterm && cp ' . expand('%:p') . ' ' . g:KOSGameDirectory . '/Ships/Script &&
+          \ (echo open ' . g:KOSTelnetIP . ' ' . g:KOSTelnetPort . ';
+          \ sleep 1;
+          \ echo "1";
+          \ sleep 1;
+          \ echo "clearscreen. switch to 0. run ' . expand('%:t') . '.";
+          \ sleep 5;
+          \ ) | telnet; true'
+endfunction
+
+function! KOSCopy()
+  exec '!cp ' . expand('%:p') . ' ' . g:KOSGameDirectory . '/Ships/Script'
+endfunction
+
+" Configure JSX support
+let g:jsx_ext_required = 0
+
+" Configure NERDTree
+let NERDTreeQuitOnOpen = 1
+
+" Call out 80+ line files
+highlight ColorColumn ctermbg=magenta
+call matchadd('ColorColumn', '\%81v', 100)
+
+function! HLNext (blinktime)
+    highlight WhiteOnRed ctermfg=white ctermbg=red
+    let [bufnum, lnum, col, off] = getpos('.')
+    let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
+    let target_pat = '\c\%#\%('.@/.'\)'
+    let ring = matchadd('WhiteOnRed', target_pat, 101)
+    redraw
+    exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
+    call matchdelete(ring)
+    redraw
+    exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
+    let ring = matchadd('WhiteOnRed', target_pat, 101)
+    redraw
+    exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
+    call matchdelete(ring)
+    redraw
+endfunction
+nnoremap <silent> n   n:call HLNext(0.1)<cr>
+nnoremap <silent> N   N:call HLNext(0.1)<cr>
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
