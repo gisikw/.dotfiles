@@ -1,0 +1,12 @@
+# ~/.tmuxinator/hologram.yml
+
+name: hologram
+root: ~/Projects/hologram
+pre: yarn install
+windows:
+  - app:
+    - vim -c 'NERDTreeToggle'
+  - server:
+    - shotgun server.rb
+  - client:
+    - yarn start
