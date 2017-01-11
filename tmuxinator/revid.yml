@@ -7,6 +7,6 @@ windows:
   - app:
     - vim -c 'NERDTreeToggle'
   - server:
-    - shotgun server.rb
+    - rackup
   - client:
     - yarn start
