@@ -21,6 +21,7 @@ aliases:
   m: tmuxinator
   z: fg
   c: clear
+  t: tmux
   s: tmux switch -t
   w: find . | grep md | xargs cat | wc -w
   v: vim
