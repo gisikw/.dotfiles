@@ -159,7 +159,7 @@ function! s:goyo_enter()
   set wrap linebreak nolist
 endfunction
 function! s:goyo_leave()
-  colorscheme synic
+  colorscheme inkpot
   highlight NonText ctermfg=fg guifg=fg
 endfunction
 
