@@ -20,3 +20,10 @@ function gz() {
   echo "gzipped size (bytes): "
   gzip -c "$1" | wc -c
 }
+
+function timer() {
+  date1=`date +%s`;
+  while true; do
+   echo -ne "$(date -u --date @$((`date +%s` - $date1)) +%H:%M:%S)\r";
+  done
+}
