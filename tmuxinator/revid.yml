@@ -7,6 +7,6 @@ windows:
   - app:
     - vim -c 'NERDTreeToggle'
   - server:
-    - rackup
+    - filewatcher -rd 'src/server.js' 'yarn server'
   - client:
     - yarn start
