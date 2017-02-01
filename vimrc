@@ -51,7 +51,7 @@ colorscheme inkpot
 " Highlighting
 set hlsearch
 set incsearch
-noremap <cr> :noh<bar>:echo<cr><cr>
+noremap <cr> :noh<bar>:echo<cr>
 
 " Use tab and shift-tab to cycle through windows.
 nnoremap <Tab> <C-W>w
