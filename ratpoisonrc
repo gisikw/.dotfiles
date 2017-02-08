@@ -16,6 +16,9 @@ bind H exchangeleft
 bind K exchangeup
 bind L exchangeright
 
+bind backslash nextscreen
+bind C-backslash nextscreen
+
 bind X kill
 
 set border 0
