@@ -7,5 +7,5 @@ windows:
       layout: 87cc,159x45,0,0{80x45,0,0,0,78x45,81,0[78x12,81,0,1,78x32,81,13,2]}
       panes:
         - vim -c 'NERDTreeToggle'
-        - filewatcher -rd 'src test' 'clear && yarn run lint'
-        - filewatcher -rd 'src test' 'clear && yarn test'
+        - filewatcher -rdE 'src test' 'clear && yarn run lint'
+        - filewatcher -rdE 'src test' 'clear && yarn test'
