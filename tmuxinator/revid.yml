@@ -6,7 +6,5 @@ pre: yarn install
 windows:
   - app:
     - vim -c 'NERDTreeToggle'
-  - server:
-    - yarn server
   - client:
     - yarn start
