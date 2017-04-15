@@ -263,8 +263,8 @@ let g:jsx_ext_required = 0
 let NERDTreeQuitOnOpen = 1
 
 " Call out 80+ line files
-highlight ColorColumn ctermbg=magenta
-call matchadd('ColorColumn', '\%81v', 100)
+" highlight ColorColumn ctermbg=magenta
+" call matchadd('ColorColumn', '\%81v', 100)
 
 function! HLNext (blinktime)
     highlight WhiteOnRed ctermfg=white ctermbg=red
