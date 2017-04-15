@@ -1,0 +1,10 @@
+# ~/.tmuxinator/minechat.yml
+
+name: minechat
+root: ~/Projects/minechat
+pre: yarn install
+windows:
+  - app:
+    - vim -c 'NERDTreeToggle'
+  - client:
+    - yarn start
