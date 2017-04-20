@@ -1,0 +1,10 @@
+# ~/.tmuxinator/twoverlay.yml
+
+name: twoverlay
+root: ~/Projects/twoverlay
+pre: yarn install
+windows:
+  - app:
+    - vim -c 'NERDTreeToggle'
+  - client:
+    - yarn start
