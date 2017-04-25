@@ -29,7 +29,11 @@ bind minus vsplit
 
 bind g exec google-chrome
 
-bind Escape exec ratpoison -c "source /home/gisikw/.ratpoisonrc"
+bind Escape exec ratpoison -c "source /home/gisikw/.ratpoisonrc" && ratpoison -c "echo Reloaded config"
+
+bind F1 exec ssh cheerskevin.com ./message mode-live
+bind F2 exec ssh cheerskevin.com ./message mode-away $(ratpoison -c "prompt How long?: ")
+bind F3 exec ssh cheerskevin.com ./message mode-hidden
 
 bind F5 exec xbacklight -dec 10
 bind F6 exec xbacklight -inc 10
