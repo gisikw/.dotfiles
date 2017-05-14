@@ -28,6 +28,7 @@ Plugin 'lambdatoast/elm.vim'
 Plugin 'andreasvc/vim-256noir'
 Plugin 'janko-m/vim-test'
 Plugin 'benmills/vimux'
+Plugin 'sbdchd/neoformat'
 call vundle#end()
 
 " General Configuration
