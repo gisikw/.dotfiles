@@ -3,8 +3,6 @@
 set nocompatible
 filetype plugin on
 
-set title
-
 " Goodbye, Swapfiles
 set nobackup
 set nowritebackup
