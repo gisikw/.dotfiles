@@ -134,6 +134,8 @@ autocmd BufRead,BufNewFile *.elm set ft=elm
 autocmd BufRead,BufNewFile *.go set tabstop=2
 autocmd BufRead,BufNewFile *.go set noet
 
+autocmd BufWritePre,TextChanged,InsertLeave *.js Neoformat
+
 " Language-Specific Vim-Test config
 " let g:test#javascript#runner = 'mocha'
 let g:test#javascript#mocha#file_pattern = 'Spec\.js'
