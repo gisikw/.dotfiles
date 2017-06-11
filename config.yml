@@ -17,6 +17,7 @@ aliases:
   res: echo $(tput cols)x$(tput lines)
   layout: tmux list-windows | sed 's/.*\[layout //' | sed 's/]].*/]/'
   wifi: nmtui
+  recover: DISPLAY=:0 xdotool windowfocus $(DISPLAY=:0 xdotool search -name rxvt)
   ck: m ck
   g: git
   m: tmuxinator
