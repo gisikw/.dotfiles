@@ -35,7 +35,7 @@ function update_dotfile_repository() {
 }
 
 if github_available; then
-  cmp ~/.dotfiles/secrets.sh ~/.dotfiles/secrets.sh.bak || encrypt ~/.dotfiles/secrets.sh
+  cmp ~/.dotfiles/secrets.sh ~/.dotfiles/secrets.sh.bak > /dev/null || encrypt ~/.dotfiles/secrets.sh
   commit_dotfile_changes
   update_dotfile_repository
   decrypt ~/.dotfiles/secrets.sh.enc
