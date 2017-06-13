@@ -8,5 +8,5 @@ function encrypt() {
 
 # Take a filename.env, create filename
 function decrypt() {
-  cat $1 | openssl rsautl -decrypt -inkey ~/.ssh/id_rsa > $(echo $1 | sed 's/\.[^.]*$//')
+  cat $1 | openssl rsautl -decrypt -inkey $HOME/.ssh/id_rsa > $(echo $1 | sed 's/\.[^.]*$//')
 }
