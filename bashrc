@@ -1,3 +1,14 @@
+function encrypt() {
+  if [ ! -e "$HOME/.ssh/id_rsa.pub.pem" ]; then
+    openssl rsa -in $HOME/.ssh/id_rsa -pubout > $HOME/.ssh/id_rsa.pub.pem 2>/dev/null
+  fi
+  cat $1 | openssl rsautl -encrypt -pubin -inkey $HOME/.ssh/id_rsa.pub.pem > $1.enc
+}
+
+function decrypt() {
+  cat $1 | openssl rsautl -decrypt -inkey $HOME/.ssh/id_rsa > $(echo $1 | sed 's/\.[^.]*$//')
+}
+
 function github_available() {
   echo -e "GET http://github.com HTTP/1.0\n\n" |
   nc github.com 80 > /dev/null 2>&1;
@@ -22,8 +33,10 @@ function update_dotfile_repository() {
 }
 
 if github_available; then
+  encrypt ~/.dotfiles/secrets.sh
   commit_dotfile_changes
   update_dotfile_repository
+  decrypt ~/.dotfiles/secrets.sh.enc
 fi
 
 function up() {
@@ -58,6 +71,9 @@ done
 for key in $(craml_all ~/.dotfiles/config.yml aliases); do
   alias $key="$(craml_value ~/.dotfiles/config.yml aliases $key)"
 done
+
+# Load secrets
+source ~/.dotfiles/secrets.sh
 
 # Tidy up
 unset -f github_available
