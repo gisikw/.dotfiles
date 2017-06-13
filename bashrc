@@ -6,7 +6,9 @@ function encrypt() {
 }
 
 function decrypt() {
-  cat $1 | openssl rsautl -decrypt -inkey $HOME/.ssh/id_rsa > $(echo $1 | sed 's/\.[^.]*$//')
+  FILENAME=$(echo $1 | sed 's/\.[^.]*$//')
+  cat $1 | openssl rsautl -decrypt -inkey $HOME/.ssh/id_rsa > $FILENAME
+  cp $FILENAME $FILENAME.bak
 }
 
 function github_available() {
@@ -33,7 +35,7 @@ function update_dotfile_repository() {
 }
 
 if github_available; then
-  encrypt ~/.dotfiles/secrets.sh
+  cmp ~/.dotfiles/secrets.sh ~/.dotfiles/secrets.sh.bak || encrypt ~/.dotfiles/secrets.sh
   commit_dotfile_changes
   update_dotfile_repository
   decrypt ~/.dotfiles/secrets.sh.enc
