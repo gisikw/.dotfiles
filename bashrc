@@ -75,7 +75,9 @@ for key in $(craml_all ~/.dotfiles/config.yml aliases); do
 done
 
 # Load secrets
-source ~/.dotfiles/secrets.sh
+if [ -e "$HOME/.dotfiles/secrets.sh" ]; then
+  source ~/.dotfiles/secrets.sh
+fi
 
 # Tidy up
 unset -f github_available
