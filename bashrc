@@ -7,7 +7,7 @@ function encrypt() {
 
 function decrypt() {
   FILENAME=$(echo $1 | sed 's/\.[^.]*$//')
-  cat $1 | openssl rsautl -decrypt -inkey $HOME/.ssh/id_rsa > $FILENAME
+  cat $1 | openssl rsautl -decrypt -inkey $HOME/.ssh/id_rsa > $FILENAME 2>/dev/null
   cp $FILENAME $FILENAME.bak
 }
 
