@@ -11,7 +11,7 @@
         p = pull
         l = log --oneline
         up = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
-        down = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
+        down = "!git pull origin $(git rev-parse --abbrev-ref HEAD)"
         pr = "!git up && hub pull-request -o"
         ci = ci-status
         ml = "!git checkout -;SRC=$(git rev-parse --abbrev-ref HEAD);git checkout -;git merge $SRC"
