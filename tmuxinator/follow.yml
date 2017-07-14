@@ -12,10 +12,5 @@ windows:
       layout: 773e,159x45,0,0{80x45,0,0,33,78x45,81,0[78x31,81,0,35,78x13,81,32,36]}
       panes:
         - cd webpack && vim -c 'NERDTreeToggle'
-        - (cd webpack && filewatcher -rdE 'src spec' 'clear && yarn run lint')
-        - (cd webpack && filewatcher -rdE 'src spec' 'clear && yarn test')
   - webpack:
-      layout: main-vertical
-      panes:
-        - (cd webpack && yarn run build:watch)
-        - (cd webpack && yarn run storybook)
+      - (cd webpack && yarn run build:watch)
