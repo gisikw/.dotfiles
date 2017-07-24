@@ -16,11 +16,17 @@ Pause::SetAuditionSeconds(4025.2)
 F11::AlertCurrentTimecode()
 F9::GrabRoomTone()
 ; F10::TrimSilence()
-F10::TryWinCommand()
+F10::TryAutoUpdate()
 
-TryWinCommand() {
+TryAutoUpdate() {
+  TryWinCommand("Msg * Trying to update")
+  TryWinCommand("git pull origin master")
+  TryWinCommand("Msg * Hopefully it worked")
+}
+
+TryWinCommand(command) {
   shell := ComObjCreate("WScript.Shell")
-  launch := "cmd.exe /c " . "Msg * Hello" . " > temp.txt"
+  launch := "cmd.exe /c " . command . " > temp.txt"
   exec := shell.Run(launch, 0, true)
   FileDelete, temp.txt
 }
