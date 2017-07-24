@@ -19,7 +19,7 @@ F9::GrabRoomTone()
 F10::TryAutoUpdate()
 
 TryAutoUpdate() {
-  TryWinCommand("New Version")
+  TryWinCommand("Msg * IT WORKED")
   TryWinCommand("Msg * Trying to update")
   TryWinCommand("git pull origin master")
   TryWinCommand("Msg * Hopefully it worked")
