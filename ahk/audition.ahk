@@ -19,18 +19,12 @@ F9::GrabRoomTone()
 F10::TryAutoUpdate()
 
 TryAutoUpdate() {
-  TryWinCommand("Msg * IT WORKED")
-  TryWinCommand("Msg * Trying to update")
-  TryWinCommand("git pull origin master")
-  TryWinCommand("Msg * Hopefully it worked")
-  Reload
-}
-
-TryWinCommand(command) {
   shell := ComObjCreate("WScript.Shell")
-  launch := "cmd.exe /c " . command . " > temp.txt"
+  launch := "cmd.exe /c git pull origin master > temp.txt"
   exec := shell.Run(launch, 0, true)
   FileDelete, temp.txt
+  MsgBox Updating to latest script version
+  Reload
 }
 
 ; Todo
