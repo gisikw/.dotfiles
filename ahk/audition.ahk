@@ -23,6 +23,7 @@ TryAutoUpdate() {
   TryWinCommand("Msg * Trying to update")
   TryWinCommand("git pull origin master")
   TryWinCommand("Msg * Hopefully it worked")
+  Reload
 }
 
 TryWinCommand(command) {
