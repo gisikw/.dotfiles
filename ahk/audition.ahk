@@ -18,7 +18,7 @@ F11::AlertCurrentTimecode()
 F9::GrabRoomTone()
 ; F10::TrimSilence()
 F10::TryAutoUpdate()
-F8::KeyboardLED(4, "Switch", 0)
+F8::KeyboardLED(4, "switch", 2)
 
 TryAutoUpdate() {
   shell := ComObjCreate("WScript.Shell")
