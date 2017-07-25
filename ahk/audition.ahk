@@ -8,7 +8,8 @@ SetTitleMatchMode, 2
 XButton1::DeleteSelectionAndJumpToNextMarker()
 F5::PauseAudition()
 $Esc::PauseAudition()
-NumpadSub::Suspend
+; NumpadSub::Suspend
+CapsLock::Suspend
 ^!r::Reload
 
 ; WIP Bindings
