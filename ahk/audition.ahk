@@ -8,8 +8,8 @@ SetTitleMatchMode, 2
 XButton1::DeleteSelectionAndJumpToNextMarker()
 F5::PauseAudition()
 $Esc::PauseAudition()
-; NumpadSub::Suspend
-CapsLock::Suspend
+F10::AutoUpdate()
+^~::Suspend
 ^!r::Reload
 
 ; WIP Bindings
@@ -17,16 +17,6 @@ Pause::SetAuditionSeconds(4025.2)
 F11::AlertCurrentTimecode()
 F9::GrabRoomTone()
 ; F10::TrimSilence()
-F10::TryAutoUpdate()
-
-TryAutoUpdate() {
-  shell := ComObjCreate("WScript.Shell")
-  launch := "cmd.exe /c git pull origin master > temp.txt"
-  exec := shell.Run(launch, 0, true)
-  FileDelete, temp.txt
-  MsgBox Updating to latest script version
-  Reload
-}
 
 ; Todo
 ; - Shortcut display
@@ -47,6 +37,15 @@ TryAutoUpdate() {
 ;   - Return to effects rack
 ;   - (consider pasting in room tone)
 ; GetAuditionTimecode not reliable
+
+AutoUpdate() {
+  shell := ComObjCreate("WScript.Shell")
+  launch := "cmd.exe /c git pull origin master > temp.txt"
+  exec := shell.Run(launch, 0, true)
+  FileDelete, temp.txt
+  MsgBox Updating to latest script version
+  Reload
+}
 
 TrimSilence() {
   WinGetText, OutputVar, a
