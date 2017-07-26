@@ -11,6 +11,7 @@ $Esc::PauseAudition()
 F10::AutoUpdate()
 ^`::Suspend
 ^!r::Reload
+F1::AddQCMarker()
 
 ; WIP Bindings
 Pause::SetAuditionSeconds(4025.2)
@@ -37,6 +38,17 @@ F9::GrabRoomTone()
 ;   - Return to effects rack
 ;   - (consider pasting in room tone)
 ; GetAuditionTimecode not reliable
+
+AddQCMarker() {
+  ControlSend, DroverLord - Window Class20, m, Adobe Audition
+  InputBox, Label, Marker, Please enter a label, , , , , , , , QC Note
+  if ErrorLevel {
+    ControlSend, DroverLord - Window Class20, {Ctrl down}0{Ctrl up}, Adobe Audition
+  } else {
+    ControlSend, DroverLord - Window Class20, /, Adobe Audition
+    ControlSend, Edit2, {Shift down}%Label%{Shift up}{Enter}, Adobe Audition
+  }
+}
 
 AutoUpdate() {
   shell := ComObjCreate("WScript.Shell")
