@@ -9,7 +9,7 @@ XButton1::DeleteSelectionAndJumpToNextMarker()
 F5::PauseAudition()
 $Esc::PauseAudition()
 F10::AutoUpdate()
-^`~::Suspend
+^`::Suspend
 ^!r::Reload
 
 ; WIP Bindings
