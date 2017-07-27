@@ -12,6 +12,7 @@ F10::AutoUpdate()
 ^`::Suspend
 ^!r::Reload
 F1::AddQCMarker()
+F2::JumpToPreviousMarker()
 
 ; WIP Bindings
 Pause::SetAuditionSeconds(4025.2)
@@ -48,6 +49,10 @@ AddQCMarker() {
     ControlSend, DroverLord - Window Class20, /, Adobe Audition
     ControlSend, Edit2, {Shift down}%Label%{Shift up}{Enter}, Adobe Audition
   }
+}
+
+JumpToPreviousMarker() {
+  ControlSend, DroverLord - Window Class20, {Ctrl down}{Alt down}{Left}{Alt up}{Ctrl up}, Adobe Audition
 }
 
 AutoUpdate() {
