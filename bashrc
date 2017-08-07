@@ -28,6 +28,7 @@ function commit_dotfile_changes() {
 function update_dotfile_repository() {
   (
     cd ~/.dotfiles
+    git pull origin master >/dev/null 2>&1
     git push origin master >/dev/null 2>&1
   )
 }
@@ -55,9 +56,9 @@ function reset() {
 set -o vi
 
 # Set up utility functions
-# for file in ~/.dotfiles/bash/*; do
-#   source $file
-# done
+for file in ~/.dotfiles/bash/*; do
+  source $file
+done
 
 # Verify symlinks
 for key in $(craml_all ~/.dotfiles/config.yml symlinks); do
