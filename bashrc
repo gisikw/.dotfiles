@@ -12,8 +12,7 @@ function decrypt() {
 }
 
 function github_available() {
-  echo -e "GET http://github.com HTTP/1.0\n\n" |
-  nc github.com 80 > /dev/null 2>&1;
+  ping -c 1 -W 1 github.com > /dev/null 2>&1
 }
 
 function commit_dotfile_changes() {
