@@ -17,9 +17,9 @@ aliases:
   res: echo $(tput cols)x$(tput lines)
   layout: tmux list-windows | sed 's/.*\[layout //' | sed 's/]].*/]/'
   todo: todoist s && todoist --color
-  today: script -f -q --command "todo --color list" | grep --color=never $(date +%y/%m/%d)
-  tomorrow: script -f -q --command "todo --color list" | grep --color=never $(date --date="tomorrow" +%y/%m/%d)
-  add: todo add
+  today: script -f -q --command "todoist --color list" | grep --color=never $(date +%y/%m/%d)
+  tomorrow: script -f -q --command "todoist --color list" | grep --color=never $(date --date="tomorrow" +%y/%m/%d)
+  add: todoist add
   wifi: nmtui
   recover: DISPLAY=:0 xdotool windowfocus $(DISPLAY=:0 xdotool search -name rxvt)
   ck: m ck
