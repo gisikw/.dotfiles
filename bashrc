@@ -80,6 +80,6 @@ if [ -e "$HOME/.dotfiles/secrets.sh" ]; then
 fi
 
 # Tidy up
-unset -f github_available
-unset -f commit_dotfile_changes
-unset -f update_dotfile_repository
+# unset -f github_available
+# unset -f commit_dotfile_changes
+# unset -f update_dotfile_repository
