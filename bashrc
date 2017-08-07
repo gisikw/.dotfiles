@@ -55,9 +55,9 @@ function reset() {
 set -o vi
 
 # Set up utility functions
-for file in ~/.dotfiles/bash/*; do
-  source $file
-done
+# for file in ~/.dotfiles/bash/*; do
+#   source $file
+# done
 
 # Verify symlinks
 for key in $(craml_all ~/.dotfiles/config.yml symlinks); do
