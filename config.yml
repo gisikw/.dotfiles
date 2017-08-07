@@ -7,6 +7,7 @@ aliases:
   small: echo -e "\033]710;xft:Cousine:pixelsize=20\033\\ \033]711;xft:Cousine:pixelsize=20\033\\ \033]712;xft:Cousine:pixelsize=20\033\\ \033]713;xft:Cousine:pixelsize=20\033\\" && clear
   tiny: echo -e "\033]710;xft:Cousine:pixelsize=14\033\\ \033]711;xft:Cousine:pixelsize=14\033\\ \033]714;xft:Cousine:pixelsize=14\033\\ \033]713;xft:Cousine:pixelsize=14\033\\" && clear
   webs: python -m SimpleHTTPServer
+  todoist: todoist --color
   nethack: ssh nethack@alt.org
   dot: (cd ~/.dotfiles && vim -c "NERDTreeToggle" bashrc) && up
   vdot: (cd ~/.dotfiles && vim -c "NERDTreeToggle" vimrc) && up
