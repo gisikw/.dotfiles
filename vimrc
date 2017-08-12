@@ -68,6 +68,9 @@ vnoremap S :sort<CR>
 " Make Ctrl+C work like traditional escape
 inoremap <C-c> <Esc>
 
+" Let tab backspace delete the previous word
+inoremap <Tab><Backspace> <C-W>
+
 " Make F12 super fun for ES6 specs
 inoremap <F12> , () => {<CR>});<Esc>O<Tab>
 
