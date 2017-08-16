@@ -148,5 +148,5 @@ AddMarker() {
 
 PauseAudition() {
   SoundBeep, 200, 100
-  ControlSend, DroverLord - Window Class20, {F12}, Adobe Audition
+  ControlSend, DroverLord - Window Class20, {Ctrl Down}{Space}{Ctrl Up}, Adobe Audition
 }
