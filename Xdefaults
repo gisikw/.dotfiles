@@ -11,10 +11,8 @@ URxvt.iso14755: false
 URxvt.iso14755_52: false
 
 ! Enable Ctrl+Shift+C and Ctrl+Shift+V copy/paste
-URxvt.keysym.C-C: perl:clipboard:copy
-URxvt.keysym.C-V: perl:clipboard:paste
-URxvt.keysym.C-A-V: perl:clipboard:paste_escaped
-URxvt.perl-ext-common: default,tabbed,clipboard
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 
 ! Turn dark blue into cornflower blue
 *color4:  #6495ed
