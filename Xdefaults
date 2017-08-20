@@ -14,6 +14,7 @@ URxvt.iso14755_52: false
 URxvt.keysym.C-C: perl:clipboard:copy
 URxvt.keysym.C-V: perl:clipboard:paste
 URxvt.keysym.C-A-V: perl:clipboard:paste_escaped
+URxvt.perl-ext-common: default,tabbed,clipboard
 
 ! Turn dark blue into cornflower blue
 *color4:  #6495ed
