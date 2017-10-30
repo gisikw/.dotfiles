@@ -165,7 +165,7 @@ function! s:goyo_enter()
 endfunction
 function! s:goyo_leave()
   syntax on
-  set nowrap nolinebreak list showmode
+  " set nowrap nolinebreak list showmode
   " colorscheme inkpot
   " highlight NonText ctermfg=fg guifg=fg
 endfunction
