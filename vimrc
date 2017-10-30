@@ -158,13 +158,16 @@ autocmd BufWritePre * call StripTrailingWhitespace()
 " Configure Goyo for writing prose
 let g:limelight_conceal_ctermfg = 'lightgray'
 function! s:goyo_enter()
-  colorscheme Tomorrow
-  highlight NonText ctermfg=bg guifg=bg
-  set wrap linebreak nolist
+  " colorscheme Tomorrow
+  " highlight NonText ctermfg=bg guifg=bg
+  syntax off
+  set wrap linebreak nolist noshowmode
 endfunction
 function! s:goyo_leave()
-  colorscheme inkpot
-  highlight NonText ctermfg=fg guifg=fg
+  syntax on
+  set nowrap nolinebreak list showmode
+  " colorscheme inkpot
+  " highlight NonText ctermfg=fg guifg=fg
 endfunction
 
 " Ignore some folders and files for CtrlP indexing
