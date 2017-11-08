@@ -90,7 +90,8 @@ command! W write
 command! Q quit
 
 " Markdown fenced code highlighting
-let g:markdown_github_languages = ['ruby']
+let g:markdown_fenced_languages = ['ruby', 'javascript', 'js=javascript']
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " Filetype overrides
 au BufRead,BufNewFile *.txt set nonumber
