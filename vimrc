@@ -89,6 +89,9 @@ nmap <leader><space> :w<cr>:TestNearest<cr>
 command! W write
 command! Q quit
 
+" Markdown fenced code highlighting
+let g:markdown_github_languages = ['ruby']
+
 " Filetype overrides
 au BufRead,BufNewFile *.txt set nonumber
 au BufRead,BufNewFile *.txt set filetype=markdown
