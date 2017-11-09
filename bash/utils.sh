@@ -27,3 +27,7 @@ function timer() {
    echo -ne "$(date -u --date @$((`date +%s` - $date1)) +%H:%M:%S)\r";
   done
 }
+
+function fetchGPG() {
+  ssh $1 gpg --export-secret-key 3BA01FDFEC13B152 | gpg --import
+}
