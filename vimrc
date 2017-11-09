@@ -17,7 +17,7 @@ call vundle#begin()
 Plugin 'scrooloose/nerdtree'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'tomvanderlee/vim-kerboscript'
+Plugin 'yump/vim-kerboscript'
 Plugin 'pangloss/vim-javascript'
 Plugin 'othree/yajs'
 Plugin 'mxw/vim-jsx'
