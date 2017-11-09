@@ -1,6 +1,7 @@
 [user]
 	email = kevin@kevingisi.com
 	name = Kevin Gisi
+	signingkey = 3BA01FDFEC13B152
 [push]
 	default = matching
 [alias]
@@ -19,3 +20,5 @@
 [core]
 	excludesfile = /Users/gisikw/.gitignore
 	excludefiles = /home/gisikw/.gitignore
+[commit]
+	gpgsign = true
