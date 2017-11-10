@@ -1,37 +1,37 @@
 aliases:
   a: tmux attach
+  add: todoist add
   be: bundle exec
   berc: bundle exec rails c
   big: echo -e "\033]710;xft:Cousine:pixelsize=38\033\\ \033]711;xft:Cousine:pixelsize=38\033\\ \033]712;xft:Cousine:pixelsize=38\033\\ \033]713;xft:Cousine:pixelsize=38\033\\" && clear
-  medium: echo -e "\033]710;xft:Cousine:pixelsize=28\033\\ \033]711;xft:Cousine:pixelsize=28\033\\ \033]712;xft:Cousine:pixelsize=28\033\\ \033]713;xft:Cousine:pixelsize=28\033\\" && clear
-  small: echo -e "\033]710;xft:Cousine:pixelsize=20\033\\ \033]711;xft:Cousine:pixelsize=20\033\\ \033]712;xft:Cousine:pixelsize=20\033\\ \033]713;xft:Cousine:pixelsize=20\033\\" && clear
-  tiny: echo -e "\033]710;xft:Cousine:pixelsize=14\033\\ \033]711;xft:Cousine:pixelsize=14\033\\ \033]714;xft:Cousine:pixelsize=14\033\\ \033]713;xft:Cousine:pixelsize=14\033\\" && clear
-  webs: python -m SimpleHTTPServer
-  nethack: ssh nethack@alt.org
-  dot: (cd ~/.dotfiles && vim -c "NERDTreeToggle" bashrc) && up
-  vdot: (cd ~/.dotfiles && vim -c "NERDTreeToggle" vimrc) && up
-  d: (cd ~/.dotfiles && vim -c "NERDTreeToggle" bashrc) && up
   book: awk 'FNR==1{print ""}1' *.md | kramdown -o pdf >out.pdf 2>/dev/null
-  kpack: ruby -Ilib ./exe/kpack
-  signal: google-chrome --app-id=$(basename $(ack 'Signal' .local/share/applications/ -l) | sed 's/-Default.desktop//' | sed 's/chrome-//')
-  res: echo $(tput cols)x$(tput lines)
-  layout: tmux list-windows | sed 's/.*\[layout //' | sed 's/]].*/]/'
-  todo: todoist s && todoist --color
-  today: script -f -q --command "todoist --color list" | grep --color=never $(date +%y/%m/%d)
-  tomorrow: script -f -q --command "todoist --color list" | grep --color=never $(date --date="tomorrow" +%y/%m/%d)
-  add: todoist add
-  wifi: nmtui
-  recover: DISPLAY=:0 xdotool windowfocus $(DISPLAY=:0 xdotool search -name rxvt)
-  ck: m ck
-  g: git
-  m: tmuxinator
-  z: fg
   c: clear
-  t: tmux
-  s: tmux switch -t
-  w: find . | grep md | xargs cat | wc -w
-  v: vim
+  ck: m ck
+  d: (cd ~/.dotfiles && vim -c "NERDTreeToggle" bashrc) && up
+  dot: (cd ~/.dotfiles && vim -c "NERDTreeToggle" bashrc) && up
+  g: git
+  kpack: ruby -Ilib ./exe/kpack
+  layout: tmux list-windows | sed 's/.*\[layout //' | sed 's/]].*/]/'
+  m: tmuxinator
+  medium: echo -e "\033]710;xft:Cousine:pixelsize=28\033\\ \033]711;xft:Cousine:pixelsize=28\033\\ \033]712;xft:Cousine:pixelsize=28\033\\ \033]713;xft:Cousine:pixelsize=28\033\\" && clear
+  nethack: ssh nethack@alt.org
   p: pwd
+  recover: DISPLAY=:0 xdotool windowfocus $(DISPLAY=:0 xdotool search -name rxvt)
+  res: echo $(tput cols)x$(tput lines)
+  s: tmux switch -t
+  signal: google-chrome --app-id=$(basename $(ack 'Signal' .local/share/applications/ -l) | sed 's/-Default.desktop//' | sed 's/chrome-//')
+  small: echo -e "\033]710;xft:Cousine:pixelsize=20\033\\ \033]711;xft:Cousine:pixelsize=20\033\\ \033]712;xft:Cousine:pixelsize=20\033\\ \033]713;xft:Cousine:pixelsize=20\033\\" && clear
+  t: tmux
+  tiny: echo -e "\033]710;xft:Cousine:pixelsize=14\033\\ \033]711;xft:Cousine:pixelsize=14\033\\ \033]714;xft:Cousine:pixelsize=14\033\\ \033]713;xft:Cousine:pixelsize=14\033\\" && clear
+  today: script -f -q --command "todoist --color list" | grep --color=never $(date +%y/%m/%d)
+  todo: todoist s && todoist --color
+  tomorrow: script -f -q --command "todoist --color list" | grep --color=never $(date --date="tomorrow" +%y/%m/%d)
+  v: vim
+  vdot: (cd ~/.dotfiles && vim -c "NERDTreeToggle" vimrc) && up
+  w: find . | grep md | xargs cat | wc -w
+  webs: python -m SimpleHTTPServer
+  wifi: nmtui
+  z: fg
 symlinks:
   .vimrc: .dotfiles/vimrc
   .tmux.conf: .dotfiles/tmux.conf
