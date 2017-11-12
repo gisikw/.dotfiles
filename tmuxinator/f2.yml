@@ -1,0 +1,19 @@
+# ~/.tmuxinator/follow.yml
+
+name: follow
+root: ~/Projects/follow
+
+pre:
+  - sudo service redis-server start
+  - sudo service mysql start
+  - sudo service elasticsearch start
+
+windows:
+  - app:
+    - vim -c 'NERDTreeToggle'
+  - server:
+    - ./bin/rails s
+  - mongo:
+      sudo mongod --config /etc/mongod.conf
+  - webpack:
+      - (cd webpack && yarn run build:watch)
