@@ -20,6 +20,7 @@ aliases:
   res: echo $(tput cols)x$(tput lines)
   s: tmux switch -t
   signal: google-chrome --app-id=$(basename $(ack 'Signal' .local/share/applications/ -l) | sed 's/-Default.desktop//' | sed 's/chrome-//')
+  sign: git config commit.gpgsign true
   small: echo -e "\033]710;xft:Cousine:pixelsize=20\033\\ \033]711;xft:Cousine:pixelsize=20\033\\ \033]712;xft:Cousine:pixelsize=20\033\\ \033]713;xft:Cousine:pixelsize=20\033\\" && clear
   t: tmux
   tiny: echo -e "\033]710;xft:Cousine:pixelsize=14\033\\ \033]711;xft:Cousine:pixelsize=14\033\\ \033]714;xft:Cousine:pixelsize=14\033\\ \033]713;xft:Cousine:pixelsize=14\033\\" && clear
