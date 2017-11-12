@@ -78,6 +78,9 @@ if [ -e "$HOME/.dotfiles/secrets.sh" ]; then
   source ~/.dotfiles/secrets.sh
 fi
 
+# Ensure color terminal on Chromebooks
+export TERM=xterm-256color
+
 # Tidy up
 # unset -f github_available
 # unset -f commit_dotfile_changes
