@@ -12,7 +12,7 @@ windows:
   - editor:
     - vim -c 'NERDTreeToggle'
   - services:
-    layout: even-vertical
-    panes:
-      - (cd . && ./bin/rails s)
-      - (cd webpack && yarn && yarn run build:watch)
+      layout: even-vertical
+      panes:
+        - (cd . && ./bin/rails s)
+        - (cd webpack && yarn && yarn run build:watch)
