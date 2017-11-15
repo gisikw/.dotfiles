@@ -7,6 +7,7 @@ pre:
   - sudo service redis-server start
   - sudo service mysql start
   - sudo service elasticsearch start
+pre_window: cd .
 
 windows:
   - editor:
@@ -14,5 +15,5 @@ windows:
   - services:
       layout: even-vertical
       panes:
-        - (cd . && ./bin/rails s)
+        - ./bin/rails s
         - (cd webpack && yarn && yarn run build:watch)
