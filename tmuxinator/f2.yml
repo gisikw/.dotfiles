@@ -9,11 +9,10 @@ pre:
   - sudo service elasticsearch start
 
 windows:
-  - app:
+  - editor:
     - vim -c 'NERDTreeToggle'
-  - server:
-    - (cd . && ./bin/rails s)
-  - mongo:
-    - sudo mongod --config /etc/mongod.conf
-  - webpack:
-    - (cd webpack && yarn run build:watch)
+  - services:
+    layout: even-vertical
+    panes:
+      - (cd . && ./bin/rails s)
+      - (cd webpack && yarn && yarn run build:watch)
