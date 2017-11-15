@@ -17,3 +17,4 @@ windows:
       panes:
         - ./bin/rails s
         - (cd webpack && yarn && yarn run build:watch)
+        - ./bin/rails c
