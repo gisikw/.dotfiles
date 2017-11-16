@@ -28,7 +28,7 @@ function update_dotfile_repository() {
   (
     cd ~/.dotfiles
     git pull origin master >/dev/null 2>&1
-    git push origin master >/dev/null 2>&1
+    git push origin master >/dev/null 2>&1 &
   )
 }
 
