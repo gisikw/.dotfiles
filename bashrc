@@ -1,16 +1,3 @@
-function encrypt() {
-  if [ ! -e "$HOME/.ssh/id_rsa.pub.pem" ]; then
-    openssl rsa -in $HOME/.ssh/id_rsa -pubout > $HOME/.ssh/id_rsa.pub.pem 2>/dev/null
-  fi
-  cat $1 | openssl rsautl -encrypt -pubin -inkey $HOME/.ssh/id_rsa.pub.pem > $1.enc
-}
-
-function decrypt() {
-  FILENAME=$(echo $1 | sed 's/\.[^.]*$//')
-  cat $1 | openssl rsautl -decrypt -inkey $HOME/.ssh/id_rsa > $FILENAME 2>/dev/null
-  cp $FILENAME $FILENAME.bak
-}
-
 function sdot() {
   update_dotfile_repository
   if [ ! -e "$HOME/.ssh/id_rsa.pub.pem" ]; then
@@ -46,10 +33,11 @@ function update_dotfile_repository() {
 }
 
 if github_available; then
-  # cmp ~/.dotfiles/secrets.sh ~/.dotfiles/secrets.sh.bak > /dev/null || encrypt ~/.dotfiles/secrets.sh
   commit_dotfile_changes
   update_dotfile_repository
-  # decrypt ~/.dotfiles/secrets.sh.enc
+  cat $HOME/.dotfiles/secrets | openssl rsautl -decrypt -inkey $HOME/.ssh/id_rsa > /tmp/secrets
+  source /tmp/secrets
+  rm /tmp/secrets
 fi
 
 function up() {
