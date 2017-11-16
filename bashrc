@@ -17,7 +17,7 @@ function sdot() {
     openssl rsa -in $HOME/.ssh/id_rsa -pubout > $HOME/.ssh/id_rsa.pub.pem 2>/dev/null
   fi
   cat $HOME/.dotfiles/secrets | openssl rsautl -decrypt -inkey $HOME/.ssh/id_rsa > /tmp/secrets 2>/dev/null
-  vim /tmp/secrets
+  vim /tmp/secrets &&
   cat /tmp/secrets | openssl rsautl -encrypt -pubin -inkey $HOME/.ssh/id_rsa.pub.pem > $HOME/.dotfiles/secrets 2>/dev/null
   rm /tmp/secrets
   commit_dotfile_changes
