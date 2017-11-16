@@ -49,7 +49,7 @@ if github_available; then
   # cmp ~/.dotfiles/secrets.sh ~/.dotfiles/secrets.sh.bak > /dev/null || encrypt ~/.dotfiles/secrets.sh
   commit_dotfile_changes
   update_dotfile_repository
-  source $(cat $HOME/.dotfiles/secrets | openssl rsautl -decrypt -inkey $HOME/.ssh/id_rsa)
+  . $(cat $HOME/.dotfiles/secrets | openssl rsautl -decrypt -inkey $HOME/.ssh/id_rsa)
 fi
 
 function up() {
