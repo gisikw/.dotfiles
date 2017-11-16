@@ -43,3 +43,4 @@ symlinks:
   .ackrc: .dotfiles/ackrc
   .ssh/config: .dotfiles/ssh_config
   .tmuxinator: .dotfiles/tmuxinator
+  .gnupg/gpg.conf: .dotfiles/gpg.conf
