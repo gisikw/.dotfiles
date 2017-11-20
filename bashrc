@@ -1,15 +1,3 @@
-function sdot() {
-  update_dotfile_repository
-  if [ ! -e "$HOME/.ssh/id_rsa.pub.pem" ]; then
-    openssl rsa -in $HOME/.ssh/id_rsa -pubout > $HOME/.ssh/id_rsa.pub.pem 2>/dev/null
-  fi
-  cat $HOME/.dotfiles/secrets | openssl rsautl -decrypt -inkey $HOME/.ssh/id_rsa > /tmp/secrets 2>/dev/null
-  vim /tmp/secrets &&
-  cat /tmp/secrets | openssl rsautl -encrypt -pubin -inkey $HOME/.ssh/id_rsa.pub.pem > $HOME/.dotfiles/secrets 2>/dev/null
-  rm /tmp/secrets
-  commit_dotfile_changes
-}
-
 function github_available() {
   ping -c 1 -W 1 github.com > /dev/null 2>&1
 }
@@ -28,16 +16,13 @@ function update_dotfile_repository() {
   (
     cd ~/.dotfiles
     git pull origin master >/dev/null 2>&1
-    git push origin master >/dev/null 2>&1
+    git push origin master >/dev/null 2>&1 &
   )
 }
 
 if github_available; then
   commit_dotfile_changes
   update_dotfile_repository
-  cat $HOME/.dotfiles/secrets | openssl rsautl -decrypt -inkey $HOME/.ssh/id_rsa > /tmp/secrets
-  source /tmp/secrets
-  rm /tmp/secrets
 fi
 
 function up() {
