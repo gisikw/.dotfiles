@@ -185,7 +185,7 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 " Function for autorunning the current file
 let g:autorun_rules = {
   \ '\.vim'     : 'source %',
-  \ 'spec\.rb' : '!clear && rspec %',
+  \ 'spec\.rb' : '!clear && ./bin/rspec %',
   \ '\.ks'      : 'call KOSEvaluate()',
   \ '\.txt'     : 'echo system("wc -w " . expand("%"))',
   \ 'Spec\.js'  : '!FILE=% npm run test:clean --silent',
