@@ -30,6 +30,7 @@ Plugin 'janko-m/vim-test'
 Plugin 'benmills/vimux'
 Plugin 'sbdchd/neoformat'
 Plugin 'chemzqm/vim-jsx-improve'
+Plugin 'mileszs/ack.vim'
 call vundle#end()
 
 " General Configuration
