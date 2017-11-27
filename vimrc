@@ -273,6 +273,11 @@ let g:jsx_ext_required = 0
 " Configure NERDTree
 let NERDTreeQuitOnOpen = 1
 
+" Use ag if it exists
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
 " Call out 80+ line files
 " highlight ColorColumn ctermbg=magenta
 " call matchadd('ColorColumn', '\%81v', 100)
