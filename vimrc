@@ -85,6 +85,7 @@ nmap <leader>@ "=strftime("%m/%d/%y")<CR>P
 nmap <leader>c :!wc %<cr>
 nmap <space> :w<cr>:TestFile<cr>
 nmap <leader><space> :w<cr>:TestNearest<cr>
+nmap <leader>s :Ack!
 
 " Keyboard lag fix
 command! W write
