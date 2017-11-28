@@ -86,6 +86,7 @@ nmap <leader>c :!wc %<cr>
 nmap <space> :w<cr>:TestFile<cr>
 nmap <leader><space> :w<cr>:TestNearest<cr>
 nmap <leader>s :Ack!<space>
+nmap <leader>? :sp ~/.dotfiles/vimtips<cr>
 
 " Keyboard lag fix
 command! W write
