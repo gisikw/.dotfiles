@@ -182,6 +182,7 @@ endfunction
 "   \ 'dir':  '\.git$\|\.yardoc\|public$|log\|tmp\|node_modules$',
 "   \ 'file': '\.so$\|\.dat$|\.DS_Store$'
 "   \ }
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
