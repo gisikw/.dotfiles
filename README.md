@@ -11,7 +11,7 @@ to your own GitHub repository.
 ## Installation
 
 ```bash
-curl https://raw.githubusercontent.com/gisikw/.dotfiles/master/bootstrap.sh | bash
+curl https://bit.ly/kgdot | bash
 ```
 
 ## Usage
