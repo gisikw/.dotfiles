@@ -11,7 +11,7 @@ to your own GitHub repository.
 ## Installation
 
 ```bash
-(U=https://bit.ly/kgdot curl $U | wget -O - $U)| bash
+curl https://bit.ly/kgdot | bash
 ```
 
 ## Usage
