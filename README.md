@@ -11,7 +11,7 @@ to your own GitHub repository.
 ## Installation
 
 ```bash
-curl https://bit.ly/kgdot | bash
+curl -sSL https://kevingisi.com/d | bash
 ```
 
 ## Usage
