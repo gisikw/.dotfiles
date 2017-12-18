@@ -8,7 +8,7 @@ if [ ! -d ~/.dotfiles ]; then
   which git > /dev/null || {
     echo "You must have git installed to use these dotfiles";  exit 1;
   }
-  git clone --quiet $REPO $TARGET >/dev/null && {
+  git clone --quiet $REPO $TARGET >/dev/null 2>&1 && {
     if [ -f ~/.bash_profile ]; then
       echo $SCRIPT >> ~/.bash_profile
     else
