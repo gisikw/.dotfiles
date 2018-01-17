@@ -155,12 +155,12 @@ endif
 let g:test#javascript#tap#executable = './node_modules/.bin/babel-tap'
 
 " Automatically remove whitespace on save
-function! StripTrailingWhitespace()
-  let save_cursor = getpos(".")
-  %s/\s\+$//e
-  call setpos('.', save_cursor)
-endfunction
-autocmd BufWritePre * call StripTrailingWhitespace()
+" function! StripTrailingWhitespace()
+"   let save_cursor = getpos(".")
+"   %s/\s\+$//e
+"   call setpos('.', save_cursor)
+" endfunction
+" autocmd BufWritePre * call StripTrailingWhitespace()
 
 " Configure Goyo for writing prose
 let g:limelight_conceal_ctermfg = 'lightgray'
