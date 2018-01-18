@@ -9,3 +9,8 @@ Host webby
   HostName cheerskevin.com
   Port 22
   User gisikw
+
+Host moneybags
+  HostName 104.237.141.190
+  Port 22
+  User gisikw
