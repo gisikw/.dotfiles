@@ -140,6 +140,7 @@ inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
 " Fix broken elm detection
 autocmd BufRead,BufNewFile *.elm set ft=elm
+autocmd BufRead,BufNewFile *.cr set ft=crystal
 autocmd BufRead,BufNewFile *.go set tabstop=2
 autocmd BufRead,BufNewFile *.go set noet
 
