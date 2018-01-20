@@ -31,6 +31,7 @@ Plugin 'benmills/vimux'
 Plugin 'sbdchd/neoformat'
 Plugin 'chemzqm/vim-jsx-improve'
 Plugin 'mileszs/ack.vim'
+Plugin 'rhysd/vim-crystal'
 call vundle#end()
 
 " General Configuration
