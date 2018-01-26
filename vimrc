@@ -36,8 +36,8 @@ call vundle#end()
 
 " General Configuration
 syntax on
-set relativenumber
 set number
+set relativenumber
 set softtabstop=2
 set shiftwidth=2
 set expandtab
