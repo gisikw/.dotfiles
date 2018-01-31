@@ -4,7 +4,7 @@ aliases:
   big: echo -e "\033]710;xft:Cousine:pixelsize=38\033\\ \033]711;xft:Cousine:pixelsize=38\033\\ \033]712;xft:Cousine:pixelsize=38\033\\ \033]713;xft:Cousine:pixelsize=38\033\\" && clear
   c: clear && yes '' | head -10
   dot: (cd ~/.dotfiles && vim -c "NERDTreeToggle" bashrc) && up
-  ids: RAILS_ENV=test RUBYOPT=W0 REDIS_URL="redis://localhost:6379/1" bundle exec rake test:units && bundle exec rspec spec && bundle exec ruby test/integration/admin/admin_all.rb && bundle exec cucumber features
+  ids: RAILS_ENV=test RUBYOPT=W0 REDIS_URL="redis://localhost:6379/1" bundle exec rake db:init && bundle exec rake test:units && bundle exec rspec spec && bundle exec ruby test/integration/admin/admin_all.rb && bundle exec cucumber features
   layout: tmux list-windows | sed 's/.*\[layout //' | sed 's/]].*/]/'
   m: tmuxinator
   medium: echo -e "\033]710;xft:Cousine:pixelsize=28\033\\ \033]711;xft:Cousine:pixelsize=28\033\\ \033]712;xft:Cousine:pixelsize=28\033\\ \033]713;xft:Cousine:pixelsize=28\033\\" && clear
