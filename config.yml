@@ -20,6 +20,7 @@ aliases:
   svndiff: 'svn diff --diff-cmd=colordiff --extensions=" -u --strip-trailing-cr --ignore-space-change " | less --quit-if-one-screen'
   t: tmux
   tiny: echo -e "\033]710;xft:Cousine:pixelsize=14\033\\ \033]711;xft:Cousine:pixelsize=14\033\\ \033]714;xft:Cousine:pixelsize=14\033\\ \033]713;xft:Cousine:pixelsize=14\033\\" && clear
+  ttf: ssh -p 2210 localhost
   v: vim
   vdot: (cd ~/.dotfiles && vim -c "NERDTreeToggle" vimrc) && up
   webs: python -m SimpleHTTPServer
