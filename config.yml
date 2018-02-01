@@ -2,6 +2,7 @@ aliases:
   a: tmux attach
   be: bundle exec
   big: echo -e "\033]710;xft:Cousine:pixelsize=38\033\\ \033]711;xft:Cousine:pixelsize=38\033\\ \033]712;xft:Cousine:pixelsize=38\033\\ \033]713;xft:Cousine:pixelsize=38\033\\" && clear
+  btf: ssh -R 2210:localhost:22 gisikw@kevingisi.com
   c: clear && yes '' | head -10
   dot: (cd ~/.dotfiles && vim -c "NERDTreeToggle" bashrc) && up
   fids: RAILS_ENV=test RUBYOPT=W0 REDIS_URL="redis://localhost:6379/1" bundle exec rake db:init && bundle exec rake test:units && bundle exec rspec spec && bundle exec ruby test/integration/admin/admin_all.rb
