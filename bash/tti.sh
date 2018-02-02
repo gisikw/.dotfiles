@@ -7,5 +7,6 @@ function ids() {
 }
 
 function verify() {
-  RAILS_ENV=test echo $RAILS_ENV
+  RAILS_ENV=test 
+  echo $RAILS_ENV
 }
