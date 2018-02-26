@@ -327,5 +327,8 @@ endif
 let &undodir=s:undoDir
 set undofile
 
+" Fix splits on resize
+autocmd VimResized * wincmd =
+
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
