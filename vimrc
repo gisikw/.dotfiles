@@ -319,5 +319,13 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
+" Persistent Undo
+let s:undoDir = "/tmp/.undodir_" . $USER
+if !isdirectory(s:undoDir)
+    call mkdir(s:undoDir, "", 0700)
+endif
+let &undodir=s:undoDir
+set undofile
+
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
