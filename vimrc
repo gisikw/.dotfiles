@@ -32,7 +32,7 @@ Plugin 'sbdchd/neoformat'
 Plugin 'chemzqm/vim-jsx-improve'
 Plugin 'mileszs/ack.vim'
 Plugin 'rhysd/vim-crystal'
-Plugin 'prettier/vim-prettier'
+" Plugin 'prettier/vim-prettier'
 call vundle#end()
 
 " General Configuration
