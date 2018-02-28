@@ -328,6 +328,9 @@ endif
 let &undodir=s:undoDir
 set undofile
 
+" Filetype-specific color schemes
+autocmd BufEnter *.elm colorscheme gruvbox
+
 " Fix splits on resize
 autocmd VimResized * wincmd =
 
