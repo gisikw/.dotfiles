@@ -330,7 +330,7 @@ set undofile
 
 " Filetype-specific color schemes
 autocmd BufEnter * colorscheme inkpot
-autocmd BufEnter *.elm colorscheme gruvbox
+" autocmd BufEnter *.elm colorscheme gruvbox
 autocmd BufEnter *.ks colorscheme synic
 
 " Fix splits on resize
