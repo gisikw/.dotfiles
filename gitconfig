@@ -16,6 +16,7 @@
         pr = "!git up && hub pull-request -o"
         ci = ci-status
         ml = "!git checkout -;SRC=$(git rev-parse --abbrev-ref HEAD);git checkout -;git merge $SRC"
+	tree = log --graph --decorate --pretty=oneline --abbrev-commit
 
 [core]
 	excludesfile = /Users/gisikw/.gitignore
