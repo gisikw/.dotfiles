@@ -81,7 +81,7 @@ nmap <leader>t :CtrlPCurWD<cr>
 nmap <leader>e :e<space>
 nmap <leader>d :NERDTreeToggle<cr>
 nmap <leader>\ :bn!<cr>
-nmap <leader>- :bd<cr>
+nmap <leader>- :bp|bd #<cr>
 nmap <leader>w :Goyo<cr>
 nmap <leader>@ "=strftime("%m/%d/%y")<CR>P
 nmap <leader>c :!wc %<cr>
