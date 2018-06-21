@@ -5,7 +5,7 @@ root: ~/Projects/ids
 
 windows:
   - app:
-    - vim -c 'NERDTreeToggle'
+    - vim
   - server:
     - bundle && ./bin/rails s
   - console:
