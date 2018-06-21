@@ -1,0 +1,12 @@
+# ~/.tmuxinator/ids.yml
+
+name: ids
+root: ~/Projects/ids
+
+windows:
+  - app:
+    - vim -c 'NERDTreeToggle'
+  - server:
+    - bundle && ./bin/rails s
+  - console:
+    - bundle && ./bin/rails c
