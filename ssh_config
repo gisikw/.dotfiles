@@ -14,3 +14,8 @@ Host moneybags
   HostName 104.237.141.190
   Port 22
   User gisikw
+
+Host aponoia
+  HostName 165.227.121.220
+  Port 22
+  User gisikw
