@@ -342,3 +342,4 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 " Use Markdown with vimwiki
 let g:vimwiki_list = [{'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_global_ext=0
