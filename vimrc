@@ -342,5 +342,5 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 " Use Markdown with vimwiki
 let g:vimwiki_list = [{'syntax': 'markdown', 'ext': '.md'}]
 " let g:vimwiki_global_ext=0
-autocmd FileType vimwiki set syntax=markdown
+autocmd FileType vimwiki set syntax=markdown | colorscheme 256_noir
 "autocmd BufEnter *.vimwiki set syntax=markdown
