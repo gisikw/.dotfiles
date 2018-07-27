@@ -344,4 +344,6 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 " Use Markdown with vimwiki
 let g:vimwiki_list = [{'syntax': 'markdown', 'ext': '.md'}]
+let g:pencil_terminal_italics = 1
 autocmd FileType vimwiki set syntax=markdown | colorscheme pencil
+" TODO: Set links as also concealable
