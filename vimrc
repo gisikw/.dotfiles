@@ -34,7 +34,6 @@ Plugin 'mileszs/ack.vim'
 Plugin 'rhysd/vim-crystal'
 Plugin 'vimwiki/vimwiki'
 Plugin 'reedes/vim-colors-pencil'
-Plugin 'tpope/vim-markdown'
 " Plugin 'prettier/vim-prettier'
 call vundle#end()
 
