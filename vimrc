@@ -332,8 +332,6 @@ set undofile
 autocmd BufEnter * colorscheme inkpot
 autocmd BufEnter *.elm colorscheme gruvbox
 autocmd BufEnter *.ks colorscheme synic
-" autocmd BufEnter *.vimwiki colorscheme 256_noir
-autocmd FileType vimwiki set ft=markdown
 
 " Fix splits on resize
 autocmd VimResized * wincmd =
@@ -344,21 +342,5 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 " Use Markdown with vimwiki
 let g:vimwiki_list = [{'syntax': 'markdown', 'ext': '.md'}]
 let g:vimwiki_global_ext=0
-
-function! s:setup_buffer_enter()
-  echo "Yo"
-
-  " don't do anything if it's not managed by Vimwiki (that is, when it's not in
-  " a registered wiki and not a temporary wiki)
-  if vimwiki#vars#get_bufferlocal('wiki_nr') == -1
-    return
-  endif
-
-  if &filetype != 'vimwiki' && &filetype != 'markdown'
-    setfiletype vimwiki
-  endif
-
-  call s:set_global_options()
-
-  call s:set_windowlocal_options()
-endfunction
+autocmd FileType vimwiki set ft=markdown
+" autocmd BufEnter *.vimwiki colorscheme 256_noir
