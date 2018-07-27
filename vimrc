@@ -333,6 +333,7 @@ set undofile
 autocmd BufEnter * colorscheme inkpot
 autocmd BufEnter *.elm colorscheme gruvbox
 autocmd BufEnter *.ks colorscheme synic
+autocmd BufEnter *.wiki colorscheme 256_noir
 
 " Fix splits on resize
 autocmd VimResized * wincmd =
