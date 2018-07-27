@@ -332,7 +332,8 @@ set undofile
 autocmd BufEnter * colorscheme inkpot
 autocmd BufEnter *.elm colorscheme gruvbox
 autocmd BufEnter *.ks colorscheme synic
-autocmd BufEnter *.wiki colorscheme 256_noir
+" autocmd BufEnter *.vimwiki colorscheme 256_noir
+autocmd FileType vimwiki set ft=markdown
 
 " Fix splits on resize
 autocmd VimResized * wincmd =
