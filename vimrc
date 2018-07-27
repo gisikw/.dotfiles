@@ -57,7 +57,7 @@ colorscheme inkpot
 " Highlighting
 set hlsearch
 set incsearch
-noremap <BS> :noh<bar>:echo<cr>
+noremap <space> :noh<bar>:echo<cr>
 
 " Use tab and shift-tab to cycle through windows.
 nnoremap <Tab> <C-W>w
@@ -86,7 +86,6 @@ nmap <leader>- :bp\|bd #<cr>
 nmap <leader>g :Goyo<cr>
 nmap <leader>@ "=strftime("%m/%d/%y")<CR>P
 nmap <leader>c :!wc %<cr>
-nmap <space> :w<cr>:TestFile<cr>
 nmap <leader><space> :w<cr>:TestNearest<cr>
 nmap <leader>s :Ack!<space>
 nmap <leader>? :sp ~/.dotfiles/vimtips<cr>
