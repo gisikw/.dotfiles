@@ -350,4 +350,4 @@ function! s:enter_vimwiki()
   source ~/.vim/bundle/vimwiki/syntax/vimwiki_markdown_custom.vim
   colorscheme pencil
 endfunction
-autocmd FileType vimwiki call vimwiki_list()
+autocmd FileType vimwiki call enter_vimwiki()
