@@ -332,6 +332,8 @@ endif
 let &undodir=s:undoDir
 set undofile
 
+" Neoformat
+let g:neoformat_verbose = 1
 augroup fmt
   autocmd!
   autocmd BufWritePre * undojoin | Neoformat
