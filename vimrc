@@ -37,7 +37,7 @@ Plugin 'reedes/vim-colors-pencil'
 Plugin 'qualiabyte/vim-colorstepper'
 " Plugin 'tpope/vim-markdown'
 Plugin 'khzaw/vim-conceal'
-" Plugin 'prettier/vim-prettier'
+Plugin 'prettier/vim-prettier'
 call vundle#end()
 
 " General Configuration
