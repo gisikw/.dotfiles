@@ -336,6 +336,12 @@ augroup fmt
   autocmd!
   autocmd BufWritePre * undojoin | Neoformat
 augroup END
+let g:neoformat_ruby_rufo = {
+  \ 'exe': 'rufo',
+  \ 'valid_exit_codes': [0, 3],
+  \ 'no_append': 1,
+\ }
+let g:neoformat_enabled_ruby = ['rufo']
 
 " Filetype-specific color schemes
 autocmd BufEnter * colorscheme inkpot
