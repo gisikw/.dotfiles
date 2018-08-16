@@ -332,6 +332,11 @@ endif
 let &undodir=s:undoDir
 set undofile
 
+augroup fmt
+  autocmd!
+  autocmd BufWritePre * undojoin | Neoformat
+augroup END
+
 " Filetype-specific color schemes
 autocmd BufEnter * colorscheme inkpot
 autocmd BufEnter *.elm colorscheme gruvbox
