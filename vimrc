@@ -337,7 +337,7 @@ let g:neoformat_only_msg_on_error = 1
 
 augroup fmt
   autocmd!
-  autocmd BufWritePre * undojoin | Neoformat
+  autocmd BufWritePre * Neoformat
 augroup END
 
 " Filetype-specific color schemes
