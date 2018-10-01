@@ -37,6 +37,7 @@ Plugin 'reedes/vim-colors-pencil'
 Plugin 'qualiabyte/vim-colorstepper'
 " Plugin 'tpope/vim-markdown'
 Plugin 'khzaw/vim-conceal'
+Plugin 'udalov/kotlin-vim'
 call vundle#end()
 
 " General Configuration
@@ -346,6 +347,7 @@ autocmd BufEnter * colorscheme inkpot
 autocmd BufEnter *.elm colorscheme gruvbox
 autocmd BufEnter *.ks colorscheme synic
 autocmd BufEnter *.md colorscheme buddy
+autocmd BufEnter *.kt colorscheme monokai
 
 " Fix splits on resize
 autocmd VimResized * wincmd =
