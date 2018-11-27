@@ -4,20 +4,20 @@ SetWorkingDir %A_ScriptDir%
 SetTitleMatchMode, 2
 
 ; Bindings
-.::AddMarker()
-XButton1::DeleteSelectionAndJumpToNextMarker()
-F5::PauseAudition()
-$Esc::PauseAudition()
-F10::AutoUpdate()
-^`::Suspend
-^!r::Reload
-F1::AddQCMarker()
-F2::JumpToPreviousMarker()
+;.::AddMarker()
+;XButton1::DeleteSelectionAndJumpToNextMarker()
+;F5::PauseAudition()
+;$Esc::PauseAudition()
+;F10::AutoUpdate()
+;^`::Suspend
+;^!r::Reload
+;F1::AddQCMarker()
+;F2::JumpToPreviousMarker()
 
 ; WIP Bindings
-Pause::SetAuditionSeconds(4025.2)
-F11::AlertCurrentTimecode()
-F9::GrabRoomTone()
+;Pause::SetAuditionSeconds(4025.2)
+;F11::AlertCurrentTimecode()
+;F9::GrabRoomTone()
 ; F10::TrimSilence()
 
 ; Todo
