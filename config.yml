@@ -24,6 +24,7 @@ aliases:
   vdot: (cd ~/.dotfiles && vim -c "NERDTreeToggle" vimrc) && up
   webs: python -m SimpleHTTPServer
   wifi: nmtui
+  wiki: vim -c VimwikiIndex
   z: fg
 symlinks:
   .Xdefaults: .dotfiles/Xdefaults
