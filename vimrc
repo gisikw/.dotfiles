@@ -109,6 +109,7 @@ au BufRead,BufNewFile *.ks set filetype=kerboscript
 au BufRead,BufNewFile *.luap set filetype=lua
 au BufRead,BufNewFile *.coffee set filetype=coffee
 au BufRead,BufNewFile .eslintrc set filetype=json
+au BufRead,BufNewFile *.thor set filetype=ruby
 
 " Reload vimrc on change
 autocmd! bufwritepost vimrc source ~/.vimrc
