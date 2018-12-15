@@ -364,6 +364,7 @@ autocmd BufWritePost ~/.vimwiki/*
             \ execute '!cd ' . expand("<amatch>:p:h")
             \ . ' && git commit -m "Auto commit of '
             \ . expand("<afile>:t") . '." "' . expand("<afile>") . '"'
+            \ . ' && git push origin master'
 " let g:pencil_terminal_italics = 1
 " function! s:enter_vimwiki()
 "   set syntax=markdown
