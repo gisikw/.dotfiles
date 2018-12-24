@@ -361,12 +361,12 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 " Use Markdown with vimwiki
 let g:vimwiki_list = [{'syntax': 'markdown', 'ext': '.md', 'path': '~/.vimwiki'}]
 autocmd BufWritePost ~/.vimwiki/*
-            \ execute 'silent !cd ' . expand("<amatch>:p:h")
+            \ execute '!cd ' . expand("<amatch>:p:h")
             \ . ' && git add "' . expand("<afile>:t") . '"'
             \ . ' && git commit -m "Auto commit of '
             \ . expand("<afile>:t") . '." "' . expand("<afile>") . '"'
             \ . ' && git push origin master'
-            \ | execute 'redraw!'
+            " \ | execute 'redraw!'
 let g:pencil_terminal_italics = 1
 " function! s:enter_vimwiki()
 "   set syntax=markdown
