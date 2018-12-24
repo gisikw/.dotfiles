@@ -362,9 +362,9 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 let g:vimwiki_list = [{'syntax': 'markdown', 'ext': '.md', 'path': '~/.vimwiki'}]
 autocmd BufWritePost ~/.vimwiki/*
             \ execute '!cd ' . expand("<amatch>:p:h")
-            \ . ' && git add "' . expand("<afile>:t") . '"'
+            \ . ' && git add "' . expand("<afile>") . '"'
             \ . ' && git commit -m "Auto commit of '
-            \ . expand("<afile>:t") . '." "' . expand("<afile>") . '"'
+            \ . expand("<afile>") . '." "' . expand("<afile>") . '"'
             \ . ' && git push origin master'
             " \ | execute 'redraw!'
 let g:pencil_terminal_italics = 1
