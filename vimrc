@@ -377,3 +377,4 @@ let g:pencil_terminal_italics = 1
 
 " Disable SQL "help"
 let g:loaded_sql_completion = 0
+let g:omni_sql_no_default_maps = 1
