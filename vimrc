@@ -374,3 +374,6 @@ let g:pencil_terminal_italics = 1
 "   colorscheme pencil
 " endfunction
 " autocmd FileType vimwiki call s:enter_vimwiki()
+
+" Disable SQL "help"
+let g:loaded_sql_completion = 0
