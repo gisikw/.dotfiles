@@ -183,8 +183,9 @@ function! s:goyo_enter()
 endfunction
 function! s:goyo_leave()
   syntax on
+  " TODO: Save the old cs on goyo_enter, so we can restore the right one
+  colorscheme inkpot
   " set nowrap nolinebreak list showmode
-  " colorscheme inkpot
   " highlight NonText ctermfg=fg guifg=fg
 endfunction
 
