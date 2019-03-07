@@ -27,7 +27,7 @@ set border 0
 bind bar hsplit
 bind minus vsplit
 
-bind g exec google-chrome
+bind g exec brave-browser
 
 bind Escape exec ratpoison -c "source /home/gisikw/.ratpoisonrc" && ratpoison -c "echo Reloaded config"
 
