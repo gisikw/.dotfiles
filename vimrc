@@ -38,6 +38,7 @@ Plugin 'qualiabyte/vim-colorstepper'
 " Plugin 'tpope/vim-markdown'
 Plugin 'khzaw/vim-conceal'
 Plugin 'udalov/kotlin-vim'
+Plugin 'editorconfig/editorconfig-vim'
 call vundle#end()
 
 " General Configuration
