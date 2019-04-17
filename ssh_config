@@ -19,3 +19,8 @@ Host aponoia
   HostName 165.227.121.220
   Port 22
   User gisikw
+
+Host cheerscraft
+  HostName 68.183.61.41
+  Port 22
+  User gisikw
