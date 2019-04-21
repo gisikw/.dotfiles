@@ -39,6 +39,7 @@ Plugin 'qualiabyte/vim-colorstepper'
 Plugin 'khzaw/vim-conceal'
 Plugin 'udalov/kotlin-vim'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'DeltaWhy/vim-mcfunction'
 call vundle#end()
 
 " General Configuration
