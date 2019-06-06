@@ -3,6 +3,9 @@
 set nocompatible
 filetype plugin on
 
+" CVE: https://github.com/numirias/security/blob/master/doc/2019-06-04_ace-vim-neovim.md
+set nomodeline
+
 " Goodbye, Swapfiles
 set nobackup
 set nowritebackup
