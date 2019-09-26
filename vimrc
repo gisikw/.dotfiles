@@ -157,8 +157,8 @@ autocmd BufRead,BufNewFile *.kt set ft=kotlin
 autocmd BufRead,BufNewFile *.go set tabstop=2
 autocmd BufRead,BufNewFile *.go set noet
 
-autocmd BufWritePre *.js Neoformat
-autocmd BufWritePre *.elm Neoformat
+" autocmd BufWritePre *.js Neoformat
+" autocmd BufWritePre *.elm Neoformat
 
 " Language-Specific Vim-Test config
 " let g:test#javascript#runner = 'mocha'
@@ -343,7 +343,7 @@ set undofile
 
 " Neoformat
 " let g:neoformat_verbose = 1
-let g:neoformat_only_msg_on_error = 1
+" let g:neoformat_only_msg_on_error = 1
 
 augroup fmt
   autocmd!
