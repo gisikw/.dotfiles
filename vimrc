@@ -345,10 +345,10 @@ set undofile
 " let g:neoformat_verbose = 1
 " let g:neoformat_only_msg_on_error = 1
 
-augroup fmt
-  autocmd!
-  autocmd BufWritePre * Neoformat
-augroup END
+" augroup fmt
+"   autocmd!
+"   autocmd BufWritePre * Neoformat
+" augroup END
 
 " Filetype-specific color schemes
 autocmd BufEnter * colorscheme inkpot
