@@ -1,3 +1,4 @@
 --color
+--ignore-dir=node_modules
 --ignore-dir=log
 --ignore-dir=coverage
