@@ -65,6 +65,7 @@ fi
 
 # Ensure color terminal on Chromebooks
 export TERM=xterm-256color
+export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # Tidy up
 # unset -f github_available
