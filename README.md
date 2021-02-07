@@ -11,7 +11,7 @@ to your own GitHub repository.
 ## Installation
 
 ```bash
-curl -sSL https://kevingisi.com/d | bash
+curl -sSL https://raw.githubusercontent.com/gisikw/.dotfiles/master/bootstrap.sh | bash
 ```
 
 ## Usage
