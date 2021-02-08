@@ -59,6 +59,7 @@ done
 cat ~/.dotfiles/config.yml | yq e '.aliases' - | while read kv; do
   key=$(echo $kv | cut -f1 -d:)
   val=$(echo $kv | cut -f2 -d' ')
+  echo "HERE"
   alias $key="$val"
 done
 
