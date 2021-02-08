@@ -29,13 +29,13 @@ function up() {
   source ~/.bash_profile 2>/dev/null || source ~/.bashrc 2>/dev/null
 }
 
-# function reset() {
-#   for key in $(craml_all ~/.dotfiles/config.yml symlinks); do
-#     target="$HOME/$key"
-#     rm -rf $target
-#     ln -s $HOME/$(craml_value ~/.dotfiles/config.yml symlinks $key) $target
-#   done
-# }
+function reset() {
+  for key in $(craml_all ~/.dotfiles/config.yml symlinks); do
+    target="$HOME/$key"
+    rm -rf $target
+    ln -s $HOME/$(craml_value ~/.dotfiles/config.yml symlinks $key) $target
+  done
+}
 
 # Yay VI!
 set -o vi
@@ -46,21 +46,16 @@ for file in ~/.dotfiles/bash/*; do
 done
 
 # Verify symlinks
-cat ~/.dotfiles/config.yml | yq e '.symlinks' - | while read kv; do
-  key=$(echo $kv | cut -f1 -d:)
-  val=$(echo $kv | cut -f2 -d' ')
+for key in $(craml_all ~/.dotfiles/config.yml symlinks); do
   target="$HOME/$key"
   if [ ! -e $target ]; then
-    ln -s $HOME/$val $target
+    ln -s $HOME/$(craml_value ~/.dotfiles/config.yml symlinks $key) $target
   fi
 done
 
-# Verify aliases
-cat ~/.dotfiles/config.yml | yq e '.aliases' - | while read kv; do
-  key=$(echo $kv | cut -f1 -d:)
-  val=$(echo $kv | cut -f2 -d' ')
-  echo "alias $key=\"$val\""
-  alias $key="$val"
+# Set up aliases
+for key in $(craml_all ~/.dotfiles/config.yml aliases); do
+  alias $key="$(craml_value ~/.dotfiles/config.yml aliases $key)"
 done
 
 # Load secrets
