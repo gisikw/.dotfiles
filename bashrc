@@ -46,7 +46,7 @@ for file in ~/.dotfiles/bash/*; do
 done
 
 # Verify symlinks
-cat ~/.dotfiles/config | yq eval '.symlinks' - | while read kv; do
+cat ~/.dotfiles/config.yml | yq eval '.symlinks' - | while read kv; do
   key=$(echo $kv | cut -f1 -d:)
   val=$(echo $kv | cut -f2 -d' ')
   target="$HOME/$key"
@@ -56,7 +56,7 @@ cat ~/.dotfiles/config | yq eval '.symlinks' - | while read kv; do
 done
 
 # Verify aliases
-cat ~/.dotfiles/config/yml | yq e '.aliases' - | while read kv; do
+cat ~/.dotfiles/config.yml | yq e '.aliases' - | while read kv; do
   key=$(echo $kv | cut -f1 -d:)
   val=$(echo $kv | cut -f2 -d' ')
   alias $key="$val"
