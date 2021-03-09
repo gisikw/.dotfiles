@@ -4,6 +4,6 @@ name: fave-lib
 root: ~/Projects/cnn-fave-lib
 
 windows:
-  - editor: vim
+  - editor: vide
   - server: source set-env/dev.conf && npm start
   - tests: npx jest --watch
