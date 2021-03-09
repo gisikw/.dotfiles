@@ -22,6 +22,7 @@ aliases:
   token: stoken | tail -n 1 | pbcopy
   ttf: ssh -tt kevingisi.com 'ssh -p 2210 localhost'
   v: vim
+  vide: vim -c "NERDTreeToggle"
   vdot: (cd ~/.dotfiles && vim -c "NERDTreeToggle" vimrc) && up
   webs: python -m SimpleHTTPServer
   wifi: nmtui
