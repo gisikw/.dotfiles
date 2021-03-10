@@ -5,4 +5,4 @@ root: ~/Projects/lanyon
 
 windows:
   - editor: vide
-  - server: bundle exec rails s
+  - server: jekyll s
