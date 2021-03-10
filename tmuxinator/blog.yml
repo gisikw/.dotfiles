@@ -1,0 +1,8 @@
+# /Users/gisikw/.tmuxinator/blog.yml
+
+name: blog
+root: ~/Projects/lanyon
+
+windows:
+  - editor: vide
+  - server: bundle exec rails s
