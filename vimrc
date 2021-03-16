@@ -43,6 +43,7 @@ Plugin 'khzaw/vim-conceal'
 Plugin 'udalov/kotlin-vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'DeltaWhy/vim-mcfunction'
+Plugin 'joukevandermaas/vim-ember-hbs'
 call vundle#end()
 
 " General Configuration
@@ -115,6 +116,7 @@ au BufRead,BufNewFile *.luap set filetype=lua
 au BufRead,BufNewFile *.coffee set filetype=coffee
 au BufRead,BufNewFile .eslintrc set filetype=json
 au BufRead,BufNewFile *.thor set filetype=ruby
+au BufRead,BufNewFile *.hbs set filetype=handlebars
 
 " Reload vimrc on change
 autocmd! bufwritepost vimrc source ~/.vimrc
