@@ -46,4 +46,5 @@ pre_window: source ~/.clay-py3-venv/bin/activate
 # attach: false
 
 windows:
+  - services: make dev
   - editor: vide
