@@ -46,5 +46,6 @@ pre_window: source ~/.clay-py3-venv/bin/activate
 # attach: false
 
 windows:
-  - services: make dev
+  - services: make start
   - editor: vide
+  - assets: cd app && npm run watch
