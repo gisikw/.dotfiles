@@ -7,4 +7,4 @@ windows:
   - editor: (cd src/product && vide)
   - build: while true; do ls src/product/{*,*/*}.{erb,yml,html,js,css,png} 2>/dev/null | entr -d make product_build; done
   - server: (cd web/product && live-server --browser=/Applications/Google\ Chrome.app/ --port=8088)
-  - browser: while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' localhost:8088)" != "200" ]]; do sleep 0.1; done; osascript ~/launchPOC.scpt
+  - browser: while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' localhost:8088)" != "200" ]]; do sleep 0.1; done; osascript ~/launchPOC.scpt; exit
