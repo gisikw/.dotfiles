@@ -6,6 +6,7 @@ aliases:
   btf: while true; do ssh -R 2210:localhost:22 gisikw@kevingisi.com; sleep 10; done
   c: clear && yes '' | head -10
   dot: (cd ~/.dotfiles && vim -c "NERDTreeToggle" bashrc) && up
+  format: npx prettier --write
   layout: tmux list-windows | sed 's/.*\[layout //' | sed 's/]].*/]/'
   m: tmuxinator
   medium: echo -e "\033]710;xft:Cousine:pixelsize=28\033\\ \033]711;xft:Cousine:pixelsize=28\033\\ \033]712;xft:Cousine:pixelsize=28\033\\ \033]713;xft:Cousine:pixelsize=28\033\\" && clear
