@@ -28,6 +28,7 @@ aliases:
   webs: python -m SimpleHTTPServer
   wifi: nmtui
   wiki: vim -c VimwikiIndex
+  x: exit
   z: fg
 symlinks:
   .Xdefaults: .dotfiles/Xdefaults
