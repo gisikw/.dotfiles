@@ -5,7 +5,7 @@ aliases:
   big: echo -e "\033]710;xft:Cousine:pixelsize=38\033\\ \033]711;xft:Cousine:pixelsize=38\033\\ \033]712;xft:Cousine:pixelsize=38\033\\ \033]713;xft:Cousine:pixelsize=38\033\\" && clear
   btf: while true; do ssh -R 2210:localhost:22 gisikw@kevingisi.com; sleep 10; done
   c: clear && yes '' | head -10
-  dot: (cd ~/.dotfiles && vim -c "NERDTreeToggle" bashrc) && up
+  dot: (cd ~/.dotfiles && vim -c "NERDTreeToggle" bashrc -c "wincmd w") && up
   format: npx prettier --write
   layout: tmux list-windows | sed 's/.*\[layout //' | sed 's/]].*/]/'
   m: tmuxinator
@@ -23,8 +23,8 @@ aliases:
   token: stoken | tail -n 1 | pbcopy
   ttf: ssh -tt kevingisi.com 'ssh -p 2210 localhost'
   v: vim
-  vide: vim -c "NERDTreeToggle"
-  vdot: (cd ~/.dotfiles && vim -c "NERDTreeToggle" vimrc) && up
+  vide: vim -c "NERDTreeToggle" -c "wincmd w"
+  vdot: (cd ~/.dotfiles && vim -c "NERDTreeToggle" vimrc -c "wincmd w") && up
   webs: python -m SimpleHTTPServer
   wifi: nmtui
   wiki: vim -c VimwikiIndex
