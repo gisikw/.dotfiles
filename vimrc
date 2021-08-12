@@ -359,6 +359,7 @@ autocmd BufEnter *.ks colorscheme synic
 autocmd BufEnter *.md colorscheme buddy
 autocmd BufEnter *.kt colorscheme monokai
 autocmd BufEnter *.rkt colorscheme birds-of-paradise
+autocmd BufEnter *.cs colorscheme jellybeans
 
 " Fix splits on resize
 autocmd VimResized * wincmd =
