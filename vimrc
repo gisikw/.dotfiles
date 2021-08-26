@@ -86,7 +86,7 @@ inoremap <C-c> <Esc>
 inoremap <F12> , () => {<CR>});<Esc>O<Tab>
 
 " Leader-Key Shortcuts
-nmap <leader>1 :nmap <leader>1 :!
+nmap <leader>1 :nmap <leader>1 :w<cr>:!
 nmap <leader>2 :call AutorunSecondary()<cr>
 nmap <leader>t :CtrlPCurWD<cr>
 nmap <leader>e :e<space>
