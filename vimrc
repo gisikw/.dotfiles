@@ -152,7 +152,6 @@ function! XTermPasteBegin()
 endfunction
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
-" Fix broken elm detection
 autocmd BufRead,BufNewFile *.elm set ft=elm
 autocmd BufRead,BufNewFile *.cr set ft=crystal
 autocmd BufRead,BufNewFile *.kt set ft=kotlin
@@ -160,6 +159,7 @@ autocmd BufRead,BufNewFile *.go set tabstop=2
 autocmd BufRead,BufNewFile *.cs set ts=4 sw=4 sts=4
 autocmd BufRead,BufNewFile *.go set noet
 
+nnoremap <silent><leader>f :Neoformat<cr>
 " autocmd BufWritePre *.js Neoformat
 " autocmd BufWritePre *.elm Neoformat
 
