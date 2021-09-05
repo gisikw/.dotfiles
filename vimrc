@@ -98,8 +98,8 @@ nmap <leader>@ "=strftime("%m/%d/%y")<CR>P
 nmap <leader><space> :w<cr>:TestNearest<cr>
 nmap <leader>s :Ack!<space>
 nmap <leader>? :sp ~/.dotfiles/vimtips<cr>
-nmap <leader>c "*y
-nmap <leader>p "*p
+map <leader>c "*y
+map <leader>p "*p
 
 " Keyboard lag fix
 command! W write
