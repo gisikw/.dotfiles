@@ -95,10 +95,11 @@ nmap <leader>\ :bn!<cr>
 nmap <leader>- :bp\|bd #<cr>
 nmap <leader>g :Goyo<cr>
 nmap <leader>@ "=strftime("%m/%d/%y")<CR>P
-nmap <leader>c :!wc %<cr>
 nmap <leader><space> :w<cr>:TestNearest<cr>
 nmap <leader>s :Ack!<space>
 nmap <leader>? :sp ~/.dotfiles/vimtips<cr>
+nmap <leader>c "*y
+nmap <leader>p "*p
 
 " Keyboard lag fix
 command! W write
