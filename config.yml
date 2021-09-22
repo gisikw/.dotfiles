@@ -1,6 +1,7 @@
 aliases:
   ack: ag
   a: tmux attach
+  audio: sudo kill -9 `ps ax|grep 'coreaudio[a-z]' | awk '{print $1}'`
   be: bundle exec
   big: echo -e "\033]710;xft:Cousine:pixelsize=38\033\\ \033]711;xft:Cousine:pixelsize=38\033\\ \033]712;xft:Cousine:pixelsize=38\033\\ \033]713;xft:Cousine:pixelsize=38\033\\" && clear
   btf: while true; do ssh -R 2210:localhost:22 gisikw@kevingisi.com; sleep 10; done
