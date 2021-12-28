@@ -1,4 +1,0 @@
-Curated Vim Tips
-================
-
-nmap <leader>1 :!ruby %<cr> - or whatever. Just remember to nmap stuff when convenient
