@@ -44,6 +44,7 @@ Plugin 'udalov/kotlin-vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'joukevandermaas/vim-ember-hbs'
 Plugin 'rubixninja314/vim-mcfunction'
+Plugin 'sotte/presenting.vim'
 call vundle#end()
 
 " General Configuration
