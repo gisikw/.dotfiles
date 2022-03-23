@@ -26,7 +26,7 @@ aliases:
   v: vim
   vide: vim -c "NERDTreeToggle" -c "wincmd w"
   vdot: (cd ~/.dotfiles && vim -c "NERDTreeToggle" vimrc -c "wincmd w") && up
-  webs: python -m SimpleHTTPServer
+  webs: (python -m SimpleHTTPServer || python -m http.server 8000)
   wifi: nmtui
   wiki: vim -c VimwikiIndex
   x: exit
