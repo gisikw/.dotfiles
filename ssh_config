@@ -42,3 +42,4 @@ Host letmein
   Hostname kevingisi.com
   Port 4096
   User gisikw
+  IdentityFile ~/.ssh/rp.key
