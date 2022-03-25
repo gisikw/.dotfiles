@@ -10,7 +10,7 @@ aliases:
   format: npx prettier --write
   layout: tmux list-windows | sed 's/.*\[layout //' | sed 's/]].*/]/'
   letmein: ssh letmein
-  openup: autossh -M 0 -f -T -N rp
+  openup: autossh -M 0 -T -N rp
   m: tmuxinator
   medium: echo -e "\033]710;xft:Cousine:pixelsize=28\033\\ \033]711;xft:Cousine:pixelsize=28\033\\ \033]712;xft:Cousine:pixelsize=28\033\\ \033]713;xft:Cousine:pixelsize=28\033\\" && clear
   nethack: ssh nethack@alt.org
