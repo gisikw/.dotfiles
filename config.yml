@@ -1,6 +1,6 @@
 aliases:
-  ack: ag
   a: tmux attach
+  ack: ag
   audio: sudo kill -9 `ps ax|grep 'coreaudio[a-z]' | awk '{print $1}'`
   be: bundle exec
   big: echo -e "\033]710;xft:Cousine:pixelsize=38\033\\ \033]711;xft:Cousine:pixelsize=38\033\\ \033]712;xft:Cousine:pixelsize=38\033\\ \033]713;xft:Cousine:pixelsize=38\033\\" && clear
@@ -9,6 +9,8 @@ aliases:
   dot: (cd ~/.dotfiles && vim -c "NERDTreeToggle" bashrc -c "wincmd w") && up
   format: npx prettier --write
   layout: tmux list-windows | sed 's/.*\[layout //' | sed 's/]].*/]/'
+  letmein: ssh letmein
+  openup: autossh -M 0 -f -T -N rp
   m: tmuxinator
   medium: echo -e "\033]710;xft:Cousine:pixelsize=28\033\\ \033]711;xft:Cousine:pixelsize=28\033\\ \033]712;xft:Cousine:pixelsize=28\033\\ \033]713;xft:Cousine:pixelsize=28\033\\" && clear
   nethack: ssh nethack@alt.org
@@ -24,8 +26,8 @@ aliases:
   token: stoken | tail -n 1 | pbcopy
   ttf: ssh -tt kevingisi.com 'ssh -p 2210 localhost'
   v: vim
-  vide: vim -c "NERDTreeToggle" -c "wincmd w"
   vdot: (cd ~/.dotfiles && vim -c "NERDTreeToggle" vimrc -c "wincmd w") && up
+  vide: vim -c "NERDTreeToggle" -c "wincmd w"
   webs: (python -m SimpleHTTPServer || python -m http.server 8000)
   wifi: nmtui
   wiki: vim -c VimwikiIndex

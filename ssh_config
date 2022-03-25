@@ -37,3 +37,8 @@ Host rp
   RemoteForward 4096 localhost:22
   ServerAliveInterval 30
   ServerAliveCountMax 3
+
+Host letmein
+  Hostname kevingisi.com
+  Port 4096
+  User gisikw
