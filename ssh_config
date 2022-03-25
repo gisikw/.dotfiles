@@ -29,3 +29,11 @@ Host cc
   Hostname 158.69.22.221
   Port 22
   User gisikw
+
+Host rp
+  Hostname kevingisi.com
+  Port 22
+  User reverseproxy
+  RemoteForward 4096 localhost:22
+  ServerAliveInterval 30
+  ServerAliveCountMax 3
