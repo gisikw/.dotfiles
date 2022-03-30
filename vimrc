@@ -45,6 +45,7 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'joukevandermaas/vim-ember-hbs'
 Plugin 'rubixninja314/vim-mcfunction'
 Plugin 'sotte/presenting.vim'
+Plugin 'leafgarland/typescript-vim'
 call vundle#end()
 
 " General Configuration
