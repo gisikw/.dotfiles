@@ -100,7 +100,7 @@ nmap <leader>g :Goyo<cr>
 nmap <leader>@ "=strftime("%m/%d/%y")<CR>P
 nmap <leader>c :!wc %<cr>
 nmap <leader>r :!(cd $(git rev-parse --show-toplevel) && rspec %:p)<cr>
-nmap <leader>R :!throw "(cd $(git rev-parse --show-toplevel) && rspec %:p)"<cr>
+nmap <leader>R :!throw "(cd $(git rev-parse --show-toplevel) && rspec %:p)"<cr><cr>
 nmap <leader><space> :w<cr>:TestNearest<cr>
 nmap <leader>s :Ack!<space>
 nmap <leader>? :sp ~/.dotfiles/vimtips<cr>
