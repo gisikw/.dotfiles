@@ -1,0 +1,8 @@
+#!/bin/bash
+cmd=$1
+passive_pane=$(tmux list-panes | grep -v active | cut -d' ' -f7)
+
+
+full_cmd="(cd Space $PWD Space && Space $(echo $cmd | sed 's/ / Space /g')) Enter"
+
+tmux send-keys -t $passive_pane $full_cmd
