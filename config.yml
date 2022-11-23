@@ -8,6 +8,7 @@ aliases:
   c: clear && yes '' | head -10
   dot: (cd ~/.dotfiles && vim -c "NERDTreeToggle" bashrc -c "wincmd w") && up
   format: npx prettier --write
+  g: cd '$(git rev-parse --show-toplevel)'
   layout: tmux list-windows | sed 's/.*\[layout //' | sed 's/]].*/]/'
   letmein: ssh letmein
   openup: autossh -M 0 -T -N -v rp
