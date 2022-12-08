@@ -18,7 +18,6 @@ aliases:
   nethack: ssh nethack@alt.org
   rc: bundle exec rails c
   res: echo $(tput cols)x$(tput lines)
-  rs: bundle exec rails s
   s: tmux switch -t
   sign: git config commit.gpgsign true
   small: echo -e "\033]710;xft:Cousine:pixelsize=20\033\\ \033]711;xft:Cousine:pixelsize=20\033\\ \033]712;xft:Cousine:pixelsize=20\033\\ \033]713;xft:Cousine:pixelsize=20\033\\" && clear
