@@ -165,7 +165,8 @@ autocmd BufRead,BufNewFile *.kt set ft=kotlin
 autocmd BufRead,BufNewFile *.go set tabstop=2
 autocmd BufRead,BufNewFile *.cs set ts=4 sw=4 sts=4
 autocmd BufRead,BufNewFile *.go set noet
-autocmd BufRead,BufNewFile *.asm set noet ci pi sts=0 sw=4 ts=4
+
+autocmd FileType asm set noet ci pi sts=0 sw=4 ts=4
 
 nnoremap <silent><leader>f :Neoformat<cr>
 " autocmd BufWritePre *.js Neoformat
