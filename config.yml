@@ -1,5 +1,6 @@
 aliases:
   a: tmux attach
+  add: git add $(history | sed -n 'x;$p' | awk '{print $3}')
   ack: ag
   audio: sudo kill -9 `ps ax|grep 'coreaudio[a-z]' | awk '{print $1}'`
   b: cd $OLDPWD
