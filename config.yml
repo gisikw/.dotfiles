@@ -38,11 +38,11 @@ aliases:
 symlinks:
   .Xdefaults: .dotfiles/Xdefaults
   .ackrc: .dotfiles/ackrc
-  .gitconfig: .dotfiles/gitconfig
-  .gitignore: .dotfiles/gitignore
+  .gitconfig: .dotfiles/git/gitconfig
+  .gitignore: .dotfiles/git/gitignore
   .gnupg/gpg.conf: .dotfiles/gpg.conf
-  .ratpoisonrc: .dotfiles/ratpoisonrc
+  .ratpoisonrc: .dotfiles/ratpoison/ratpoisonrc
   .ssh/config: .dotfiles/ssh_config
-  .tmux.conf: .dotfiles/tmux.conf
+  .tmux.conf: .dotfiles/tmux/tmux.conf
   .tmuxinator: .dotfiles/tmuxinator
   .vimrc: .dotfiles/vim/vimrc
