@@ -58,11 +58,6 @@ for key in $(craml_all ~/.dotfiles/config.yml aliases); do
   alias $key="$(craml_value ~/.dotfiles/config.yml aliases $key)"
 done
 
-# Load secrets
-if [ -e "$HOME/.dotfiles/secrets.sh" ]; then
-  source ~/.dotfiles/secrets.sh
-fi
-
 # Ensure color terminal on Chromebooks
 export TERM=xterm-256color
 export BASH_SILENCE_DEPRECATION_WARNING=1
