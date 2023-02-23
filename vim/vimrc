@@ -90,8 +90,20 @@ inoremap <C-c> <Esc>
 inoremap <F12> , () => {<CR>});<Esc>O<Tab>
 
 " Leader-Key Shortcuts
-nmap <leader>1 :nmap <leader>1 :!
-nmap <leader>2 :call AutorunSecondary()<cr>
+function! RunLeaderCmd(num)
+  if !exists("g:leader_" . a:num)
+    call inputsave()
+    exec "let g:leader_" . a:num . ' = "' . substitute(input("Temp cmd: "),'"','\\"',"g") . '"'
+    call inputrestore()
+    redraw
+  endif
+  exec substitute(eval("g:leader_" . a:num),"%",expand('%'),"g")
+endfunction
+
+for i in [1,2,3,4,5,6,7,8,9,0]
+  exec "nmap <leader>" . i . " :call RunLeaderCmd(" . i . ")<cr>"
+endfor
+
 nmap <leader>t :CtrlPCurWD<cr>
 nmap <leader>e :e<space>
 nmap <leader>d :NERDTreeToggle<cr>
@@ -103,8 +115,6 @@ nmap <leader>c :!wc %<cr>
 nmap <leader>r :!(cd $(git rev-parse --show-toplevel) && rspec %:p)<cr>
 nmap <leader>R :!throw "(cd $(git rev-parse --show-toplevel) && rspec %:p)"<cr><cr>
 nmap <leader><space> :w<cr>:TestNearest<cr>
-nmap <leader>s :Ack!<space>
-nmap <leader>? :sp ~/.dotfiles/vimtips<cr>
 map <leader>y "*y
 map <leader>p "*p
 
@@ -213,7 +223,6 @@ function! EnterPresentation()
   colorscheme jelleybeans
 endfunction
 
-
 " Ignore some folders and files for CtrlP indexing
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.yardoc\|public$|log\|tmp\|node_modules$',
@@ -221,46 +230,6 @@ let g:ctrlp_custom_ignore = {
   \ }
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-
-" Function for autorunning the current file
-let g:autorun_rules = {
-  \ '\.vim'     : 'source %',
-  \ 'spec\.rb' : '!clear && rspec %',
-  \ '\.ks'      : 'call KOSEvaluate()',
-  \ '\.txt'     : 'echo system("wc -w " . expand("%"))',
-  \ 'Spec\.js'  : '!FILE=% npm run test:clean --silent',
-  \ '\.js'      : '!node %',
-  \ '\.py'      : '!python %',
-  \ '\.lua'     : '!clear && lua %',
-  \ '\.sh'      : '!clear && bash %',
-\}
-
-function! Autorun()
-  for [pattern, task] in items(g:autorun_rules)
-    if match(expand('%'),pattern) != -1
-      exec task
-      break
-    endif
-  endfor
-endfunction
-
-" Secondary functions for autorunning the current file
-let g:autorun_rules_secondary = {
-  \ '\.js'      : '!FILE=% npm run lint',
-  \ '\.rb'      : '!rubocop %',
-  \ '\.rake'    : '!rubocop %',
-  \ '\.scss'    : '!scss-lint %',
-  \ '\.ks'      : 'call KOSCopy()'
-\}
-
-function! AutorunSecondary()
-  for [pattern, task] in items(g:autorun_rules_secondary)
-    if match(expand('%'),pattern) != -1
-      exec task
-      break
-    endif
-  endfor
-endfunction
 
 " Functions for playing back the deleted buffer
 function! Retype()
