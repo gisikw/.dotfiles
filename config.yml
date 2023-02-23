@@ -45,4 +45,4 @@ symlinks:
   .ssh/config: .dotfiles/ssh_config
   .tmux.conf: .dotfiles/tmux.conf
   .tmuxinator: .dotfiles/tmuxinator
-  .vimrc: .dotfiles/vimrc
+  .vimrc: .dotfiles/vim/vimrc
