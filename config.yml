@@ -36,3 +36,4 @@ symlinks:
   .tmux.conf: .dotfiles/tmux/tmux.conf
   .tmuxinator: .dotfiles/tmuxinator
   .vimrc: .dotfiles/vim/vimrc
+  .vim/after/ftplugin: .dotfiles/vim/ftplugin
