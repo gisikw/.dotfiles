@@ -18,7 +18,7 @@ aliases:
   t: tmux
   token: stoken | tail -n 1 | pbcopy
   v: vim
-  vdot: (cd ~/.dotfiles && vim -c "NERDTreeToggle" vimrc -c "wincmd w") && up
+  vdot: (cd ~/.dotfiles && vim -c "NERDTreeToggle" vim/vimrc -c "wincmd w") && up
   vide: vim -c "NERDTreeToggle" -c "wincmd w"
   webs: (python -m SimpleHTTPServer || python -m http.server 8000)
   wifi: nmtui

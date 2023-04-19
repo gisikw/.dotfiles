@@ -104,9 +104,11 @@ for i in [1,2,3,4,5,6,7,8,9,0]
   exec "nmap <leader>" . i . " :call RunLeaderCmd(" . i . ")<cr>"
 endfor
 
+" nmap <leader>d :NERDTreeToggle<cr>
+" Can we break this habit?
+
 nmap <leader>t :CtrlPCurWD<cr>
 nmap <leader>e :e<space>
-nmap <leader>d :NERDTreeToggle<cr>
 nmap <leader>\ :bn!<cr>
 nmap <leader>- :bp\|bd #<cr>
 nmap <leader>g :Goyo<cr>
