@@ -11,15 +11,13 @@ aliases:
   g: cd $(git rev-parse --show-toplevel)
   layout: tmux list-windows | sed 's/.*\[layout //' | sed 's/]].*/]/'
   m: tmuxinator
-  n: nvim
-  nv: nvim
   nethack: ssh nethack@alt.org
   rc: bundle exec rails c
   res: echo $(tput cols)x$(tput lines)
   s: tmux switch -t
   t: tmux
   token: stoken | tail -n 1 | pbcopy
-  v: vim
+  vim: nvim
   vdot: (cd ~/.dotfiles && vim -c "NERDTreeToggle" vim/vimrc -c "wincmd w") && up
   vide: vim -c "NERDTreeToggle" -c "wincmd w"
   webs: (python -m SimpleHTTPServer || python -m http.server 8000)
