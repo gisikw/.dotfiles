@@ -37,3 +37,4 @@ symlinks:
   .tmuxinator: .dotfiles/tmuxinator
   .vimrc: .dotfiles/vim/vimrc
   .vim/after/ftplugin: .dotfiles/vim/ftplugin
+  .config/neovim: .dotfiles/neovim
