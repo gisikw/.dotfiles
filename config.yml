@@ -11,8 +11,8 @@ aliases:
   g: cd $(git rev-parse --show-toplevel)
   layout: tmux list-windows | sed 's/.*\[layout //' | sed 's/]].*/]/'
   m: tmuxinator
-  n: neovim
-  nv: neovim
+  n: nvim
+  nv: nvim
   nethack: ssh nethack@alt.org
   rc: bundle exec rails c
   res: echo $(tput cols)x$(tput lines)
