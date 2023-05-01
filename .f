@@ -26,10 +26,10 @@ _f_show_usage() {
             _f_edit
             ;;
         install)
-            f_install
+            _f_install
             ;;
         uninstall)
-            f_uninstall
+            _f_uninstall
             ;;
         *)
             if [ -n "$1" ]; then
