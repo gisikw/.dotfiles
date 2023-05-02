@@ -34,6 +34,9 @@ _f_install() {
 }
 
 _f_uninstall() {
+  while read symlink; do
+    rm -rf $symlink
+  done < <(yq '.symlinks | keys' ~/.dotfiles/config.yml | sed 's/- //')
   rm -rf $HOME/.dotfiles
   if [[ "$(uname)" == "Darwin" ]]; then
     sed -i '' '/source \$HOME\/.dotfiles\/.f/d' $HOME/.bash_profile 2>/dev/null
@@ -44,9 +47,6 @@ _f_uninstall() {
     sed -i '/source \$HOME\/.dotfiles\/.f/d' $HOME/.bashrc 2>/dev/null
     sed -i '/source \$HOME\/.dotfiles\/.f/d' $HOME/.zshrc 2>/dev/null
   fi
-  while read symlink; do
-    rm -rf $symlink
-  done < <(yq '.symlinks | keys' ~/.dotfiles/config.yml | sed 's/- //')
   echo "Dotfiles uninstalled. Please restart your shell."
 }
 
