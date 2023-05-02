@@ -77,3 +77,6 @@ _f_show_usage() {
             ;;
     esac
 }
+
+[ "${BASH_SOURCE[0]}" != "$HOME/.dotfiles/.f" ] && exit 0;
+source $HOME/.dotfiles/shell/prompt.sh
