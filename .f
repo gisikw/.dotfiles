@@ -48,7 +48,29 @@ _f_uninstall() {
 }
 
 _f_main() {
-  echo "Running 'main' command..."
+  function github_available() {
+    ping -c 1 -W 1 github.com > /dev/null 2>&1
+  }
+  function commit_dotfile_changes() {
+    (
+    cd $HOME/.dotfiles
+    if ! test -z "$(git status --porcelain)"; then
+      git add --all >/dev/null 2>&1
+      git commit -m "Automatic update" >/dev/null 2>&1
+    fi
+  )
+  }
+  function update_dotfile_repository() {
+  (
+    cd ~/.dotfiles
+    git pull origin master >/dev/null 2>&1
+    git push origin master >/dev/null 2>&1 &
+  )
+}
+  if github_available; then
+    commit_dotfile_changes
+    update_dotfile_repository
+  fi
 }
 
 _f_show_usage() {
