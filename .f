@@ -104,7 +104,7 @@ _f_show_usage() {
 }
 
 current_file_path="${BASH_SOURCE[0]}"
-[ -z "$current_file_path" ] && current_file_path="${(%):-%x}"
+[ -z "$current_file_path" ] || current_file_path="${(%):-%x}"
 if [ "$(realpath $current_file_path)" = "$HOME/.dotfiles/.f" ]; then
   source $HOME/.dotfiles/init.sh
 fi
