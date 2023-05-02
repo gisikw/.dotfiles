@@ -1,0 +1,5 @@
+aliases:
+  vim: nvim
+  z: fg
+symlinks:
+  .config/nvim: .dotfiles/nvim

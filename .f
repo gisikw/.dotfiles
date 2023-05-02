@@ -102,5 +102,5 @@ _f_show_usage() {
 
 current_file_path="$(realpath "${BASH_SOURCE[0]:-${(%):-%x}}")"
 if [ "$current_file_path" = "$HOME/.dotfiles/.f" ]; then
-  source $HOME/.dotfiles/shell/prompt.sh
+  source $HOME/.dotfiles/init.sh
 fi
