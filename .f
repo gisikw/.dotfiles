@@ -1,7 +1,7 @@
 #!/bin/bash
 
 _f_edit() {
-  echo "Running 'edit' command..."
+  (cd $HOME/.dotfiles && vim -c "NvimTreeToggle" config.yml -c "wincmd w" && .f)
 }
 
 _f_install() {
