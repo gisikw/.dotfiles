@@ -12,6 +12,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 require('lazy').setup("plugins")
 
+vim.opt.modeline = false
+
 vim.opt.syntax = "on"
 vim.opt.relativenumber = true
 vim.opt.number = true
