@@ -44,6 +44,9 @@ _f_uninstall() {
     sed -i '/source \$HOME\/.dotfiles\/.f/d' $HOME/.bashrc 2>/dev/null
     sed -i '/source \$HOME\/.dotfiles\/.f/d' $HOME/.zshrc 2>/dev/null
   fi
+  while read symlink; do
+    rm -rf $symlink
+  done < <(yq '.symlinks | keys' ~/.dotfiles/config.yml | sed 's/- //')
   echo "Dotfiles uninstalled. Please restart your shell."
 }
 
