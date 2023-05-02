@@ -100,6 +100,7 @@ _f_show_usage() {
     esac
 }
 
-if [ "${BASH_SOURCE[0]}" == "$HOME/.dotfiles/.f" ]; then
+current_file_path="$(realpath "${BASH_SOURCE[0]:-${(%):-%x}}")"
+if [ "$current_file_path" = "$HOME/.dotfiles/.f" ]; then
   source $HOME/.dotfiles/shell/prompt.sh
 fi
