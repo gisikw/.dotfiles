@@ -1,6 +1,6 @@
 #!/bin/bash
 
-shell_load_scripts=(.bashrc .bash_profile .zshrc)
+shell_rcs=(.bashrc .bash_profile .zshrc)
 
 _f_edit() {
 	(cd $HOME/.dotfiles && vim -c "NvimTreeToggle" config.yml -c "wincmd w" && .f)
@@ -30,10 +30,9 @@ _f_install() {
 	fi
 
 	git clone --quiet git@github.com:gisikw/.dotfiles.git $HOME/.dotfiles >/dev/null 2>&1
-	[ -f $HOME/.bash_profile ] && echo 'source $HOME/.dotfiles/.f' >>$HOME/.bash_profile
-	[ -f $HOME/.bashrc ] && echo 'source $HOME/.dotfiles/.f' >>$HOME/.bashrc
-	[ -f $HOME/.zshrc ] && echo 'source $HOME/.dotfiles/.f' >>$HOME/.zshrc
-
+        for rc_file in "${shell_rcs[@]}"; do
+          [ -f "$HOME/$rc_file" ] && echo 'source $HOME/.dotfiles/.f' >> $HOME/$rc_file
+        done
 	echo "Installation complete. Please restart your shell or run . ~/.dotfiles/.f"
 }
 
@@ -42,15 +41,13 @@ _f_uninstall() {
 		rm -rf $symlink
 	done < <(yq '.symlinks | keys' ~/.dotfiles/config.yml | sed 's/- //')
 	rm -rf $HOME/.dotfiles
-	if [[ "$(uname)" == "Darwin" ]]; then
-		sed -i '' '/source \$HOME\/.dotfiles\/.f/d' $HOME/.bash_profile 2>/dev/null
-		sed -i '' '/source \$HOME\/.dotfiles\/.f/d' $HOME/.bashrc 2>/dev/null
-		sed -i '' '/source \$HOME\/.dotfiles\/.f/d' $HOME/.zshrc 2>/dev/null
-	else
-		sed -i '/source \$HOME\/.dotfiles\/.f/d' $HOME/.bash_profile 2>/dev/null
-		sed -i '/source \$HOME\/.dotfiles\/.f/d' $HOME/.bashrc 2>/dev/null
-		sed -i '/source \$HOME\/.dotfiles\/.f/d' $HOME/.zshrc 2>/dev/null
-	fi
+        for rc_file in "${shell_rcs[@]}"; do
+          if [[ "$(uname)" == "Darwin" ]]; then
+            sed -i '' '/source \$HOME\/.dotfiles\/.f/d' $HOME/$rc_file 2>/dev/null
+          else
+            sed -i '/source \$HOME\/.dotfiles\/.f/d' $HOME/$rc_file 2>/dev/null
+          fi
+        done
 	echo "Dotfiles uninstalled. Please restart your shell."
 }
 
