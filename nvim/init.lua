@@ -27,3 +27,5 @@ require('lazy').setup({
 vim.opt.syntax = "on"
 vim.opt.relativenumber = true
 vim.opt.number = true
+
+vim.api.nvim_set_keymap('n', '<leader>d', ':NvimTreeToggle<cr>', {})
