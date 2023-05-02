@@ -14,13 +14,11 @@ function status_prompt() {
       color_code=32; }
 
   if [[ $ZSH_NAME ]]; then
-    # zsh syntax
     named_color=$(get_named_color $color_code)
-    PROMPT="%F{$named_color}\$%f "
-    [ -n "$SSH_CLIENT" ] && PROMPT="%F{cyan}(%m)%f $PROMPT"
+    PROMPT="%F{$named_color}%f "
+    [ -n "$SSH_CLIENT" ] && PROMPT="%K{$named_color}%F{black}(%m)%f %k$PROMPT"
   else
-    # bash syntax
-    PS1="\[\e[0;${color_code}m\]\$\[\e[0m\] "
+    PS1="\[\e[0;${color_code}m\]\[\e[0m\] "
     [ -n "$SSH_CLIENT" ] && PS1="\[\e[0;36m\](\h)\[\e[0m\] $PS1"
   fi
 }
