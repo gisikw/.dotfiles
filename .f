@@ -1,3 +1,5 @@
+#!/bin/bash
+
 _f_edit() {
   echo "Running 'edit' command..."
 }
