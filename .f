@@ -103,8 +103,11 @@ _f_show_usage() {
     esac
 }
 
-current_file_path="${BASH_SOURCE[0]}"
-[ -z "$current_file_path" ] || current_file_path="${(%):-%x}"
+if [[ $ZSH_NAME ]]; then
+  current_file_path="${(%):-%x}"
+else
+  current_file_path="${BASH_SOURCE[0]}"
+fi
 if [ "$(realpath $current_file_path)" = "$HOME/.dotfiles/.f" ]; then
   source $HOME/.dotfiles/init.sh
 fi
