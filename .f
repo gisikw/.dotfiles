@@ -63,8 +63,8 @@ _f_main() {
   function update_dotfile_repository() {
   (
     cd ~/.dotfiles
-    git pull origin master >/dev/null 2>&1
-    git push origin master >/dev/null 2>&1 &
+    git pull origin main >/dev/null 2>&1
+    git push origin main >/dev/null 2>&1 &
   )
 }
   if github_available; then
