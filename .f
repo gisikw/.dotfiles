@@ -30,11 +30,21 @@ _f_install() {
     [ -f $HOME/.bashrc ] && echo 'source $HOME/.dotfiles/.f' >> $HOME/.bashrc
     [ -f $HOME/.zshrc ] && echo 'source $HOME/.dotfiles/.f' >> $HOME/.zshrc
 
-    echo "Installation complete. Restart your shell or run . ~/.dotfiles/.f"
+    echo "Installation complete. Please restart your shell or run . ~/.dotfiles/.f"
 }
 
 _f_uninstall() {
-  echo "Running 'uninstall' command..."
+  rm -rf $HOME/.dotfiles
+  if [[ "$(uname)" == "Darwin" ]]; then
+    sed -i '' '/source \$HOME\/.dotfiles\/.f/d' $HOME/.bash_profile 2>/dev/null
+    sed -i '' '/source \$HOME\/.dotfiles\/.f/d' $HOME/.bashrc 2>/dev/null
+    sed -i '' '/source \$HOME\/.dotfiles\/.f/d' $HOME/.zshrc 2>/dev/null
+  else
+    sed -i '/source \$HOME\/.dotfiles\/.f/d' $HOME/.bash_profile 2>/dev/null
+    sed -i '/source \$HOME\/.dotfiles\/.f/d' $HOME/.bashrc 2>/dev/null
+    sed -i '/source \$HOME\/.dotfiles\/.f/d' $HOME/.zshrc 2>/dev/null
+  fi
+  echo "Dotfiles uninstalled. Please restart your shell."
 }
 
 _f_main() {
