@@ -60,4 +60,4 @@ insert_keymap('<C-c>', '<Esc>')
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.termguicolors = true
-normal_keymap('<space>',    ':noh<bar>:echo<cr>')
+normal_keymap('<space>', ':noh<bar>:echo<cr>')
