@@ -1,5 +1,7 @@
 #!/bin/bash
 
+shell_load_scripts=(.bashrc .bash_profile .zshrc)
+
 _f_edit() {
 	(cd $HOME/.dotfiles && vim -c "NvimTreeToggle" config.yml -c "wincmd w" && .f)
 }
