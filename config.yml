@@ -3,3 +3,6 @@ aliases:
   z: fg
 symlinks:
   .config/nvim: .dotfiles/nvim
+  .gitignore: .dotfiles/git/gitignore
+  .gitconfig: .dotfiles/git/gitconfig
+  .tmux.conf: .dotfiles/tmux/tmux.conf
