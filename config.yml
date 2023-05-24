@@ -2,6 +2,7 @@ aliases:
   vim: nvim
   z: fg
   ack: ag
+  a: tmux attach
 symlinks:
   .config/nvim: .dotfiles/nvim
   .gitignore: .dotfiles/git/gitignore
