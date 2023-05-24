@@ -3,7 +3,7 @@
 shell_rcs=(.bashrc .bash_profile .zshrc)
 
 _f_edit() {
-	(cd $HOME/.dotfiles && vim -c "NvimTreeToggle" config.yml -c "wincmd w" && .f)
+	(cd $HOME/.dotfiles && nvim -c "NvimTreeToggle" config.yml -c "wincmd w" && .f)
 }
 
 _f_install() {
