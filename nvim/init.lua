@@ -63,3 +63,15 @@ vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.termguicolors = true
 normal_keymap('<space>', ':noh<bar>:echo<cr>')
+
+function _G.insert_tab_wrapper()
+    local col = vim.api.nvim_win_get_cursor(0)[2]
+    if col == 0 or vim.api.nvim_get_current_line():sub(col, col):match("%w") == nil then
+        return vim.api.nvim_replace_termcodes("<Tab>", true, true, true)
+    else
+        return vim.api.nvim_replace_termcodes("<C-p>", true, true, true)
+    end
+end
+
+vim.api.nvim_set_keymap('i', '<Tab>', 'v:lua.insert_tab_wrapper()', {expr = true, noremap = true})
+vim.api.nvim_set_keymap('i', '<S-Tab>', '<C-n>', {noremap = true})
