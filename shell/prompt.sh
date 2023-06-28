@@ -9,18 +9,17 @@ function get_named_color() {
 }
 
 function status_prompt() {
-  [ $? -ne 0 ] && color_code=31 || 
-    { [ $(git status --porcelain=1 2>/dev/null | wc -l) -ne 0 ] && color_code=33 || 
-      color_code=32; }
-
-  if [[ $ZSH_NAME ]]; then
-    named_color=$(get_named_color $color_code)
-    PROMPT="%F{$named_color}%f "
-    [ -n "$SSH_CLIENT" ] && PROMPT="%K{$named_color}%F{black}(%m)%f %k$PROMPT"
+  if [ $? -ne 0 ]; then
+    STATUS="red"
   else
-    PS1="\[\e[0;${color_code}m\]\[\e[0m\] "
-    [ -n "$SSH_CLIENT" ] && PS1="\[\e[0;36m\](\h)\[\e[0m\] $PS1"
+    [ $(git status --porcelain=1 2>/dev/null | wc -l) -ne 0 ] && STATUS="yellow" || STATUS="green"
   fi
+  { read GROOT; read BRANCH } < <(git rev-parse --show-toplevel --abbrev-ref HEAD 2>/dev/null)
+  LOCATION="$HOST"
+  [ ! -z "$GROOT" ] && LOCATION="$LOCATION/$(basename $GROOT)"
+  [ ! -z "$BRANCH" ] && [ "$BRANCH" != "master" ] && [ "$BRANCH" != "main" ] && LOCATION="$LOCATION#$BRANCH"
+  NEWLINE=$'\n'
+  PROMPT="%K{$STATUS}%F{black} $LOCATION %F{$STATUS}%k${NEWLINE}%K{$STATUS}%k%f "
 }
 
 if [[ $ZSH_NAME ]]; then
