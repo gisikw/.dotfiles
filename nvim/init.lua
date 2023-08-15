@@ -57,11 +57,12 @@ insert_keymap = keymap_macro('i')
 
 normal_keymap('<leader>c',  ':!wc %<cr>')
 normal_keymap('<leader>-',  ':bp<bar>bd #<cr>')
+normal_keymap('<leader><leader>',  ':bnext<cr>')
 insert_keymap('<C-c>', '<Esc>')
 
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 vim.opt.incsearch = true
-vim.opt.termguicolors = true
+vim.opt.termguicolors = false
 normal_keymap('<space>', ':noh<bar>:echo<cr>')
 
 function _G.insert_tab_wrapper()
