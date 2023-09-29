@@ -24,3 +24,5 @@
 	excludefiles = /home/gisikw/.gitignore
 [init]
 	defaultBranch = main
+[pull]
+	rebase = true

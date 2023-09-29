@@ -3,6 +3,7 @@ aliases:
   z: fg
   ack: ag
   a: tmux attach
+  t: todo.sh
 symlinks:
   .config/nvim: .dotfiles/nvim
   .gitignore: .dotfiles/git/gitignore

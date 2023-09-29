@@ -62,7 +62,7 @@ insert_keymap('<C-c>', '<Esc>')
 
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
-vim.opt.termguicolors = false
+-- vim.opt.termguicolors = false
 normal_keymap('<space>', ':noh<bar>:echo<cr>')
 
 function _G.insert_tab_wrapper()
