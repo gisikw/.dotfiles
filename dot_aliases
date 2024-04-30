@@ -1,0 +1,5 @@
+alias vim=nvim
+alias z=fg
+alias ack=ag
+alias a="tmux attach"
+alias t="todo.sh"

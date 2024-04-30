@@ -1,3 +1,5 @@
+[ -s "$HOME/.ps1" ] && source "$HOME/.ps1"
+[ -s "$HOME/.aliases" ] && source "$HOME/.aliases"
 [ -s "/opt/homebrew/bin/brew" ] && eval "$(/opt/homebrew/bin/brew shellenv)"
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 ulimit -n 32768
