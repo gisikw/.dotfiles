@@ -1,0 +1,9 @@
+[ -s "/opt/homebrew/bin/brew" ] && eval "$(/opt/homebrew/bin/brew shellenv)"
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+ulimit -n 32768
+autoload -Uz compinit && compinit
+stty icrnl
+export EDITOR="nvim"
+bindkey -v
+bindkey '^R' history-incremental-search-backward
+mise_path=$(which mise) && eval "$($mise_path activate zsh)"
