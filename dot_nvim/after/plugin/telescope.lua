@@ -1,0 +1,5 @@
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>t', function()
+  builtin.find_files()
+  -- builtin.git_files()
+end)

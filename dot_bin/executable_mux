@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+
+custom_projects=(
+  "$HOME/.local/share/chezmoi"
+)
+project_list=$(cat <(find ~/Projects -mindepth 1 -maxdepth 1 -type d) <(printf "%s\n" "${custom_projects[@]}"))
+
+if [[ "$1" == "init" ]]; then
+    current_dir_basename=$(basename "$PWD")
+    project_name=$(echo "$current_dir_basename" | tr '.' '_')
+    tmuxinator new --local "$project_name"
+    exit 0
+elif [[ "$1" == "edit" ]]; then
+  $EDITOR .tmuxinator.yml
+  exit 0
+fi
+
+if [[ $# -eq 1 ]]; then
+  matched_project=$(echo "$project_list" | grep "/${1}$")
+  if [ ! -z "$matched_project" ]; then
+    selected="$matched_project"
+  else
+    selected=$1
+  fi
+else
+  selected=$(echo "$project_list" | \
+    awk -F/ '{print $0 "\t" $NF}' | \
+    fzf --delimiter='\t' --with-nth=2 | \
+    awk '{print $1}'
+  )
+fi
+
+if [[ -z $selected ]]; then
+    exit 0
+fi
+
+selected_name=$(basename "$selected" | tr . _)
+tmux_running=$(pgrep tmux)
+
+if [[ -f "$selected/.tmuxinator.yml" ]]; then
+  (cd "$selected" && tmuxinator start)
+else
+  if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
+      tmux new-session -s $selected_name -c $selected
+      exit 0
+  fi
+
+  if ! tmux has-session -t=$selected_name 2> /dev/null; then
+      tmux new-session -ds $selected_name -c $selected
+  fi
+fi
+
+tmux switch-client -t $selected_name
