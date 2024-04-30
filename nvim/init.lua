@@ -12,13 +12,13 @@ end
 vim.opt.rtp:prepend(lazypath)
 require('lazy').setup("plugins")
 
-vim.opt.modeline = false
+vim.opt.modeline = true
 
 vim.opt.syntax = "on"
 vim.opt.relativenumber = true
 vim.opt.number = true
 
-vim.cmd.colorscheme("inkpot")
+vim.cmd.colorscheme("sonokai")
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -62,7 +62,7 @@ insert_keymap('<C-c>', '<Esc>')
 
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
--- vim.opt.termguicolors = false
+vim.opt.termguicolors = true
 normal_keymap('<space>', ':noh<bar>:echo<cr>')
 
 function _G.insert_tab_wrapper()
@@ -77,56 +77,4 @@ end
 vim.api.nvim_set_keymap('i', '<Tab>', 'v:lua.insert_tab_wrapper()', {expr = true, noremap = true})
 vim.api.nvim_set_keymap('i', '<S-Tab>', '<C-n>', {noremap = true})
 
-_G.TermSplitCmd = function(cmd)
-    local buf_name = "special_terminal"
-    local existing_buf = vim.fn.bufnr(buf_name)
-    local terminal_win = nil
-
-    -- Check if our buffer is currently visible in any window.
-    for _, win in ipairs(vim.api.nvim_list_wins()) do
-        if vim.api.nvim_win_get_buf(win) == existing_buf then
-            terminal_win = win
-            break
-        end
-    end
-
-    -- If the terminal buffer is visible in another window, close it.
-    if terminal_win then
-        vim.api.nvim_win_close(terminal_win, false)
-        vim.cmd(string.format("bdelete %d", existing_buf))
-    end
-
-    -- Always create a new terminal in a new split.
-    vim.cmd("belowright split")
-    vim.cmd(string.format("term %s", cmd))
-    vim.api.nvim_buf_set_name(0, buf_name)
-end
-
-
-vim.api.nvim_command('command! -nargs=* TermSplitCmd lua _G.TermSplitCmd(<q-args>)')
-
-_G.run_leader_cmd = function(num)
-  local cmd_var = "leader_" .. tostring(num)
-  if vim.g[cmd_var] == nil then
-    local success, user_input = pcall(vim.fn.input, "Temp cmd: ")
-
-    if not success or user_input == "" then return end
-    vim.g[cmd_var] = "TermSplitCmd " .. user_input:gsub('%%', vim.fn.expand('%'))
-  end
-  vim.cmd(vim.g[cmd_var])
-end
-
-_G.clear_leader_cmds = function()
-  for i = 1, 10 do
-    local cmd_var = "leader_" .. tostring(i)
-    vim.g[cmd_var] = nil
-  end
-  print("Cleared all temp commands")
-end
-
-for i = 1, 10 do
-  local key = i % 10
-  vim.api.nvim_set_keymap('n', '<leader>' .. tostring(key), string.format(':lua run_leader_cmd(%d)<CR>', i), { noremap = true, silent = true })
-end
-vim.api.nvim_set_keymap('n', '<leader>`', ':lua _G.clear_leader_cmds()<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>q', ':bdelete<CR>', { noremap = true, silent = true })
+require('term_autocmds')
