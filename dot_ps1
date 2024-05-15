@@ -19,7 +19,7 @@ function status_prompt() {
   [ ! -z "$GROOT" ] && LOCATION="$LOCATION/$(basename $GROOT)"
   [ ! -z "$BRANCH" ] && [ "$BRANCH" != "master" ] && [ "$BRANCH" != "main" ] && LOCATION="$LOCATION#$BRANCH"
   NEWLINE=$'\n'
-  PROMPT="%K{$STATUS}%F{black} $LOCATION %F{$STATUS}%k${NEWLINE}%K{$STATUS}%k%f "
+  PROMPT="%K{$STATUS}%F{black} $LOCATION %F{$STATUS}%k${NEWLINE}%K{$STATUS}%k%f "
 }
 
 if [[ $ZSH_NAME ]]; then
