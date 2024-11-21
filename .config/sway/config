@@ -17,6 +17,7 @@ mode "prefix" {
   bindsym r reload; mode "default"
   bindsym n focus next; mode "default"
   bindsym p focus prev; mode "default"
+  bindsym x kill; mode "default"
   bindsym q exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
   bindsym Backslash exec $launcher; mode "default"
   bindsym Space exec swaymsg "floating enable, border none, resize set width $size ppt height $size ppt, move position center"
