@@ -1,3 +1,4 @@
+set $size 99
 set $term kitty
 set $launcher fuzzel
 
@@ -8,6 +9,9 @@ input "1922:27:-_Gameball" {
   pointer_accel -0.5
 }
 
+# Rather than use chording, we use a modifier sequence to isolate our WM interactions
+bindsym Control+b mode "prefix"
+
 mode "prefix" {
   bindsym c exec $term; mode "default"
   bindsym r reload; mode "default"
@@ -15,10 +19,11 @@ mode "prefix" {
   bindsym p focus prev; mode "default"
   bindsym q exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
   bindsym Backslash exec $launcher; mode "default"
-  bindsym b mode "default"
-  bindsym Control+b mode "default"
+  bindsym Space exec swaymsg "floating enable, border none, resize set width $size ppt height $size ppt, move position center"
+
+  # Subsequent prefix taps keep us in prefix mode
+  bindsym b mode "prefix"
+  bindsym Control+b mode "prefix"
 }
 
-bindsym Control+b mode "prefix"
-
-for_window [class=.*] floating enable, border none, resize set width 100 ppt height 100 ppt
+for_window [class=.*] floating enable, border none, resize set width $size ppt height $size ppt, move position center
