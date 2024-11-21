@@ -1,0 +1,24 @@
+set $term kitty
+set $launcher fuzzel
+
+output HDMI-A-1 scale 2 bg #000000 solid_color
+
+input "1922:27:-_Gameball" {
+  natural_scroll enabled
+  pointer_accel -0.5
+}
+
+mode "prefix" {
+  bindsym c exec $term; mode "default"
+  bindsym r reload; mode "default"
+  bindsym n focus next; mode "default"
+  bindsym p focus prev; mode "default"
+  bindsym q exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+  bindsym Backslash exec $launcher; mode "default"
+  bindsym b mode "default"
+  bindsym Control+b mode "default"
+}
+
+bindsym Control+b mode "prefix"
+
+for_window [class=.*] floating enable, border none, resize set width 100 ppt height 100 ppt
