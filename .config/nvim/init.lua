@@ -104,7 +104,12 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   spec = {
     "hrsh7th/nvim-cmp",
-    'RRethy/base16-nvim',
+    {
+      'RRethy/base16-nvim',
+      config = function()
+        vim.cmd.colorscheme("base16-selenized-black")
+      end,
+    },
     {
       'nvim-treesitter/nvim-treesitter',
       build = ':TSUpdate',
