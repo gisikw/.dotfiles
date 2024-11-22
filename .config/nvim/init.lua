@@ -51,7 +51,7 @@ local undo_dir = "/tmp/.nvim_undodir_" .. vim.fn.expand("$USER")
 if not vim.loop.fs_stat(undo_dir) then
   vim.loop.fs_mkdir(undo_dir, tonumber("700", 8))
 end
-vim.opt.undodir = undodir
+vim.opt.undodir = undo_dir
 vim.opt.undofile = true
 
 -------------------------------------------------------------------------------
