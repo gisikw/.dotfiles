@@ -41,6 +41,8 @@ vim.keymap.set('n','<space>', function()
   vim.cmd('echon ""')
 end)
 
+vim.keymap.set('n', '<leader>d', ':NvimTreeToggle<cr>')
+
 -------------------------------------------------------------------------------
 -- USE UNDO TEMPFILES
 -------------------------------------------------------------------------------
@@ -104,6 +106,15 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   spec = {
     "hrsh7th/nvim-cmp",
+    {
+      "nvim-tree/nvim-tree.lua",
+      dependencies = {
+        "nvim-tree/nvim-web-devicons",
+      },
+      config = function()
+        require("nvim-tree").setup()
+      end,
+    },
     {
       'RRethy/base16-nvim',
       config = function()
