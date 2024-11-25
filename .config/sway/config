@@ -28,3 +28,7 @@ mode "prefix" {
 }
 
 for_window [class=.*] floating enable, border none, resize set width $size ppt height $size ppt, move position center
+
+input "16701:8455:HID_413d:2107" {
+  events disabled
+}
