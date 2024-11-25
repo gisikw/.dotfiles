@@ -1,12 +1,10 @@
 -------------------------------------------------------------------------------
 -- BASE CONFIGURATION
 -------------------------------------------------------------------------------
-
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 10
 vim.opt.updatetime = 250
-vim.opt.cursorline = true
 
 vim.opt.expandtab = true
 vim.opt.autoindent = true
@@ -55,6 +53,41 @@ if not vim.loop.fs_stat(undo_dir) then
 end
 vim.opt.undodir = undo_dir
 vim.opt.undofile = true
+
+-------------------------------------------------------------------------------
+-- OS-SPECIFIC CLIPBOARD SETTINGS
+-------------------------------------------------------------------------------
+if vim.fn.getenv("WAYLAND_DISPLAY") ~= nil then
+  if vim.fn.executable("wl-copy") == 1 and vim.fn.executable("wl-paste") == 1 then
+    vim.g.clipboard = {
+      name = "wayland",
+      copy = {
+        ["*"] = "wl-copy --foreground --type text/plain"
+      },
+      paste = {
+        ["*"] = "wl-paste --no-newline"
+      },
+      cache_enabled = 1,
+    }
+  else
+    vim.notify("Wayland detected but wl-copy/paste not found", vim.log.levels.WARN)
+  end
+elseif vim.fn.getenv("DISPLAY") ~= nil then
+    if vim.fn.executable("xclip") == 1 then
+        vim.g.clipboard = {
+            name = "xclip",
+            copy = {
+                ["*"] = "xclip -selection clipboard",
+            },
+            paste = {
+                ["*"] = "xclip -selection clipboard -o",
+            },
+            cache_enabled = 1,
+        }
+    else
+        vim.notify("X11 detected but xclip not found", vim.log.levels.WARN)
+    end
+end
 
 -------------------------------------------------------------------------------
 -- FILETYPE-SPECIFIC SETTINGS
