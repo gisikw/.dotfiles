@@ -100,7 +100,6 @@ colors = {
   ruby = "base16-railscasts",
   sh = "base16-paraiso",
   python = "base16-onedark",
-  -- todo = "base16-primer-dark"
   -- todo = "base16-qualia"
   -- todo = "base16-selenized-black"
   -- todo = "base16-woodland"
@@ -324,6 +323,7 @@ _G.TermFloatingCmd = function(cmd)
 
   vim.fn.termopen(cmd)
   vim.bo[buf].buftype = "terminal"
+  vim.cmd.colorscheme("base16-primer-dark")
   vim.cmd("startinsert")
 
   vim.api.nvim_create_autocmd("TermClose", {
