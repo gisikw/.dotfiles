@@ -40,6 +40,8 @@ vim.keymap.set('n','<space>', function()
 end)
 
 vim.keymap.set('n', '<leader>d', ':NvimTreeToggle<cr>')
+vim.keymap.set('n', '<leader><leader>', '<cmd>b#<cr>')
+vim.keymap.set('n', '<leader>-', ':bd<cr>')
 
 -------------------------------------------------------------------------------
 -- USE UNDO TEMPFILES
@@ -138,6 +140,18 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   spec = {
     "hrsh7th/nvim-cmp",
+    {
+      "nvim-telescope/telescope.nvim",
+      config = function()
+        require('telescope').setup {
+          defaults = {
+            file_ignore_patterns = { "node_modules", "target" }
+          }
+        }
+        local builtin = require("telescope.builtin")
+        vim.keymap.set("n", "<leader>t", builtin.find_files)
+      end
+    },
     {
       "nvim-tree/nvim-tree.lua",
       dependencies = {
