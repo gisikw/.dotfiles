@@ -59,7 +59,7 @@ vim.opt.undofile = true
 -------------------------------------------------------------------------------
 -- OS-SPECIFIC CLIPBOARD SETTINGS
 -------------------------------------------------------------------------------
-if vim.fn.getenv("WAYLAND_DISPLAY") ~= nil then
+if vim.fn.getenv("WAYLAND_DISPLAY") ~= vim.NIL then
   if vim.fn.executable("wl-copy") == 1 and vim.fn.executable("wl-paste") == 1 then
     vim.g.clipboard = {
       name = "wayland",
@@ -74,7 +74,7 @@ if vim.fn.getenv("WAYLAND_DISPLAY") ~= nil then
   else
     vim.notify("Wayland detected but wl-copy/paste not found", vim.log.levels.WARN)
   end
-elseif vim.fn.getenv("DISPLAY") ~= nil then
+elseif vim.fn.getenv("DISPLAY") ~= vim.NIL then
     if vim.fn.executable("xclip") == 1 then
         vim.g.clipboard = {
             name = "xclip",
