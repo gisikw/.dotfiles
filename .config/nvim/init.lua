@@ -164,7 +164,17 @@ require("lazy").setup({
             api.config.mappings.default_on_attach(bufnr)
             vim.keymap.set("n", "-", api.node.open.horizontal, { buffer = bufnr })
             vim.keymap.set("n", "|", api.node.open.vertical, { buffer = bufnr })
-          end
+          end,
+          diagnostics = {
+            enable = true,
+            show_on_dirs = true,
+            icons = {
+              hint = "",
+              info = "",
+              warning = "",
+              error = "",
+            },
+          },
         }
       end,
     },
@@ -219,9 +229,16 @@ require("lazy").setup({
         })
 
         vim.opt.signcolumn = "yes"
+        local signs = { ERROR = "", WARN = "", INFO = "", HINT = "" }
+        for type, icon in pairs(signs) do
+          local hl = "DiagnosticSign" .. type:sub(1, 1) .. type:sub(2):lower()
+          vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+        end
         vim.diagnostic.config({ 
-          virtual_text = true, 
-          signs = true 
+          virtual_text = {
+            prefix = ""
+          },
+          signs = true,
         })
         vim.diagnostic.enable() 
 
