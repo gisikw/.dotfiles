@@ -92,31 +92,6 @@ elseif vim.fn.getenv("DISPLAY") ~= vim.NIL then
 end
 
 -------------------------------------------------------------------------------
--- FILETYPE-SPECIFIC SETTINGS
--------------------------------------------------------------------------------
-colors = {
-  rust = "base16-gruvbox-dark-hard",
-  lua = "base16-atlas",
-  javascript = "base16-ia-dark",
-  go = "base16-monokai",
-  ruby = "base16-railscasts",
-  sh = "base16-paraiso",
-  python = "base16-onedark",
-  -- todo = "base16-qualia"
-  -- todo = "base16-selenized-black"
-  -- todo = "base16-woodland"
-}
-
-vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter", "BufDelete" }, {
-  callback = function()
-    local color = colors[vim.bo.filetype]
-    if color then
-      vim.cmd.colorscheme(color)
-    end
-  end
-})
-
--------------------------------------------------------------------------------
 -- PLUGINS
 -------------------------------------------------------------------------------
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -153,6 +128,13 @@ require("lazy").setup({
       end
     },
     {
+      "loctvl842/monokai-pro.nvim",
+      config = function()
+        require("monokai-pro").setup()
+        vim.cmd.colorscheme("monokai-pro-machine")
+      end
+    },
+    {
       "nvim-tree/nvim-tree.lua",
       dependencies = {
         "nvim-tree/nvim-web-devicons",
@@ -176,12 +158,6 @@ require("lazy").setup({
             },
           },
         }
-      end,
-    },
-    {
-      'RRethy/base16-nvim',
-      config = function()
-        vim.cmd.colorscheme("base16-selenized-black")
       end,
     },
     {
@@ -209,7 +185,7 @@ require("lazy").setup({
       config = function()
         require("mason").setup()
         require("mason-lspconfig").setup({
-          ensure_installed = { "rust_analyzer" },
+          ensure_installed = { "rust_analyzer", "ts_ls", "ruby_lsp" },
         })
 
         local capabilities = vim.lsp.protocol.make_client_capabilities()

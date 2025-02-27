@@ -1,3 +1,4 @@
 # Disabled for now - there's a spacing issue with the Nerd Glyphs in the ttf
 # font-family = "ProggyClean Nerd Font"
 # font-size = 18
+theme = "Monokai Pro Spectrum"
