@@ -233,7 +233,7 @@ require("lazy").setup({
       config = function()
         require("mason").setup()
         require("mason-lspconfig").setup({
-          ensure_installed = { "rust_analyzer", "ts_ls", "ruby_lsp" },
+          ensure_installed = { "rust_analyzer", "ts_ls", "ruby_lsp", "nextls" },
         })
 
         local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -316,7 +316,7 @@ require("lazy").setup({
           mapping = cmp.mapping.preset.insert({
             ['<C-n>'] = cmp.mapping.select_next_item(), -- Navigate suggestions
             ['<C-p>'] = cmp.mapping.select_prev_item(),
-            ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Confirm selection
+            ['<CR>'] = cmp.mapping.confirm({ select = false }), -- Confirm selection
             ['<Tab>'] = cmp.mapping(function(fallback)
               if cmp.visible() then
                 cmp.select_next_item()
