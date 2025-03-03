@@ -6,6 +6,7 @@ vim.opt.relativenumber = true
 vim.opt.scrolloff = 10
 vim.opt.updatetime = 250
 
+
 vim.opt.expandtab = true
 vim.opt.autoindent = true
 vim.opt.smartindent = true
@@ -20,6 +21,7 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 
 vim.opt.mouse = ""
+vim.opt.ttimeoutlen = 10
 
 -------------------------------------------------------------------------------
 -- KEYBINDINGS
