@@ -199,6 +199,11 @@ require("lazy").setup({
             vim.keymap.set("n", "-", api.node.open.horizontal, { buffer = bufnr })
             vim.keymap.set("n", "|", api.node.open.vertical, { buffer = bufnr })
           end,
+          actions = {
+            open_file = {
+              quit_on_open = true
+            }
+          },
           diagnostics = {
             enable = true,
             show_on_dirs = true,
@@ -237,7 +242,7 @@ require("lazy").setup({
       config = function()
         require("mason").setup()
         require("mason-lspconfig").setup({
-          ensure_installed = { "rust_analyzer", "ts_ls", "ruby_lsp", "nextls" },
+          ensure_installed = { "rust_analyzer", "ts_ls", "ruby_lsp", "nextls", "tailwindcss" },
         })
 
         local capabilities = vim.lsp.protocol.make_client_capabilities()
