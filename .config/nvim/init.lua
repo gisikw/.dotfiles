@@ -357,6 +357,24 @@ require("lazy").setup({
         })
       end
     },
+    {
+      'echasnovski/mini.indentscope',
+      version = false ,
+      config = function()
+        require('mini.indentscope').setup({
+          draw = {
+            animation = require('mini.indentscope').gen_animation.none(),
+            delay = 0,
+          },
+          options = {
+            try_as_border = true,
+            indent_at_cursor = false,
+          },
+          symbol = "│"
+        })
+      end,
+    },
+
   },
   checker = { 
     enabled = true,
