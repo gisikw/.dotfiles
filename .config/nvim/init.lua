@@ -343,39 +343,13 @@ require("lazy").setup({
       end,
     },
     {
-      "lukas-reineke/indent-blankline.nvim",
-      main = "ibl",
-      ---@module "ibl"
-      ---@type ibl.config
+      "nvimdev/indentmini.nvim",
       config = function()
-        require("ibl").setup({
-          indent = {
-            char = "┋",
-            highlight = "Whitespace",
-          },
-          scope = { enabled = false },
-        })
-      end
-    },
-    {
-      'echasnovski/mini.indentscope',
-      version = false ,
-      config = function()
-        require('mini.indentscope').setup({
-          draw = {
-            animation = require('mini.indentscope').gen_animation.none(),
-            delay = 0,
-          },
-          options = {
-            try_as_border = true,
-            indent_at_cursor = false,
-          },
-          symbol = "┋"
-        })
-        vim.api.nvim_set_hl(0, "MiniIndentscopeSymbol", { ctermfg = 252, fg = "#b8c4c3", bg = "NONE" })
+        require("indentmini").setup({ char = "┋" })
+        vim.api.nvim_set_hl(0, "IndentLine", { ctermfg = 252, ctermbg = "NONE", fg = "#545f62", bg = "NONE" })
+        vim.api.nvim_set_hl(0, "IndentLineCurrent", { ctermfg = 252, ctermbg = "NONE", fg = "#b8c4c3", bg = "NONE" })
       end,
     },
-
   },
   checker = { 
     enabled = true,
