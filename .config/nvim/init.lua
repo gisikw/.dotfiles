@@ -350,7 +350,7 @@ require("lazy").setup({
       config = function()
         require("ibl").setup({
           indent = {
-            char = "│",
+            char = "┋",
             highlight = "Whitespace",
           },
           scope = { enabled = false },
@@ -370,7 +370,7 @@ require("lazy").setup({
             try_as_border = true,
             indent_at_cursor = false,
           },
-          symbol = "│"
+          symbol = "┋"
         })
         vim.api.nvim_set_hl(0, "MiniIndentscopeSymbol", { ctermfg = 252, fg = "#b8c4c3", bg = "NONE" })
       end,
