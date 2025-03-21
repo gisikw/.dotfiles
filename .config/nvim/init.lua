@@ -372,6 +372,7 @@ require("lazy").setup({
           },
           symbol = "│"
         })
+        vim.api.nvim_set_hl(0, "MiniIndentscopeSymbol", { ctermfg = 252, fg = "#b8c4c3", bg = "NONE" })
       end,
     },
 
