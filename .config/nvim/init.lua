@@ -46,6 +46,14 @@ end)
 vim.keymap.set('n', '<leader>d', ':NvimTreeToggle<cr>')
 vim.keymap.set('n', '<leader><leader>', '<cmd>b#<cr>')
 vim.keymap.set('n', '<leader>-', ':bd<cr>')
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
+vim.keymap.set("n", "<leader>v", function()
+  local current = vim.diagnostic.config()
+  local new = vim.tbl_deep_extend("force", current, {
+    virtual_text = not current.virtual_text
+  })
+  vim.diagnostic.config(new)
+end, { silent = true, noremap = true, desc = "Toggle virtual text diagnostics" })
 
 -------------------------------------------------------------------------------
 -- USE UNDO TEMPFILES
@@ -261,6 +269,8 @@ require("lazy").setup({
           end,
         })
 
+        lspconfig.gleam.setup({})
+
         vim.opt.signcolumn = "yes"
         local signs = { ERROR = "", WARN = "", INFO = "", HINT = "" }
         for type, icon in pairs(signs) do
@@ -270,6 +280,10 @@ require("lazy").setup({
         vim.diagnostic.config({ 
           virtual_text = {
             prefix = ""
+          },
+          float = {
+            max_width = 80,
+            wrap = true
           },
           signs = true,
         })
