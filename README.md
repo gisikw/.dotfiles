@@ -16,13 +16,13 @@ shells.
 Run the installer script to clone this repository into `~/.config` and patch your shell configuration:
 
 ```bash
-GITHUB_USER=gisikw sh -c "$(curl -fsSL https://raw.githubusercontent.com/$GITHUB_USER/config/main/install.sh)"
+sh -c 'export GITHUB_USER=gisikw; curl -fsSL https://raw.githubusercontent.com/$GITHUB_USER/config/main/install.sh | sh'
 ```
 
 > You can pass a different GitHub username if you've forked this repo
 >
 > ```bash
-> GITHUB_USER=yourname sh -c "$(curl -fsSL https://raw.githubusercontent.com/$GITHUB_USER/config/main/install.sh)"
+> sh -c 'export GITHUB_USER=yourname; curl -fsSL https://raw.githubusercontent.com/$GITHUB_USER/config/main/install.sh | sh'
 > ```
 
 This will:
