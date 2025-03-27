@@ -1,2 +1,4 @@
 export EDITOR=vim
-alias dotfiles='git --git-dir=$HOME/.dotfiles/.git --work-tree=$HOME'
+dotfiles() {
+  git --git-dir="$HOME/.dotfiles/.git" --work-tree="$HOME" "${@:-status}"
+}
