@@ -32,14 +32,14 @@ function status_prompt() {
   # Background job count
   JOB_COUNT=$(jobs -p | wc -l | tr -d '[:space:]')
   if [ "$JOB_COUNT" -gt 0 ]; then
-    JOBS_SEGMENT="%K{$STATUS}%F{black}^$JOB_COUNT%k"
+    JOBS_SEGMENT="^$JOB_COUNT"
   else
     JOBS_SEGMENT=""
   fi
 
   # Final prompt
   NEWLINE=$'\n'
-  PROMPT="%K{$STATUS}%F{black} $CONTEXT %F{$STATUS}%k${NEWLINE}${JOBS_SEGMENT}%F{$STATUS}%f "
+  PROMPT="%K{$STATUS}%F{black} $CONTEXT %F{$STATUS}%k${NEWLINE}%F{$STATUS}${JOBS_SEGMENT}❯%f "
 }
 
 # Hook into prompt
